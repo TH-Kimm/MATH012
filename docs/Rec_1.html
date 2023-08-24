@@ -12,7 +12,7 @@
 
 <meta name="date" content="2023-08-23" />
 
-<title>Minitab Labs</title>
+<title>Minitab Lab 1</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -349,29 +349,206 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Minitab Labs</h1>
+<h1 class="title toc-ignore">Minitab Lab 1</h1>
 <h4 class="date">2023-08-23</h4>
 
 </div>
 
 
-<p>This page contains labs for MATH 012 S110/S210: Fall 2023.</p>
+<div id="minitab-lab-for-recitation-1" class="section level2">
+<h2>Minitab Lab for Recitation 1</h2>
+<p><font size="3">Our class survey data contains the survey
+information about 11 variables and 83 observations. The following is a
+part of data:</font></p>
 <table>
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="11%" />
+<col width="7%" />
+<col width="9%" />
+<col width="11%" />
+<col width="5%" />
+<col width="8%" />
+<col width="7%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="center">Date</th>
-<th align="center">Lab</th>
-<th align="center">etc</th>
+<th align="right">Sports</th>
+<th align="right">States</th>
+<th align="right">Cat_Dog</th>
+<th align="right">Pets</th>
+<th align="right">Gender</th>
+<th align="right">Browser</th>
+<th align="right">Air</th>
+<th align="right">Shoes</th>
+<th align="left">Cash</th>
+<th align="right">Water</th>
+<th align="right">Arrival</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">8/24</td>
-<td align="center">[Test]</td>
-<td align="center">-</td>
+<td align="right">5</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">4</td>
+<td align="left">$75</td>
+<td align="right">84.5</td>
+<td align="right">12.5</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">67</td>
+<td align="right">10</td>
+<td align="left">100</td>
+<td align="right">100.0</td>
+<td align="right">12.0</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">70</td>
+<td align="right">13</td>
+<td align="left">300</td>
+<td align="right">16.0</td>
+<td align="right">10.0</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">68</td>
+<td align="right">10</td>
+<td align="left">1</td>
+<td align="right">60.0</td>
+<td align="right">10.0</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">70</td>
+<td align="right">6</td>
+<td align="left">40</td>
+<td align="right">64.0</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">70</td>
+<td align="right">17</td>
+<td align="left">10</td>
+<td align="right">40.0</td>
+<td align="right">20.0</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">64</td>
+<td align="right">4</td>
+<td align="left">1</td>
+<td align="right">6.0</td>
+<td align="right">5.0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">75</td>
+<td align="right">10</td>
+<td align="left">0</td>
+<td align="right">50.0</td>
+<td align="right">10.0</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">65</td>
+<td align="right">5</td>
+<td align="left">0</td>
+<td align="right">48.0</td>
+<td align="right">8.0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">68</td>
+<td align="right">15</td>
+<td align="left">20</td>
+<td align="right">80.0</td>
+<td align="right">8.0</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">70</td>
+<td align="right">8</td>
+<td align="left">9</td>
+<td align="right">15.0</td>
+<td align="right">10.0</td>
 </tr>
 </tbody>
 </table>
+<p><font size="3"> Let us download the survey data (an excel file)
+through this <a href="https://drive.google.com/file/d/1DlQuNSYGLpGSXMMH6D0lnIqdV4oDULsc/view?usp=sharing">LINK</a>.
+Open <strong>Minitab</strong> user interface and load the data.</p>
+<ol style="list-style-type: decimal">
+<li><p>Choose one of the discrete numercal variables and calculate the
+mean.</p></li>
+<li><p>Choose one of the continuous numerical variables and calculate
+the median.</p></li>
+<li><p>Choose one of the categorical variables and make a pie
+chart.</p></li>
+<li><p>Make a histogram for the variable Shoes. Don’t forget to use
+relative frequency or percentage for each rectangle. </font></p></li>
+</ol>
+</div>
 
 
 

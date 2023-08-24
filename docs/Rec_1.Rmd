@@ -1,0 +1,35 @@
+---
+title: "Minitab Lab 1"
+date: "2023-08-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r,echo=FALSE}
+
+```
+## Minitab Lab for Recitation 1
+
+<font size = "3">Our class survey data contains the survey information about 11 variables and 83 observations. The following is a part of data:</font>
+```{r,echo=FALSE}
+library(knitr)
+survey<-read.csv('https://www.lehigh.edu/~tak422/data/Survey_MATH12.csv')
+kable(survey[1:11,])
+```
+<font size = "3">
+Let us download the survey data (an excel file) through this [LINK](https://drive.google.com/file/d/1DlQuNSYGLpGSXMMH6D0lnIqdV4oDULsc/view?usp=sharing). 
+Open **Minitab** user interface and load the data.
+
+1. Choose one of the discrete numercal variables and calculate the mean.
+
+2. Choose one of the continuous numerical variables and calculate the median.
+
+3. Choose one of the categorical variables and make a pie chart. 
+
+4. Make a histogram for the variable Shoes. Don't forget to use relative frequency or percentage for each rectangle. 
+</font>
+
+
+
