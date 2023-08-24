@@ -1,5 +1,5 @@
 ---
-title: "Minitab Lab 1"
+title: "Minitab Lab 3"
 date: "2023-08-23"
 output: html_document
 ---
