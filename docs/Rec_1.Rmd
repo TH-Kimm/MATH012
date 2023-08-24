@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r,echo=FALSE}
 
 ```
-## Minitab Lab for Recitation 1
+## Minitab Lab for Recitation 3
 
 <font size = "3">Our class survey data contains the survey information about 11 variables and 83 observations. The following is a part of data:</font>
 ```{r,echo=FALSE}
@@ -20,7 +20,7 @@ kable(survey[1:11,])
 ```
 <font size = "3">
 Let us download the survey data (an excel file) through this [LINK](https://drive.google.com/file/d/1DlQuNSYGLpGSXMMH6D0lnIqdV4oDULsc/view?usp=sharing). 
-Open **Minitab** user interface and load the data.
+Open [**Minitab**](https://app.minitab.com/) user interface and load the data.
 
 1. Choose one of the discrete numercal variables and calculate the mean.
 
