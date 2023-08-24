@@ -12,5 +12,5 @@ This page contains labs for MATH 012 S110/S210: Fall 2023.
 
 | Date      | Lab      |  etc     |
 |:-----:|:------:|:-------:|
-| 8/24 | [Test] | -   |
+| 8/24 | [Test](https://th-kimm.github.io/MATH012/Rec_1.html) | -   |
 
