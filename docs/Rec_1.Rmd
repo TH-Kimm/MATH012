@@ -1,35 +1,36 @@
 ---
-title: "Minitab Lab 3"
-date: "2023-08-23"
-output: html_document
+title: "MATH 012: Week 2"
+date: "Minitab Lab 1"
+output: rmdformats::html_docco
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-```{r,echo=FALSE}
 
-```
-## Minitab Lab for Recitation 3
-
-<font size = "3">Our class survey data contains the survey information about 11 variables and 83 observations. The following is a part of data:</font>
+Our class survey data contains 15 variables and 79 observations:
 ```{r,echo=FALSE}
 library(knitr)
-survey<-read.csv('https://www.lehigh.edu/~tak422/data/Survey_MATH12.csv')
-kable(survey[1:11,])
+library(kableExtra)
+survey<-read.csv('https://www.lehigh.edu/~tak422/data/Survey_2023.csv')
+survey %>%
+  kable %>%
+  kable_styling("striped", full_width = F) %>% 
+ scroll_box(width = "700px", height = "350px")
 ```
-<font size = "3">
-Let us download the survey data (an excel file) through this [LINK](https://drive.google.com/file/d/1DlQuNSYGLpGSXMMH6D0lnIqdV4oDULsc/view?usp=sharing). 
-Open [**Minitab**](https://app.minitab.com/) user interface and load the data.
 
-1. Choose one of the discrete numercal variables and calculate the mean.
+You can download the survey data (a .csv file) through this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing).\
+Open [**Minitab**](https://app.minitab.com/) user interface and load the data.\
+Answer the following questions.
 
-2. Choose one of the continuous numerical variables and calculate the median.
+1. Choose one of the categorical numerical variables and draw a frequency table.
+
+2. Choose one of the discrete numerical variables and draw a frequency table.
 
 3. Choose one of the categorical variables and make a pie chart. 
 
-4. Make a histogram for the variable Shoes. Don't forget to use relative frequency or percentage for each rectangle. 
-</font>
+4. Make a histogram for the variable Height. Don't forget to use relative frequency or percentage for each rectangle. 
+
 
 
 
