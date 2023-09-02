@@ -19,9 +19,8 @@ survey %>%
  scroll_box(width = "700px", height = "350px")
 ```
 
-You can download the survey data (a .csv file) through this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing).\
-Open [**Minitab**](https://app.minitab.com/) user interface and load the data.\
-Answer the following questions.
+Download the survey data (a .csv file) from this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing),\
+then open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
 
 1. Choose one of the categorical numerical variables and draw a frequency table.
 
