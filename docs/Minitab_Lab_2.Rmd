@@ -1,0 +1,41 @@
+---
+title: "MATH 012: Week 3"
+date: "Minitab Lab 2"
+output: rmdformats::html_docco
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Let's revisit our class survey data, which comprises 15 variables and 79 observations:
+```{r,echo=FALSE}
+library(knitr)
+library(kableExtra)
+survey<-read.csv('https://www.lehigh.edu/~tak422/data/Survey_2023.csv')
+survey %>%
+  kable %>%
+  kable_styling("striped", full_width = F) %>% 
+ scroll_box(width = "700px", height = "250px")
+```
+
+Download the survey data (.csv file) from this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing),\
+then open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
+
+1. For the variable **Shoes**, compute the mean, median, variance, standard deviation, range, and IQR. 
+
+2. Create a boxplot for the variable **Shoes** in horizontal orientation. 
+Determine whether it exhibits a right-skewed, left-skewed, or symmetric distribution.
+
+3. Create side-by-side horizontal boxplots for the variable **Shoes** categorized by different groups of the **Gender** variable. 
+Assess which group demonstrates a higher central tendency and which one exhibits lower variability among females and males.
+
+4. Duplicate the **Shoes** variable to a new variable, **Shoes_1**. Remove the two outliers from **Shoes_1**.
+
+5. For the variable **Shoes** and **Shoes_1**, calculate the mean, median, variance, standard deviation, range, and IQR. 
+Determine which numerical measures are sensitive or resistant to outliers.
+
+
+
+
+
