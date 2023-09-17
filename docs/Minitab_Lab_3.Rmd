@@ -1,0 +1,34 @@
+---
+title: "MATH 012: Week 4"
+date: "Minitab Lab 3"
+output: rmdformats::html_docco
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Let's revisit our class survey data, which comprises 15 variables and 79 observations:
+```{r,echo=FALSE}
+library(knitr)
+library(kableExtra)
+survey<-read.csv('https://www.lehigh.edu/~tak422/data/Survey_2023.csv')
+survey %>%
+  kable %>%
+  kable_styling("striped", full_width = F) %>% 
+ scroll_box(width = "700px", height = "250px")
+```
+
+Download the survey data (.csv file) from this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing),\
+then open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
+
+1. Create a contingency table for **Gender** (in rows) and **Sports** (in columns) variables to show the relative frequency, i.e., unconditional percentage. What is the reason we cannot simply compare males and females with respect to different sports using this contingency table?
+
+2. Generate a conditional contingency table to compare males and females with respect to different sports. Excluding "Other" category, which sport is more popular among male students compared to female students?
+
+3. Among the continuous variables, which pair do you believe has the highest correlation? Compute the correlations to confirm your guess.
+
+4. Create scatter plots with **MO_Height** on the X-axis and **Height** on the Y-axis, segmented by the **Gender** variable. Which gender exhibits a stronger positive relationship?
+
+
+
