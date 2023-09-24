@@ -8,7 +8,7 @@ output: rmdformats::html_docco
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The following is a real estate data with 414 observations and 7 variables
+The following is a real estate data with 414 observations and 7 variables:
 ```{r,echo=FALSE}
 library(knitr)
 library(kableExtra)
@@ -28,15 +28,15 @@ survey %>%
 |**X6**| Longitude|
 |**Y**| House price of unit area|
 
-Download data (.csv file) from this [**LINK**](https://drive.google.com/file/d/12aNlOShZH8wHcKDAnbbI8fpWvUeENAhg/view?usp=sharing), then open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
+Download the data (.csv file) from this [**LINK**](https://drive.google.com/file/d/12aNlOShZH8wHcKDAnbbI8fpWvUeENAhg/view?usp=sharing), then open it in the [**Minitab**](https://app.minitab.com/) user interface to answer the following questions.
 
 1. Check out the correlations and scatter plots between the response variable **Y** and potential predictor variables **X**s. Do you think there is a predictor variable that can be used for a linear regression analysis?
 
 2. If you cannot find one, then let us transform data. Go to Calc => Calculation and use a log function, **LN()**, to transform **X3**. Save it in **LOG_X3** and check the correlation and scatter plot between **LOG_X3** and **Y**. Do you think we can use the transformed variable for the regression analysis?
 
-3. Perform a linear regression analysis by Minitab. 
--   What are the values of slope and intercept? Do you think you can interpret those? 
--   What is the coefficient of determination? Can you interpret the value?
+3. Perform a linear regression analysis using Minitab. 
+-   What are the values of slope and intercept? Can you interpret those? 
+-   What is the coefficient of determination? Can you interpret its value?
 
 4. Predict the value of **Y** when **LOG_X3** is 5.25.
 
