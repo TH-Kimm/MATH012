@@ -1,0 +1,48 @@
+---
+title: "MATH 012: Week 6"
+date: "Minitab Lab 5"
+output: rmdformats::html_docco
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In class, we have discussed the concept of **Long-Run Probability**. It basically states that our definition of probability as 'the proportion of times that something happens' essentially agrees with our intuition. In other words:
+
+* In the short run, the proportion of times that something happens is highly random.
+* In the long run, the proportion of times that something happens becomes predictable.
+
+We have seen this phenomenon through our own experiment or class slide. Now, let us confirm this through the Minitab Simulation. Let us first open it in the [**Minitab**](https://app.minitab.com/) user interface.
+
+1. **Label empty columns as "n", "x1", "x2", "x3", "x4", "p1", "p2", "p3", and "p4".**\
+    Fill in the numbers from 1 to 1000 into the "n" column:
+    i. Choose Calc / Make Patterned Data / Simple Set of Numbers.
+    ii. Store the patterned data in "n".
+    iii. Start with the first value of 1.
+    iv. Go to the last value of 1000.
+    v. Click OK.
+        
+2. **Generate the random data**:
+    i.    Choose Calc / Random Data / Bernoulli.
+    ii.    Generate 1000 rows of data with the given probability.
+    iii.    Store in columns x1, x2, x3, and x4.
+    iv.    Use the probability of success that was given to you. Enter it as a decimal.
+    v.    Click OK.
+        
+3. **Find the consecutive probabilities**:
+     i.   Choose Calc / Calculator.
+    ii.  Store the results into "p1".
+    iii.    The expression is "pars(x1)/n".
+    iv.    Click OK.
+    v.    Repeat steps a-d, but change the variables. Use p2 with x2, p3 with x3, and p4 with x4.
+        
+4. **Plot the probability trajectories**: 
+    i. Choose Graph / Time Series Plot
+    ii. Tab Overlaid in Multiple Y Variables.  
+    iii. Choose p1, p2, p3, and p4.
+    iv. Click OK.
+    v. Draw a reference line at Y= our probability.
+
+
+
