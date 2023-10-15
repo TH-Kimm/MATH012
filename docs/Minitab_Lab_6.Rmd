@@ -1,0 +1,62 @@
+---
+title: "MATH 012: Week 8"
+date: "Minitab Lab 6"
+output: rmdformats::html_docco
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{css float-right-figure-caption, echo = FALSE}
+.my-right-figure {
+  display: table;
+  float: right;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.my-right-figure p {
+  display: table-caption;
+  caption-side: bottom;
+  padding-left: 30px
+}
+.figure {
+  display: contents;
+}
+```
+
+```{css float-left-figure-caption, echo = FALSE}
+.my-left-figure {
+  display: table;
+  float: left;
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+.my-left-figure p {
+  display: table-caption;
+  caption-side: bottom;
+  padding-right: 30px
+}
+.figure {
+  display: contents;
+}
+```
+
+<div class="my-right-figure">
+```{r echo=FALSE, fig.cap="Paratroopers of the armies of Britain, Italy and the United States during an exercise in Pordenone, Italy, 2019.", out.width='100%', fig.align='right'}
+knitr::include_graphics('Parachute.jpg')
+```
+</div>
+
+In class, we have seen an example of parachute soldiers. That is, 12 parachute soldiers jumped out from a US Air Force C-130 airplane. Assume the probability of each soldier safely touching down at the drop zone is identically 0.8, and those landing procedures are independent in that they are strictly spacing out each other.
+
+Given the setting, we were able to calculate the probability of the number of parachute soldiers who can safely touch down at a drop zone. However, each probability calculation requires us to use the binomial probability formula. In this lab, let us use [**Minitab**](https://app.minitab.com/) to calculate the probability easily. Our TA will guide you on how to calculate the probabilities.
+
+1. Calculate the probability that 10 parachute soldiers safely touch down at a drop zone.
+        
+2. Calculate the probability that at least 8 parachute soldiers safely touch down at a drop zone.
+
+3. Calculate the probability that more than 4 and less than equal to 8 soldiers safely touch down at a drop zone.
+
+4. Lastly, plot the binomial distribution given this scenario, and the discuss the shape of the probability. What would be the reason for the skewness?
+   
+
