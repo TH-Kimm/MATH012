@@ -1,0 +1,40 @@
+---
+title: "MATH 012: Week 12"
+date: "Minitab Lab 9"
+output: rmdformats::html_docco
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+We covered the concept of confidence intervals in class. A common challenge in statistical inference arises when calculations become burdensome, especially with large sample sizes. Fortunately, a computing package like **Minitab** can alleviate this issue, proving valuable for your future studies. 
+
+Suppose we are interested in the population mean height, denoted as $\mu$, for all Lehigh students. Since this value is unknown, we need to collect a sample to make an inference. Fortunately, we have data ("Height" variable) from our class survey.
+
+```{r,echo=FALSE}
+library(knitr)
+library(kableExtra)
+survey<-read.csv('https://www.lehigh.edu/~tak422/data/Survey_2023.csv')
+survey %>%
+  kable %>%
+  kable_styling("striped", full_width = F) %>% 
+ scroll_box(width = "700px", height = "350px")
+```
+
+Download the survey data (a .csv file) from this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing),\
+then open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
+
+
+1. Let's begin by checking the assumptions. (It's worth noting that one of the assumptions is violated. However, for the sake of our discussion, let's consider it a limitation and proceed.)
+   
+   
+2. Output the descriptive statistics of **Height** variable and calculate the three components: point estimate, cut-off $Z_{\alpha/2}$, and (estimated) standard error.
+
+3. Derive the confidence interval for the population mean height $\mu$ by hands. Note that we can replace the population standard deviation with the sample standard deviation for large sample sizes, $n$.
+
+4. Now, compute the confidence interval through **Minitab** (Star => Basic Statistics => **1-sample Z for the Mean**).  Compare the result with the previous one from the hand calculation.
+
+
+   
+
