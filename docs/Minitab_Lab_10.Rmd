@@ -1,5 +1,5 @@
 ---
-title: "MATH 012: Week 13"
+title: "MATH 012: Week 14"
 date: "Minitab Lab 10"
 output: rmdformats::html_docco
 ---
