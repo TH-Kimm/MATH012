@@ -8,7 +8,7 @@ output: rmdformats::html_docco
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This week, let's delve into **hypothesis testing for the population mean**. For our discussion, let's suppose our interest lies in the population mean height, denoted as $\mu$, for **all Lehigh students**. As this value is unknown, we need to collect a sample for inference. For our purpose, let's utilize the class survey data with the **Height** variable. For the following questions, let us assume the assumptions are satisfied.
+This week, let's delve into **hypothesis testing for the population mean**. For our discussion, let's suppose our interest lies in the population mean height, denoted as $\mu$, for **all Lehigh students**. As this value is unknown, we need to collect a sample for inference. For our purpose, let's utilize the class survey data with the **Height** variable. For the following questions, let us presume the assumptions for the hypothesis testings are satisfied.
 
 ```{r,echo=FALSE}
 library(knitr)
