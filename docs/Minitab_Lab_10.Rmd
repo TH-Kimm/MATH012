@@ -8,7 +8,7 @@ output: rmdformats::html_docco
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This week, let's delve into **hypothesis testing for the population mean**. For our discussion, let's suppose our interest lies in the population mean height, denoted as $\mu$, for **all Lehigh students**. As this value is unknown, we need to collect a sample for inference. For our purpose, let's utilize the class survey data with the **Height** variable.
+This week, let's delve into **hypothesis testing for the population mean**. For our discussion, let's suppose our interest lies in the population mean height, denoted as $\mu$, for **all Lehigh students**. As this value is unknown, we need to collect a sample for inference. For our purpose, let's utilize the class survey data with the **Height** variable. For the following questions, let us assume the assumptions are satisfied.
 
 ```{r,echo=FALSE}
 library(knitr)
@@ -23,7 +23,9 @@ survey %>%
 Download the survey data (a .csv file) from this [**LINK**](https://drive.google.com/file/d/1kPnc2Uw7pPl6AzxS0TgDb_ML31NxyEoG/view?usp=sharing),\
 then open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
 
-In this question, the random sample assumption is violated. However, we acknowledge this limitation and proceed with the hypothesis testing to confirm:
+___
+
+In this lab, let us test the following hypotheses:
 \[
 H_0:\; \mu = 66.1\;\;\text{vs.}\;\;H_a:\; \mu \neq 66.1
 \]
@@ -31,9 +33,11 @@ under 0.1 significance level.
 
 1. Output the descriptive statistics of **Height** variable and record the estimated standard error (SE Mean). 
 
-2. Perform the hypothesis testing through **Minitab** (Star => Basic Statistics => **1-sample Z for the Mean**). Given significance level, would you reject the null hypothesis in favor of the alternative hypothesis?  
+2. Perform the hypothesis testing through **Minitab** (Stat => Basic Statistics => **1-sample Z for the Mean**). Given significance level, would you reject the null hypothesis in favor of the alternative hypothesis?  
 
-For hypothesis testing procedures, if the corresponding sample size is small ($n<30$) and the population standard deviation $\sigma$ is unknown, then we need to use t-distribution (instead of standard normal distribution) for the p-value calculation. Let us now consider a similar hypothesis test for another target parameter $\mu$, the population mean height for **all MALE Lehigh students**:
+___
+
+For hypothesis testing procedures, if the corresponding sample size is small ($n<30$) and the population standard deviation $\sigma$ is unknown, then we need to use t-distribution (instead of standard normal distribution) for the p-value calculation. Let us now consider a similar hypothesis testing for another target parameter $\mu$, the population mean height for **all MALE Lehigh students**:
 \[
 H_0:\; \mu = 69\;\;\text{vs.}\;\;H_a:\; \mu > 69
 \]
@@ -41,7 +45,7 @@ under 0.1 significance level.
 
 3. Subset the survey dataset to include only the rows where the **Gender** variable is Male. Note that we only have 21 observations.
 
-4. Perform the hypothesis testing through **Minitab** (Star => Basic Statistics => **1-sample t for the Mean**). Given significance level, would you reject the null hypothesis in favor of the alternative hypothesis?  
+4. Perform the hypothesis testing through **Minitab** (Stat => Basic Statistics => **1-sample t for the Mean**). Given significance level, would you reject the null hypothesis in favor of the alternative hypothesis?  
 
    
 
