@@ -43,4 +43,4 @@ Note that X3 and X4 are the weight before and after the holiday. We can assume t
 3. Make the interpretation and conclude whether there exists weight increase over the Thanksgiving holiday.
 
    
-
+Lastly, which sampling design provides a more sensible approach to addressing the given question?
