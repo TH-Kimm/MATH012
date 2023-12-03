@@ -8,19 +8,24 @@ output: rmdformats::html_docco
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-We often compare two groups in many real-life situations. In chapter 10, we learn to do this by comparing the means or proportions of the two groups. In this lab, let us compare two group means using a **confidence interval** based on data from either an **independent samples design** or a **matched pairs sample design**. 
+We often compare two groups in many real-life situations. In chapter 10, we learn to do this by comparing the means or proportions of the two groups. In this lab, let us compare two group means using a **confidence interval** based on data from either an **independent samples design** or a **matched pairs sample design**. The question we would like to answer is 
 
-The question we would like to answer is **"On average, does the body weight of college students increase over the Thanksgiving holiday break?"**
 
-Download data from the [LINK](https://drive.google.com/file/d/1XtsbQGwv4PyT67uYsWZhRG6iT_j6OtV3/view?usp=sharing) and Let us open the [**Minitab**](https://app.minitab.com/) user interface and proceed to answer the following questions.
+<center>
+"On average, does the body weight of college students increase over the Thanksgiving break?"
+</center>
+
+
+Download data from the [LINK](https://drive.google.com/file/d/1XtsbQGwv4PyT67uYsWZhRG6iT_j6OtV3/view?usp=sharing) and open the [**Minitab**](https://app.minitab.com/) user interface to answer the following questions.
 
 ___
-Suppose the following weight data set is randomly gathered from two groups of students before and after the Thanksgiving holiday, respectively.
+Suppose the following weight dataset is randomly collected from two groups of students: one before and the other after the Thanksgiving holiday, respectively.
+
 <center>
 X1: 127 144 123 172 147 124 150 155\
 X2: 132 154 182 127 148 153\
 </center>
-Note that X1 and X2 are the weight before and after the holiday. We can assume the population distributions are normal with similar standard deviations.
+Note that X1 and X2 are the weight before and after the holiday. Suppose the population distributions are normal with similar standard deviations.
 
 1. Check the assumptions.
 
@@ -29,12 +34,13 @@ Note that X1 and X2 are the weight before and after the holiday. We can assume t
 3. Make the interpretation and conclude whether there exists weight increase over the Thanksgiving holiday.
 
 ___
-Now, suppose the following weight data set is gathered from a randomly selected single group of students before and after the Thanksgiving holiday.
+Now, suppose the following weight dataset is gathered from a randomly selected group of students both before and after the Thanksgiving holiday.
+
 <center>
 X3: 121 145 144 142 116 125 126 143\
 X4: 135 133 152 170 160 123 147 146\
 </center>
-Note that X3 and X4 are the weight before and after the holiday. We can assume the distribution of the measurement differences is normal. 
+Note that X3 and X4 are the weight before and after the holiday. Suppose the distribution of the measurement differences is normal. 
 
 1. Check the assumptions.
 
