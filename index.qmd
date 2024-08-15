@@ -1,0 +1,11 @@
+---
+title: "MATH 012: R-Labs"
+filters: 
+  - webr
+---
+
+This is MATH 012 / R Lab Test Page.
+
+```{webr-r}
+1 + 1
+```
