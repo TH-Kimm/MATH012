@@ -356,7 +356,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"read-only":"false","out-width":"700px","warning":"true","label":"unnamed-chunk-1","fig-cap":"","editor-max-height":"","out-height":"","classes":"","results":"markup","message":"true","autorun":"false","editor-word-wrap":"true","fig-width":7,"context":"interactive","output":"true","dpi":72,"comment":"","editor-quick-suggestions":"false","editor-font-scale":"1","fig-height":5},"id":1,"code":"1 + 1"}];
+globalThis.qwebrCellDetails = [{"code":"2 + 2","id":1,"options":{"editor-word-wrap":"true","context":"interactive","editor-max-height":"","label":"unnamed-chunk-1","output":"true","fig-width":7,"results":"markup","editor-quick-suggestions":"false","editor-font-scale":"1","fig-height":5,"out-height":"","message":"true","warning":"true","autorun":"false","fig-cap":"","classes":"","comment":"","out-width":"700px","read-only":"false","dpi":72}},{"code":"log(42)","id":2,"options":{"editor-word-wrap":"true","context":"interactive","editor-max-height":"","label":"unnamed-chunk-2","output":"true","fig-width":7,"results":"markup","editor-quick-suggestions":"false","editor-font-scale":"1","fig-height":5,"out-height":"","message":"true","warning":"true","autorun":"false","fig-cap":"","classes":"","comment":"","out-width":"700px","read-only":"false","dpi":72}},{"code":"sqrt(4)","id":3,"options":{"editor-word-wrap":"true","context":"interactive","editor-max-height":"","label":"unnamed-chunk-3","output":"true","fig-width":7,"results":"markup","editor-quick-suggestions":"false","editor-font-scale":"1","fig-height":5,"out-height":"","message":"true","warning":"true","autorun":"false","fig-cap":"","classes":"","comment":"","out-width":"700px","read-only":"false","dpi":72}},{"code":"4^3","id":4,"options":{"editor-word-wrap":"true","context":"interactive","editor-max-height":"","label":"unnamed-chunk-4","output":"true","fig-width":7,"results":"markup","editor-quick-suggestions":"false","editor-font-scale":"1","fig-height":5,"out-height":"","message":"true","warning":"true","autorun":"false","fig-cap":"","classes":"","comment":"","out-width":"700px","read-only":"false","dpi":72}},{"code":"","id":5,"options":{"editor-word-wrap":"true","context":"interactive","editor-max-height":"","label":"unnamed-chunk-5","output":"true","fig-width":7,"results":"markup","editor-quick-suggestions":"false","editor-font-scale":"1","fig-height":5,"out-height":"","message":"true","warning":"true","autorun":"false","fig-cap":"","classes":"","comment":"","out-width":"700px","read-only":"false","dpi":72}}];
 
 </script>
 <script type="module">
@@ -1554,6 +1554,35 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -1594,8 +1623,22 @@ globalThis.qwebrExecuteCode = async function (
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lab-1-introduction-to-r" id="toc-lab-1-introduction-to-r" class="nav-link active" data-scroll-target="#lab-1-introduction-to-r">Lab 1: Introduction to R</a>
+  <ul class="collapse">
+  <li><a href="#learning-the-tools" id="toc-learning-the-tools" class="nav-link" data-scroll-target="#learning-the-tools">Learning the tools</a>
+  <ul class="collapse">
+  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link" data-scroll-target="#what-is-r">What is R?</a></li>
+  <li><a href="#the-command-line" id="toc-the-command-line" class="nav-link" data-scroll-target="#the-command-line">The command line</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1903,11 +1946,44 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>This is MATH 012 / R Lab Test Page.</p>
+<section id="lab-1-introduction-to-r" class="level1">
+<h1>Lab 1: Introduction to R</h1>
+<section id="learning-the-tools" class="level2">
+<h2 class="anchored" data-anchor-id="learning-the-tools">Learning the tools</h2>
+<section id="what-is-r" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-r">What is R?</h3>
+<p>R is a computer program that allows an extraordinary range of statistical calculations. It is a free program, mainly written by voluntary contributions from statisticians around the world. R is available on most operating systems, including Windows, Mac OS, and Linux.</p>
+<p>R can make graphics and do statistical calculations. It is also a full-fledged computing language. In this series of labs, we will only scratch the surface of what R can do.</p>
+</section>
+<section id="the-command-line" class="level3">
+<h3 class="anchored" data-anchor-id="the-command-line">The command line</h3>
+<p>You can type commands in the “Console”.</p>
+<p>Type “2+2” at and hit shift+return or click “Run Code” Icon. You’ll see that R can work like a calculator (among its many other powers). It will give you the answer, 4, and it will label that answer with [1] to indicate that it is the first element in the answer. (This is sort of annoying when the answers are simple like this, but can be very valuable when the answers become more complex.)</p>
 <div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>You can use a wide variety of math functions to make calculations here, e.g., log() calculates the log of a number:</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Parentheses are used both as a way to group elements of the calculation and also as a way to denote the arguments of functions. (The “arguments” of a function are the set of values given to it as input.) For example, log(3) is applying the function log() to the argument 3.</p>
+<p>Another mathematical function that often comes in handy is the square root function, sqrt(). For example, the square root of 4 is:</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>To calculate a value with an exponent, used the ^ symbol. For example <span class="math inline">\(4^3\)</span> is written as:</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ol type="1">
+<li>Calculate the following math expression: <span class="math display">\[\frac{1}{\sqrt{2\pi (3.1)^2}}e^{-\frac{(12-10.8)^2}{2(3.1)}}\]</span></li>
+</ol>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

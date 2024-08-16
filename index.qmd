@@ -3,9 +3,45 @@ title: "MATH 012: R-Labs"
 filters: 
   - webr
 ---
+# Lab 1: Introduction to R
 
-This is MATH 012 / R Lab Test Page.
+## Learning the tools
+
+### What is R?
+R is a computer program that allows an extraordinary range of statistical calculations. It is a free program, mainly written by voluntary contributions from statisticians around the world. R is available on most operating systems, including Windows, Mac OS, and Linux.
+
+R can make graphics and do statistical calculations. It is also a full-fledged computing language. In this series of labs, we will only scratch the surface of what R can do.
+
+### The command line
+
+You can type commands in the "Console".
+
+Type “2+2” at and hit shift+return or click "Run Code" Icon. You’ll see that R can work like a calculator (among its many other powers). It will give you the answer, 4, and it will label that answer with [1] to indicate that it is the first element in the answer. (This is sort of annoying when the answers are simple like this, but can be very valuable when the answers become more complex.)
 
 ```{webr-r}
-1 + 1
+2 + 2
+```
+
+You can use a wide variety of math functions to make calculations here, e.g., log() calculates the log of a number:
+```{webr-r}
+log(42)
+```
+
+Parentheses are used both as a way to group elements of the calculation and also as a way to denote the arguments of functions. (The “arguments” of a function are the set of values given to it as input.) For example, log(3) is applying the function log() to the argument 3.
+
+Another mathematical function that often comes in handy is the square root function, sqrt(). For example, the square root of 4 is:
+```{webr-r}
+sqrt(4)
+```
+
+To calculate a value with an exponent, used the ^ symbol. For example $4^3$ is written as:
+```{webr-r}
+4^3
+```
+
+## Questions
+1. Calculate the following math expression:
+$$\frac{1}{\sqrt{2\pi (3.1)^2}}e^{-\frac{(12-10.8)^2}{2(3.1)}}$$
+```{webr-r}
+
 ```
