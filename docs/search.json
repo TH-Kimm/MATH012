@@ -4,7 +4,12 @@
     "href": "index.html",
     "title": "MATH 012: R-Labs",
     "section": "",
-    "text": "R is a computer program that allows an extraordinary range of statistical calculations. It is a free program, mainly written by voluntary contributions from statisticians around the world. R is available on most operating systems, including Windows, Mac OS, and Linux.\nR can make graphics and do statistical calculations. It is also a full-fledged computing language. In this series of labs, we will only scratch the surface of what R can do.\n\n\n\nYou can type commands in the “Console”.\nType “2+2” at and hit shift+return or click “Run Code” Icon. You’ll see that R can work like a calculator (among its many other powers). It will give you the answer, 4, and it will label that answer with [1] to indicate that it is the first element in the answer. (This is sort of annoying when the answers are simple like this, but can be very valuable when the answers become more complex.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can use a wide variety of math functions to make calculations here, e.g., log() calculates the log of a number:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nParentheses are used both as a way to group elements of the calculation and also as a way to denote the arguments of functions. (The “arguments” of a function are the set of values given to it as input.) For example, log(3) is applying the function log() to the argument 3.\nAnother mathematical function that often comes in handy is the square root function, sqrt(). For example, the square root of 4 is:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTo calculate a value with an exponent, used the ^ symbol. For example \\(4^3\\) is written as:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nCalculate the following math expression: \\[\\frac{1}{\\sqrt{2\\pi (3.1)^2}}e^{-\\frac{(12-10.8)^2}{2(3.1)}}\\]\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "R is a versatile computer program that enables a wide range of statistical calculations and data analysis. Developed and maintained largely through voluntary contributions from statisticians globally, R is a free and open-source tool available on most operating systems, including Windows, Mac OS, and Linux.\nBeyond statistical analysis, R also excels in creating graphics and functions as a full-fledged programming language. In this series of labs, we will only begin to explore the extensive capabilities that R offers.\n\n\n\nThe base R environment is always accessible, but most users prefer to work with an Integrated Development Environment (IDE) for a more user-friendly interface. RStudio, for example, is one of the most popular IDEs today.\n\n\n\n\n\nAlthough you can download and run R locally on your system, it’s not necessary for our labs, as they can be completed directly within self-contained webpages. We recommend sticking to the content provided on the lab webpages to familiarize yourself with the syntax. Once you feel comfortable with the language, you can easily run R on your laptop.\n\n\n\nIn most recitation sessions, we will dedicate about 20 minutes to a lab focused on R programming. Each lab includes a brief tutorial that you can easily follow. While lab topics are often closely related to class content, they may diverge, especially around the middle of the semester. At the end of each lab, you’ll find a few questions that you can answer based on the lab materials. Finally, complete the Gradescope lab quiz, which is directly based on the lab questions. Feel free to discuss the questions with fellow students, and don’t hesitate to ask the TA for help!",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "MATH 012: R-Labs"
+    ]
   },
   {
     "objectID": "about.html",
@@ -32,13 +37,140 @@
     "href": "Lab_1.html",
     "title": "Lab 1",
     "section": "",
-    "text": "About this site\n1 + 1"
+    "text": "You can type commands in the “Console”.\nType “2+2” and then hit “Shift+Return” or click the “Run Code” icon. You’ll see that R can perform simple calculations, just like a calculator. The result, 4, will appear, with a “[1]” label indicating that this is the first element of the output. While this labeling may seem unnecessary for simple answers, it becomes quite helpful for more complex outputs.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nIn your code scripts, it’s often useful to include text that isn’t evaluated by R. This allows you to leave notes for yourself or a friend about what the next line of code does, its strengths and limitations, or any other information you want to remember. To add a comment, start the line with the hash symbol “#”. R will ignore everything on that line after the “#”.\nLet us try the rest of the fundamental arithmetic operations:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nYou can use a variety of mathematical functions for calculations. For example, log() calculates the logarithm of a number.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nParentheses serve two purposes in R: they group elements within calculations and denote the arguments passed to functions. The “arguments” of a function refer to the values provided as input. For example, in “log(3)”, the “log()” function is applied to the argument “3”.\nAnother useful mathematical function is “sqrt()”, which calculates the square root of a number. For example, “sqrt(4)” returns:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTo calculate a value with an exponent, used the “^” symbol. For example \\(4^3\\) is written as:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nLet us compute the following mathematical expression: Calculate the following math expression: \\[\\frac{1}{\\sqrt{2\\pi} 0.5}e^{-\\frac{(12-10.8)^2}{2(0.5)}}\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\nIn R, we can store information by assigning it to objects. For example, to create an object named “x” with a value of “24”, you can write:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe part in the middle—a less-than sign followed by a hyphen, resembling a left-facing arrow—indicates to R that the value on the right should be assigned to the object on the left. After executing the command, whenever we use “x”, it will be replaced by its value, “24”. For instance, if we add “12” to “x”, we should expect a result of “36”.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can reassign a new value to a object. E.g.,\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\nCalculate the following math expressions.\n\n\n\\((23\\times 6)+3\\).\n\\(13^3-1100\\).\n\\(\\log(23)\\) with the natural log.\n\\(\\sqrt{81}/(3^3)\\).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease complete the following semester start survey. Participation is voluntary, and you may choose to skip any questions: Give Us Your Input",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
   },
   {
     "objectID": "Lab_2.html",
     "href": "Lab_2.html",
     "title": "Lab 2",
     "section": "",
-    "text": "About this site\n1 + 1"
+    "text": "About this site\n1 + 1",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "Lab_1.html#questions",
+    "href": "Lab_1.html#questions",
+    "title": "Lab 1",
+    "section": "Questions",
+    "text": "Questions\n\nCalculate the following math expression: \\[\\frac{1}{\\sqrt{2\\pi (3.1)^2}}e^{-\\frac{(12-10.8)^2}{2(3.1)}}\\]\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "index.html#what-is-r",
+    "href": "index.html#what-is-r",
+    "title": "MATH 012: R-Labs",
+    "section": "What is R?",
+    "text": "What is R?\nR is a versatile computer program that enables a wide range of statistical calculations and data analysis. Developed and maintained largely through voluntary contributions from statisticians globally, R is a free and open-source tool available on most operating systems, including Windows, Mac OS, and Linux.\nBeyond statistical analysis, R also excels in creating graphics and functions as a full-fledged programming language. In this series of labs, we will only begin to explore the extensive capabilities that R offers."
+  },
+  {
+    "objectID": "index.html#how-can-we-run-r",
+    "href": "index.html#how-can-we-run-r",
+    "title": "MATH 012: R-Labs",
+    "section": "How can we run R?",
+    "text": "How can we run R?\nThe base R environment is always accessible, but most users prefer to work with an Integrated Development Environment (IDE) for a more user-friendly interface. RStudio, for example, is one of the most popular IDEs today.\n\n\n\n\n\nAlthough you can download and run R locally on your system, it’s not necessary for our labs, as they can be completed directly within self-contained webpages. We recommend sticking to the content provided on the lab webpages to familiarize yourself with the syntax. Once you feel comfortable with the language, you can easily run R on your laptop."
+  },
+  {
+    "objectID": "index.html#lab-content",
+    "href": "index.html#lab-content",
+    "title": "MATH 012: R-Labs",
+    "section": "Lab content",
+    "text": "Lab content\nIn most recitation sessions, we will dedicate about 20 minutes to a lab focused on R programming. Each lab includes a brief tutorial that you can easily follow. While lab topics are often closely related to class content, they may diverge, especially around the middle of the semester. At the end of each lab, you’ll find a few questions that you can answer based on the lab materials. Finally, complete the Gradescope lab quiz, which is directly based on the lab questions. Feel free to discuss the questions with fellow students, and don’t hesitate to ask the TA for help!",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "MATH 012: R-Labs"
+    ]
+  },
+  {
+    "objectID": "index.html#r-lab-procedure-during-recitations",
+    "href": "index.html#r-lab-procedure-during-recitations",
+    "title": "MATH 012: R-Labs",
+    "section": "R-Lab procedure during recitations",
+    "text": "R-Lab procedure during recitations\nIn most recitation sessions, we will dedicate about 20 minutes to a lab focused on R programming. Each lab includes a brief tutorial that you can easily follow. While lab topics are often closely related to class content, they may diverge, especially around the middle of the semester. At the end of each lab, you’ll find a few questions that you can answer based on the lab materials. Finally, complete the Gradescope lab quiz, which is directly based on the lab questions. Feel free to discuss the questions with fellow students, and don’t hesitate to ask the TA for help!"
+  },
+  {
+    "objectID": "Lab_1.html#the-command-line",
+    "href": "Lab_1.html#the-command-line",
+    "title": "Lab 1",
+    "section": "",
+    "text": "You can type commands in the “Console”.\nType “2+2” and then hit “Shift+Return” or click the “Run Code” icon. You’ll see that R can perform simple calculations, just like a calculator. The result, 4, will appear, with a “[1]” label indicating that this is the first element of the output. While this labeling may seem unnecessary for simple answers, it becomes quite helpful for more complex outputs.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet us try other three fundamental arithmetic operations:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "Lab_1.html#mathematical-functions",
+    "href": "Lab_1.html#mathematical-functions",
+    "title": "Lab 1",
+    "section": "",
+    "text": "You can use a variety of mathematical functions for calculations. For example, log() calculates the logarithm of a number.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nParentheses serve two purposes in R: they group elements within calculations and denote the arguments passed to functions. The “arguments” of a function refer to the values provided as input. For example, in “log(3)”, the “log()” function is applied to the argument “3”.\nAnother useful mathematical function is “sqrt()”, which calculates the square root of a number. For example, “sqrt(4)” returns:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTo calculate a value with an exponent, used the “^” symbol. For example \\(4^3\\) is written as:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nLet us compute the following mathematical expression: Calculate the following math expression: \\[\\frac{1}{\\sqrt{2\\pi} 0.5}e^{-\\frac{(12-10.8)^2}{2(0.5)}}\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "Lab_1.html#lab-questions",
+    "href": "Lab_1.html#lab-questions",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Calculate the following math expressions.\n\n\n\\((23\\times 6)+3\\).\n\\(13^3-1100\\).\n\\(\\log(23)\\) with the natural log.\n\\(\\sqrt{81}/(3^3)\\).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease complete the following semester start survey. Participation is voluntary, and you may choose to skip any questions: Give Us Your Input",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "Lab_1.html#command-line",
+    "href": "Lab_1.html#command-line",
+    "title": "Lab 1",
+    "section": "",
+    "text": "You can type commands in the “Console”.\nType “2+2” and then hit “Shift+Return” or click the “Run Code” icon. You’ll see that R can perform simple calculations, just like a calculator. The result, 4, will appear, with a “[1]” label indicating that this is the first element of the output. While this labeling may seem unnecessary for simple answers, it becomes quite helpful for more complex outputs.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "Lab_1.html#comments",
+    "href": "Lab_1.html#comments",
+    "title": "Lab 1",
+    "section": "",
+    "text": "In your code scripts, it’s often useful to include text that isn’t evaluated by R. This allows you to leave notes for yourself or a friend about what the next line of code does, its strengths and limitations, or any other information you want to remember. To add a comment, start the line with the hash symbol “#”. R will ignore everything on that line after the “#”.\nLet us try the rest of the fundamental arithmetic operations:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "Lab_1.html#defining-objects",
+    "href": "Lab_1.html#defining-objects",
+    "title": "Lab 1",
+    "section": "",
+    "text": "In R, we can store information by assigning it to objects. For example, to create an object named “x” with a value of “24”, you can write:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe part in the middle—a less-than sign followed by a hyphen, resembling a left-facing arrow—indicates to R that the value on the right should be assigned to the object on the left. After executing the command, whenever we use “x”, it will be replaced by its value, “24”. For instance, if we add “12” to “x”, we should expect a result of “36”.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can reassign a new value to a object. E.g.,\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 1"
+    ]
   }
 ]

@@ -1,10 +1,7 @@
 ---
 title: "Lab 1"
-filters: 
-  - webr
-format:
-  html:
-    page-layout: full
+webr:
+  show-startup-message: true
 ---
 
 About this site
