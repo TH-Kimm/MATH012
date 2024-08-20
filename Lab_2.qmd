@@ -1,0 +1,14 @@
+---
+title: "Lab 2"
+filters: 
+  - webr
+format:
+  html:
+    page-layout: full
+---
+
+About this site
+
+```{web-r}
+1 + 1
+```
