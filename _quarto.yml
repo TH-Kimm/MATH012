@@ -26,9 +26,10 @@ filters:
       
 format:
   html:
-    theme: sketchy
-    css: styles.css
     toc: true
+    css: styles.css
+    theme: sketchy
+
 
 editor: visual
 
