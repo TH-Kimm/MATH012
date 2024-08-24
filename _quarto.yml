@@ -12,7 +12,7 @@ website:
         text: Home
       - href: Lab_1.qmd
         text: Lab 1
-  favicon: icon.png
+  favicon: lehigh-icon.ico
         
   sidebar: 
     - style: "floating"
