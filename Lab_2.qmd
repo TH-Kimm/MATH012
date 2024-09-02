@@ -30,7 +30,7 @@ Let us assign relevant names to the following variables:
 |:---:|:------------------------------:|:------:|
 |  1  | Body temperature in Fahrenheit |   98   |
 |  2  |    Number of shoes for Sam     |   11   |
-|  3  | Weight of a elephant in pound  | 12,050 |
+|  3  | Weight of a elephant in pounds  | 12,050 |
 
 ```{webr-r}
 # 1
@@ -91,7 +91,7 @@ length(weight_pound)
 Compute the mean of $\texttt{weight\_kg}$ by using $\texttt{sum()}$ and $\texttt{length()}$ functions. (Do not use $\texttt{mean()}$ function.)
 
 ```{webr-r}
-# mean height
+# mean weight in kilograms
 
 ```
 
@@ -133,7 +133,7 @@ v) Use R to calculate the average amount of urine (in ml) in a 500,000 L pool.
 
 ```{webr-r}
 ## i
-# 438,211,640,85,83,350,138,49,465,489,55,1086,71,1058,247.
+# 438,211,640,85,83,350,138,49,465,489,55,1086,71,1058,247
 
 ## ii
 
