@@ -65,7 +65,7 @@ You can check the car names with the $\texttt{rownames(mtcars)}$ command.
 3. Extract the $\texttt{mpg}$ and $\texttt{hp}$ variables using $\texttt{[]}$ command.
 
 4. Extract the $\texttt{mpg}$ and $\texttt{hp}$ variables except for the $\texttt{Merc}$ cars.
-```{web-r}
+```{webr-r}
 ## 1
 
 ## 2
@@ -103,7 +103,7 @@ iii) Extract the $\texttt{Sepal.Width}$ and $\texttt{Petal.Width}$ variables usi
 
 iv) Compare the IQRs of $\texttt{SW}$ and $\texttt{PW}$. Which variable exhibits greater variation in terms of IQR?
 
-```{web-r}
+```{webr-r}
 ## i
 
 ## ii
@@ -119,9 +119,17 @@ iv) Compare the IQRs of $\texttt{SW}$ and $\texttt{PW}$. Which variable exhibits
 ```{=html}
 <!-- -->
 ```
-2.  The sample variance has the following formula: 
-$$s^2=\frac{1}{n-1}\sum_{i=1}^n\left(x_i-\bar{x}\right)^2,$$ where $x$ is a numerical variable of length $n$. Calculate the variance of $\texttt{SL}$ without using $\texttt{var()}$ function. (You could use $\texttt{mean()}$, $\texttt{sum()}$, or $\texttt{length()}$ functions.) Check your results coincides with the value in 1-ii.
+2.  Let us recall the fomulas for the sample variance.
 
+i) The sample variance can be computed from the following formula: 
+$$s^2=\frac{1}{n-1}\sum_{i=1}^n\left(x_i-\bar{x}\right)^2,$$ where $x$ is a numerical variable of length $n$. Calculate the variance of $\texttt{SL}$ without using $\texttt{var()}$ function. (You could use $\texttt{mean()}$, $\texttt{sum()}$, and $\texttt{length()}$ functions.) Verify that your result matches the value provided in 1-ii.
+```{webr-r}
+
+```
+
+ii)  Additionally, we have learned an alternative formula for variance calculation (also known as the 'computing formula'):
+$$s^2=\frac{1}{n-1}\left\{\sum_{i=1}^nx_i^2-\bar{x}^2\right\}.$$
+Similar to the previous case, calculate the variance of $\texttt{PL}$ using this formula, based on the $\texttt{mean()}$, $\texttt{sum()}$, and $\texttt{length()}$ functions. Verify that your result matches the value provided in 1-ii.
 ```{webr-r}
 
 ```
