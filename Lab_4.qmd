@@ -282,7 +282,6 @@ barplot(FTBL1)
 ## Side-by-side conditional barplot
 ## Female is in darkgray; male is in lightgray.
 barplot(Con_FTBL2,beside=TRUE)
-?barplot
 ```
 
 For any plotting functions, the $\texttt{main}$ argument can be used to add a "title" to the plot.
