@@ -4,10 +4,15 @@ webr:
   show-startup-message: true
 ---
 
-```{r,echo=FALSE}
-Survey_Data<-read.csv(file="https://www.lehigh.edu/~tak422/data/Survey_FA2024.csv")
-attach(Survey_Data)
+
+```{webr-r}
+#| context: setup
+download.file(
+  "https://www.lehigh.edu/~tak422/data/Survey_FA2024.csv",
+  "Survey_Data.csv"
+)
 ```
+
 
 ## Basic Graphics in **R**
 
@@ -38,6 +43,7 @@ For illustrations, we will use our beginning semester survey data. It contains 1
 Let us check the variable name and the first six observations by using the function $\texttt{head()}$:
 
 ```{webr-r}
+
 head(Survey_Data)
 ```
 

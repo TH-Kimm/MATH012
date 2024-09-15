@@ -243,7 +243,7 @@
     "href": "Lab_4.html",
     "title": "Lab 4",
     "section": "",
-    "text": "R offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics.",
+    "text": "AA&lt;-1:10",
     "crumbs": [
       "Home",
       "Lab Sessions",
@@ -254,8 +254,8 @@
     "objectID": "Lab_4.html#basic-graphics-in-r",
     "href": "Lab_4.html#basic-graphics-in-r",
     "title": "Lab 4",
-    "section": "",
-    "text": "R offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics.",
+    "section": "Basic Graphics in R",
+    "text": "Basic Graphics in R\nR offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics.",
     "crumbs": [
       "Home",
       "Lab Sessions",
