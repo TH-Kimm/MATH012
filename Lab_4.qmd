@@ -1,0 +1,196 @@
+---
+title: "Lab 4"
+webr:
+  show-startup-message: true
+---
+
+```{r,echo=FALSE}
+Survey_Data<-read.csv("MATH012_Survey.csv",header=TRUE)
+attach(Survey_Data)
+```
+
+## Basic Graphics in **R**
+
+**R** offers a variety of options for creating visual displays in statistics. While base **R** itself provides sufficient quality for many plots, additional packages like $\texttt{ggplot2}$ or $\texttt{lattice}$ to produce "publishable" quality graphics. In our lab sessions, we will focus on the basic **R** graphics.
+
+## Beginning Semester Survey Data
+
+For illustrations, we will use our beginning semester survey data. It contains 136 observations and 16 variables as follows:
+
+```{r,eval=FALSE}
+01. Sports:    What is your favorite professional sport? 
+02. States:    How many states in the US have you traveled to? 
+03. Cat_Dog:   Are you more of a cat person or a dog person? 
+04. Pets:      What is the number of pets you and your family currently have? 
+05. Gender:    What is your gender? 
+06. Browser:   What is your preferred internet browser? 
+08. Shoes:     How many pairs of shoes do you have? 
+09. Height:    How tall are you (inch)? 
+10. MO_Height: What is your mothers height (inch)? 
+11. FA_Height: What is your fathers height (inch)? 
+12. Arrival:   How many minutes does it take for you to reach the recitation classroom from your residence? 
+13. Sleep:     How many HOURS did you sleep last night, to the nearest half-hour? 
+14. Number:    What is your favorite whole number between 1 and 10? 
+15. Hand:      Are you right- or left-handed? 
+16. Credit:    How many credits are you taking this semester? 
+```
+
+Let us check the variable name and the first six observations by using the function $\texttt{head()}$:
+
+```{webr-r}
+head(Survey_Data)
+```
+
+## Frequency Tables
+
+As we discussed in class, a frequency table summarizes the information from the corresponding data set. It also serves as an important intermediate step for creating visual displays such as pie charts, bar plots, histograms, and more.
+
+Let us create a frequency table of a categorical variable $\texttt{Hand}$ using the function $\texttt{table()}$.
+
+```{webr-r}
+FTBL1<-table(Sports)
+FTBL1
+```
+
+We can also create a 2-by-2 (relative) frequency table (or contingency table) with two categorical variables.
+
+```{webr-r}
+## Frequency table
+FTBL2<-table(Gender,Sports)
+FTBL2
+## Relative Frequency table
+Rel_FTBL2<-prop.table(FTBL2)
+Rel_FTBL2
+## Round to the hundredths place
+round(Rel_FTBL2,2)
+```
+
+Now, we can finally created conditional frequency table.
+
+```{webr-r}
+## Condition with respect to Gender
+Con_FTBL2<-prop.table(FTBL2,margin=1)
+Con_FTBL2
+## Round to the hundredths place
+round(Con_FTBL2,2)
+```
+
+Based on the results of conditional frequency table, we can answer questions such as: Which gender prefers MLB? Which gender prefers NBA?
+
+## Bar Plot
+
+A bar plot is highly useful for displaying categorical data, regardless of the number of categories. To create a bar plot, we can use the $\texttt{barplot()}$ function. Note that the function accepts the $\texttt{table}$ object that we created earlier.
+
+```{webr-r}
+## Barplot
+barplot(FTBL1)
+```
+
+```{webr-r}
+## Side-by-side conditional barplot
+## Female is in darkgray; male is in lightgray.
+barplot(Con_FTBL2,beside=TRUE)
+?barplot
+```
+
+For any plotting functions, the $\texttt{main}$ argument can be used to add a "title" to the plot.
+
+```{webr-r}
+barplot(FTBL1,main="Favorite Sports")
+barplot(Con_FTBL2,beside=TRUE,main="Favorite Sports: Gender Comparison")
+```
+
+#### Example
+
+Select a single categorical variable from the data set, and create a bar plot with an appropriate title. (We will address bivariate categorical variables in a lab question.)
+
+```{webr-r}
+
+```
+
+## Histogram
+
+Histogram is a versatile graphical display for a single numerical variable (data). It directly accepts a numerical vector as its first argument. Let us create a histogram for the $\texttt{Height}$ variable.
+
+```{webr-r}
+## Use Freq=FALSE to get a relative frequency table.
+hist(Height,freq=FALSE)
+## Let us refine the title 
+hist(Height,main="Height: MATH 012 Students",freq=FALSE)
+```
+
+The histogram reveals that the distribution of the $\texttt{Height}$ variable is right-skewed.
+
+#### Example
+
+Select a single numerical variable from the data set, and create a histogram with an appropriate title. What is the shape of the distribution?
+
+```{webr-r}
+
+```
+
+## Box Plot
+
+Although the histogram is typically our go-to choice for a single numerical variable, there are situations where a box plot is preferable. For instance, if we want to display $\texttt{Height}$ by $\texttt{Gender}$, a box plot would be more appropriate.
+
+```{webr-r}
+## First, a boxplot for Height
+boxplot(Height)
+## Now, a side-by-side boxplot for Height with respect to Gender
+boxplot(Height~Gender)
+## We can have horizontal orientation
+boxplot(Height~Gender,horizontal=TRUE)
+## Please add a relevant title!
+
+```
+
+This graphical representation makes it easy to compare the differences in $\texttt{Height}$ between genders. As demonstrated, a box plot is a clear and intuitive choice when we have one numerical variable and one categorical variable.
+
+## Lab Questions
+
+1.  Let us consider $\texttt{Browser}$ variable in relation to $\texttt{Cat\_Dog}$.
+
+<!-- -->
+
+i)  Create a frequency table for the $\texttt{Browser}$ variable.
+
+```{webr-r}
+
+```
+
+ii) Create a bar plot using the table object in (i).
+
+```{webr-r}
+
+```
+
+iii) Create a conditional frequency table for $\texttt{Browser}$ with respect to $\texttt{Cat\_Dog}$.
+
+```{webr-r}
+
+```
+
+iv) Create a conditional frequency barplot for $\texttt{Browser}$ with respect to $\texttt{Cat\_Dog}$. Discuss the percentages of Edge and Safari with respect to the personality.
+
+```{webr-r}
+
+```
+
+2.  Let us consider $\texttt{Shoes}$ variable in relation to $\texttt{Gender}$. Note that we have one numerical and one categorical variable.
+
+<!-- -->
+
+i) Choose a relevant graphical display to summarize the information of $\texttt{Shoes}$, and provide the plot.
+```{webr-r}
+
+```
+i)  Choose a relevant graphical display to summarize the information of $\texttt{Shoes}$ in terms of $\texttt{Gender}$, and provide the plot.
+
+```{webr-r}
+
+```
+
+ii) Which gender has a higher central value for $\texttt{Shoes}$? Which gender shows greater variability? What can we infer about the number of pairs of shoes with respect to gender?
+```{webr-r}
+
+```

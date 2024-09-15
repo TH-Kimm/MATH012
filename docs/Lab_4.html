@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 3 – MATH 012: R-Labs</title>
+<title>Lab 4 – MATH 012: R-Labs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -357,7 +391,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"head(mtcars)","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-1","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":2,"code":"## Subsetting a variable with \"$\"\nHP <- mtcars$hp","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-2","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":3,"code":"## Subsetting a variable with \"[]\"\nHP2 <- mtcars[,4]\n## Checking the two variables are identical\nidentical(HP,HP2)","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-3","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":4,"code":"mtcars[3,4]","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-4","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":5,"code":"## 2nd and 4th variables\nmtcars[,c(2,4)]\n## 2nd and 4th variables of the first five cars\nmtcars[c(1,2,3,4,5),c(2,4)]\n## data set without 5th variables\nmtcars[,-5]\n## data set without 5th and 10th variables\nmtcars[,-c(5,10)]","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-5","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":6,"code":"## 1\n\n## 2\n\n## 3\n\n## 4","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-6","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":7,"code":"var(HP)\nsd(HP)\nrange(HP)\nIQR(HP)","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-7","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":8,"code":"head(iris)","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-8","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":9,"code":"## i\n\n## ii\n\n## iii\n\n## iv","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-9","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":10,"code":"","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-10","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}},{"id":11,"code":"","options":{"fig-cap":"","results":"markup","fig-height":5,"read-only":"false","editor-font-scale":"1","label":"unnamed-chunk-11","comment":"","editor-word-wrap":"true","editor-max-height":"","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","warning":"true","classes":"","output":"true","out-height":"","autorun":"false","dpi":72,"out-width":"700px","message":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"head(Survey_Data)","id":1,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-1","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"FTBL1<-table(Sports)\nFTBL1","id":2,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-2","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"## Frequency table\nFTBL2<-table(Gender,Sports)\nFTBL2\n## Relative Frequency table\nRel_FTBL2<-prop.table(FTBL2)\nRel_FTBL2\n## Round to the hundredths place\nround(Rel_FTBL2,2)","id":3,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-3","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"## Condition with respect to Gender\nCon_FTBL2<-prop.table(FTBL2,margin=1)\nCon_FTBL2\n## Round to the hundredths place\nround(Con_FTBL2,2)","id":4,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-4","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"## Barplot\nbarplot(FTBL1)","id":5,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-5","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"## Side-by-side conditional barplot\n## Female is in darkgray; male is in lightgray.\nbarplot(Con_FTBL2,beside=TRUE)\n?barplot","id":6,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-6","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"barplot(FTBL1,main=\"Favorite Sports\")\nbarplot(Con_FTBL2,beside=TRUE,main=\"Favorite Sports: Gender Comparison\")","id":7,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-7","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":8,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-8","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"## Use Freq=FALSE to get a relative frequency table.\nhist(Height,freq=FALSE)\n## Let us refine the title \nhist(Height,main=\"Height: MATH 012 Students\",freq=FALSE)","id":9,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-9","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":10,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-10","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"## First, a boxplot for Height\nboxplot(Height)\n## Now, a side-by-side boxplot for Height with respect to Gender\nboxplot(Height~Gender)\n## We can have horizontal orientation\nboxplot(Height~Gender,horizontal=TRUE)\n## Please add a relevant title!","id":11,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-11","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":12,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-12","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":13,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-13","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":14,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-14","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":15,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-15","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":16,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-16","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":17,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-17","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}},{"code":"","id":18,"options":{"context":"interactive","output":"true","label":"unnamed-chunk-18","out-width":"700px","results":"markup","editor-word-wrap":"true","fig-height":5,"dpi":72,"out-height":"","read-only":"false","fig-width":7,"message":"true","editor-font-scale":"1","editor-max-height":"","comment":"","autorun":"false","fig-cap":"","classes":"","warning":"true","editor-quick-suggestions":"false"}}];
 
 </script>
 <script type="module">
@@ -1637,7 +1671,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab_1.html">Lab Sessions</a></li><li class="breadcrumb-item"><a href="./Lab_3.html">Lab 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 4</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1672,7 +1706,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Lab_3.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Lab_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 3</span></a>
   </div>
 </li>
@@ -1688,9 +1722,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-r-object-data-frame" id="toc-basic-r-object-data-frame" class="nav-link active" data-scroll-target="#basic-r-object-data-frame">Basic <strong>R</strong> Object: Data Frame</a></li>
-  <li><a href="#subsetting-data-frame" id="toc-subsetting-data-frame" class="nav-link" data-scroll-target="#subsetting-data-frame">Subsetting Data Frame</a></li>
-  <li><a href="#measure-of-variation" id="toc-measure-of-variation" class="nav-link" data-scroll-target="#measure-of-variation">Measure of Variation</a></li>
+  <li><a href="#basic-graphics-in-r" id="toc-basic-graphics-in-r" class="nav-link active" data-scroll-target="#basic-graphics-in-r">Basic Graphics in <strong>R</strong></a></li>
+  <li><a href="#beginning-semester-survey-data" id="toc-beginning-semester-survey-data" class="nav-link" data-scroll-target="#beginning-semester-survey-data">Beginning Semester Survey Data</a></li>
+  <li><a href="#frequency-tables" id="toc-frequency-tables" class="nav-link" data-scroll-target="#frequency-tables">Frequency Tables</a></li>
+  <li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot">Bar Plot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a></li>
+  <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot">Box Plot</a></li>
   <li><a href="#lab-questions" id="toc-lab-questions" class="nav-link" data-scroll-target="#lab-questions">Lab Questions</a></li>
   </ul>
 </nav>
@@ -1982,9 +2019,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab_1.html">Lab Sessions</a></li><li class="breadcrumb-item"><a href="./Lab_3.html">Lab 3</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 3</h1>
+<h1 class="title">Lab 4</h1>
 </div>
 
 
@@ -2001,77 +2038,129 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="basic-r-object-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="basic-r-object-data-frame">Basic <strong>R</strong> Object: Data Frame</h2>
-<p>A data frame in <strong>R</strong> stores a data set where columns represent variables and rows correspond to individuals. Each element in the data frame is an observation or measurement of a variable for a specific individual. (It’s similar to an Excel sheet.)</p>
-<p>A data frame is typically assigned a name, which is used to indicate to <strong>R</strong>’s functions which data set to work with. For example, a built-in data set “mtcars” contains car specification information in 1970’s. This data frame has 11 variables and 32 individual cars. The following <span class="math inline">\(\texttt{head()}\)</span> function shows the variables names and first six observations. Also, use <span class="math inline">\(\texttt{help(mtcars)}\)</span> for the variable descriptions.</p>
+<section id="basic-graphics-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="basic-graphics-in-r">Basic Graphics in <strong>R</strong></h2>
+<p><strong>R</strong> offers a variety of options for creating visual displays in statistics. While base <strong>R</strong> itself provides sufficient quality for many plots, additional packages like <span class="math inline">\(\texttt{ggplot2}\)</span> or <span class="math inline">\(\texttt{lattice}\)</span> to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic <strong>R</strong> graphics.</p>
+</section>
+<section id="beginning-semester-survey-data" class="level2">
+<h2 class="anchored" data-anchor-id="beginning-semester-survey-data">Beginning Semester Survey Data</h2>
+<p>For illustrations, we will use our beginning semester survey data. It contains 136 observations and 16 variables as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fl">01.</span> Sports<span class="sc">:</span>    What is your favorite professional sport? </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fl">02.</span> States<span class="sc">:</span>    How many states <span class="cf">in</span> the US have you traveled to? </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fl">03.</span> Cat_Dog<span class="sc">:</span>   Are you more of a cat person or a dog person? </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fl">04.</span> Pets<span class="sc">:</span>      What is the number of pets you and your family currently have? </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fl">05.</span> Gender<span class="sc">:</span>    What is your gender? </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fl">06.</span> Browser<span class="sc">:</span>   What is your preferred internet browser? </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fl">08.</span> Shoes<span class="sc">:</span>     How many pairs of shoes do you have? </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fl">09.</span> Height<span class="sc">:</span>    How tall are <span class="fu">you</span> (inch)? </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fl">10.</span> MO_Height<span class="sc">:</span> What is your mothers <span class="fu">height</span> (inch)? </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fl">11.</span> FA_Height<span class="sc">:</span> What is your fathers <span class="fu">height</span> (inch)? </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fl">12.</span> Arrival<span class="sc">:</span>   How many minutes does it take <span class="cf">for</span> you to reach the recitation classroom from your residence? </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fl">13.</span> Sleep<span class="sc">:</span>     How many HOURS did you sleep last night, to the nearest half<span class="sc">-</span>hour? </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fl">14.</span> Number<span class="sc">:</span>    What is your favorite whole number between <span class="dv">1</span> and <span class="dv">10</span>? </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fl">15.</span> Hand<span class="sc">:</span>      Are you right<span class="sc">-</span> or left<span class="sc">-</span>handed? </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fl">16.</span> Credit<span class="sc">:</span>    How many credits are you taking this semester? </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let us check the variable name and the first six observations by using the function <span class="math inline">\(\texttt{head()}\)</span>:</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="subsetting-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting-data-frame">Subsetting Data Frame</h2>
-<p>Sometimes, we are interested in extracting one of the variables (columns) from the a data frame for further analysis.</p>
-<p>When your data frame has variable names, then this can be easily done by <span class="math inline">\(\texttt{\$}\)</span> command. For example, use <span class="math inline">\(\texttt{mtcars\$hp}\)</span> to extract <span class="math inline">\(\texttt{horsepower}\)</span> variable.</p>
+<section id="frequency-tables" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-tables">Frequency Tables</h2>
+<p>As we discussed in class, a frequency table summarizes the information from the corresponding data set. It also serves as an important intermediate step for creating visual displays such as pie charts, bar plots, histograms, and more.</p>
+<p>Let us create a frequency table of a categorical variable <span class="math inline">\(\texttt{Hand}\)</span> using the function <span class="math inline">\(\texttt{table()}\)</span>.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Another way to extract a variable is to use an index with <span class="math inline">\(\texttt{[]}\)</span>. Recall that we cal select a specific element in a vector using its index, e.g., <span class="math inline">\(\texttt{HP[2]}\)</span> returns the second element of the <span class="math inline">\(\texttt{HP}\)</span>. Similarly, we can use <span class="math inline">\(\texttt{mtcars[,4]}\)</span> to extract the variable in the fourth column, <span class="math inline">\(\texttt{horsepower}\)</span>.</p>
+<p>We can also create a 2-by-2 (relative) frequency table (or contingency table) with two categorical variables.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Note that the first argument is empty because it is used to select a specific row (an individual car). By leaving it empty, we are selecting all rows (cars) of the <span class="math inline">\(\texttt{horsepower}\)</span> variable. Similarly, we can extract the value of a particular variable for a specific car, e.g.&nbsp;<span class="math inline">\(\texttt{mtcars[3,4]}\)</span> retrieves the horsepower of “Datsun 710”.</p>
+<p>Now, we can finally created conditional frequency table.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Lastly, we can simultaneously select or deselect multiple variables and/or observations by combining <span class="math inline">\(\texttt{[]}\)</span>, <span class="math inline">\(\texttt{c()}\)</span> and <span class="math inline">\(\texttt{-}\)</span>.</p>
+<p>Based on the results of conditional frequency table, we can answer questions such as: Which gender prefers MLB? Which gender prefers NBA?</p>
+</section>
+<section id="bar-plot" class="level2">
+<h2 class="anchored" data-anchor-id="bar-plot">Bar Plot</h2>
+<p>A bar plot is highly useful for displaying categorical data, regardless of the number of categories. To create a bar plot, we can use the <span class="math inline">\(\texttt{barplot()}\)</span> function. Note that the function accepts the <span class="math inline">\(\texttt{table}\)</span> object that we created earlier.</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>I believe you can now recognize the patterns. Mastering data subsetting is a crucial skill in data analysis, and we have just covered the fundamental procedures.</p>
-<section id="example" class="level4">
-<h4 class="anchored" data-anchor-id="example">Example</h4>
-<p>Consider the <span class="math inline">\(\texttt{mtcars}\)</span> data again.</p>
-<ol type="1">
-<li><p>Extract the weight variable using <span class="math inline">\(\texttt{\$}\)</span> command.</p></li>
-<li><p>Extract the Miles/gallon of Honda Civic using <span class="math inline">\(\texttt{[]}\)</span> command.<br>
-You can check the car names with the <span class="math inline">\(\texttt{rownames(mtcars)}\)</span> command.</p></li>
-<li><p>Extract the <span class="math inline">\(\texttt{mpg}\)</span> and <span class="math inline">\(\texttt{hp}\)</span> variables using <span class="math inline">\(\texttt{[]}\)</span> command.</p></li>
-<li><p>Extract the <span class="math inline">\(\texttt{mpg}\)</span> and <span class="math inline">\(\texttt{hp}\)</span> variables except for the <span class="math inline">\(\texttt{Merc}\)</span> cars.</p></li>
-</ol>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-</section>
-<section id="measure-of-variation" class="level2">
-<h2 class="anchored" data-anchor-id="measure-of-variation">Measure of Variation</h2>
-<p>We covered several measures of variation, including “variance”, “standard deviation”, “range”, and “interquartile Range (IQR)”. While calculating these by hand can be tedious, <strong>R</strong> offers quick and easy outputs using the functions <span class="math inline">\(\texttt{var()}\)</span>, <span class="math inline">\(\texttt{sd()}\)</span>, <span class="math inline">\(\texttt{range()}\)</span>, and <span class="math inline">\(\texttt{IQR()}\)</span>.</p>
+<p>For any plotting functions, the <span class="math inline">\(\texttt{main}\)</span> argument can be used to add a “title” to the plot.</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example</h4>
+<p>Select a single categorical variable from the data set, and create a bar plot with an appropriate title. (We will address bivariate categorical variables in a lab question.)</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+</section>
+<section id="histogram" class="level2">
+<h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
+<p>Histogram is a versatile graphical display for a single numerical variable (data). It directly accepts a numerical vector as its first argument. Let us create a histogram for the <span class="math inline">\(\texttt{Height}\)</span> variable.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The histogram reveals that the distribution of the <span class="math inline">\(\texttt{Height}\)</span> variable is right-skewed.</p>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">Example</h4>
+<p>Select a single numerical variable from the data set, and create a histogram with an appropriate title. What is the shape of the distribution?</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+</section>
+<section id="box-plot" class="level2">
+<h2 class="anchored" data-anchor-id="box-plot">Box Plot</h2>
+<p>Although the histogram is typically our go-to choice for a single numerical variable, there are situations where a box plot is preferable. For instance, if we want to display <span class="math inline">\(\texttt{Height}\)</span> by <span class="math inline">\(\texttt{Gender}\)</span>, a box plot would be more appropriate.</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This graphical representation makes it easy to compare the differences in <span class="math inline">\(\texttt{Height}\)</span> between genders. As demonstrated, a box plot is a clear and intuitive choice when we have one numerical variable and one categorical variable.</p>
 </section>
 <section id="lab-questions" class="level2">
 <h2 class="anchored" data-anchor-id="lab-questions">Lab Questions</h2>
 <ol type="1">
-<li>The famous “iris” data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris.</li>
+<li>Let us consider <span class="math inline">\(\texttt{Browser}\)</span> variable in relation to <span class="math inline">\(\texttt{Cat\_Dog}\)</span>.</li>
 </ol>
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ol type="i">
-<li><p>Extract the <span class="math inline">\(\texttt{Sepal.Length}\)</span> and <span class="math inline">\(\texttt{Petal.Length}\)</span> variables using the <span class="math inline">\(\texttt{\$}\)</span> command, and save those in <span class="math inline">\(\texttt{SL}\)</span> and <span class="math inline">\(\texttt{PL}\)</span>, respectively.</p></li>
-<li><p>Compare the variances of <span class="math inline">\(\texttt{SL}\)</span> and <span class="math inline">\(\texttt{PL}\)</span>. Which variable exhibits greater variation in terms of variance?</p></li>
-<li><p>Extract the <span class="math inline">\(\texttt{Sepal.Width}\)</span> and <span class="math inline">\(\texttt{Petal.Width}\)</span> variables using the <span class="math inline">\(\texttt{[]}\)</span> command, and save those in <span class="math inline">\(\texttt{SW}\)</span> and <span class="math inline">\(\texttt{PW}\)</span>, respectively.</p></li>
-<li><p>Compare the IQRs of <span class="math inline">\(\texttt{SW}\)</span> and <span class="math inline">\(\texttt{PW}\)</span>. Which variable exhibits greater variation in terms of IQR?</p></li>
-</ol>
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <!-- -->
-<ol start="2" type="1">
-<li>Let us recall the fomulas for the sample variance.</li>
-</ol>
 <ol type="i">
-<li>The sample variance can be computed from the following formula: <span class="math display">\[s^2=\frac{1}{n-1}\sum_{i=1}^n\left(x_i-\bar{x}\right)^2,\]</span> where <span class="math inline">\(x\)</span> is a numerical variable of length <span class="math inline">\(n\)</span>. Calculate the variance of <span class="math inline">\(\texttt{SL}\)</span> without using <span class="math inline">\(\texttt{var()}\)</span> function. (You could use <span class="math inline">\(\texttt{mean()}\)</span>, <span class="math inline">\(\texttt{sum()}\)</span>, and <span class="math inline">\(\texttt{length()}\)</span> functions.) Verify that your result matches the value provided in 1-ii.</li>
+<li>Create a frequency table for the <span class="math inline">\(\texttt{Browser}\)</span> variable.</li>
 </ol>
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="2" type="i">
-<li>Additionally, we have learned an alternative formula for variance calculation (also known as the ‘computing formula’): <span class="math display">\[s^2=\frac{1}{n-1}\left\{\sum_{i=1}^nx_i^2-\bar{x}^2\right\}.\]</span> Similar to the previous case, calculate the variance of <span class="math inline">\(\texttt{PL}\)</span> using this formula, based on the <span class="math inline">\(\texttt{mean()}\)</span>, <span class="math inline">\(\texttt{sum()}\)</span>, and <span class="math inline">\(\texttt{length()}\)</span> functions. Verify that your result matches the value provided in 1-ii.</li>
+<li>Create a bar plot using the table object in (i).</li>
 </ol>
-<div id="qwebr-insertion-location-11"></div>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol start="3" type="i">
+<li>Create a conditional frequency table for <span class="math inline">\(\texttt{Browser}\)</span> with respect to <span class="math inline">\(\texttt{Cat\_Dog}\)</span>.</li>
+</ol>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol start="4" type="i">
+<li>Create a conditional frequency barplot for <span class="math inline">\(\texttt{Browser}\)</span> with respect to <span class="math inline">\(\texttt{Cat\_Dog}\)</span>. Discuss the percentages of Edge and Safari with respect to the personality.</li>
+</ol>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol start="2" type="1">
+<li>Let us consider <span class="math inline">\(\texttt{Shoes}\)</span> variable in relation to <span class="math inline">\(\texttt{Gender}\)</span>. Note that we have one numerical and one categorical variable.</li>
+</ol>
+<!-- -->
+<ol type="i">
+<li>Choose a relevant graphical display to summarize the information of <span class="math inline">\(\texttt{Shoes}\)</span>, and provide the plot.</li>
+</ol>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol type="i">
+<li>Choose a relevant graphical display to summarize the information of <span class="math inline">\(\texttt{Shoes}\)</span> in terms of <span class="math inline">\(\texttt{Gender}\)</span>, and provide the plot.</li>
+</ol>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol start="2" type="i">
+<li>Which gender has a higher central value for <span class="math inline">\(\texttt{Shoes}\)</span>? Which gender shows greater variability? What can we infer about the number of pairs of shoes with respect to gender?</li>
+</ol>
+<div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
