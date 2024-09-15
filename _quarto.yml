@@ -18,6 +18,7 @@ website:
         text: Lab 3
       - href: Lab_4.qmd
         text: Lab 4
+        
   favicon: lehigh-icon.ico
         
   sidebar: 
