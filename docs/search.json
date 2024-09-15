@@ -243,28 +243,48 @@
     "href": "Lab_4.html",
     "title": "Lab 4",
     "section": "",
-    "text": "R offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics."
+    "text": "R offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#basic-graphics-in-r",
     "href": "Lab_4.html#basic-graphics-in-r",
     "title": "Lab 4",
     "section": "",
-    "text": "R offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics."
+    "text": "R offers a variety of options for creating visual displays in statistics. While base R itself provides sufficient quality for many plots, additional packages like \\(\\texttt{ggplot2}\\) or \\(\\texttt{lattice}\\) to produce “publishable” quality graphics. In our lab sessions, we will focus on the basic R graphics.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#frequency-tables",
     "href": "Lab_4.html#frequency-tables",
     "title": "Lab 4",
     "section": "Frequency Tables",
-    "text": "Frequency Tables\nAs we discussed in class, a frequency table summarizes the information from the corresponding data set. It also serves as an important intermediate step for creating visual displays such as pie charts, bar plots, histograms, and more.\nLet us create a frequency table of a categorical variable \\(\\texttt{Hand}\\) using the function \\(\\texttt{table()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can also create a 2-by-2 (relative) frequency table (or contingency table) with two categorical variables.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow, we can finally created conditional frequency table.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBased on the results of conditional frequency table, we can answer questions such as: Which gender prefers MLB? Which gender prefers NBA?"
+    "text": "Frequency Tables\nAs we discussed in class, a frequency table summarizes the information from the corresponding data set. It also serves as an important intermediate step for creating visual displays such as pie charts, bar plots, histograms, and more.\nLet us create a frequency table of a categorical variable \\(\\texttt{Hand}\\) using the function \\(\\texttt{table()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can also create a 2-by-2 (relative) frequency table (or contingency table) with two categorical variables.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow, we can finally created conditional frequency table.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBased on the results of conditional frequency table, we can answer questions such as: Which gender prefers MLB? Which gender prefers NBA?",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#beginning-semester-survey-data",
     "href": "Lab_4.html#beginning-semester-survey-data",
     "title": "Lab 4",
     "section": "Beginning Semester Survey Data",
-    "text": "Beginning Semester Survey Data\nFor illustrations, we will use our beginning semester survey data. It contains 136 observations and 16 variables as follows:\n\n01. Sports:    What is your favorite professional sport? \n02. States:    How many states in the US have you traveled to? \n03. Cat_Dog:   Are you more of a cat person or a dog person? \n04. Pets:      What is the number of pets you and your family currently have? \n05. Gender:    What is your gender? \n06. Browser:   What is your preferred internet browser? \n08. Shoes:     How many pairs of shoes do you have? \n09. Height:    How tall are you (inch)? \n10. MO_Height: What is your mothers height (inch)? \n11. FA_Height: What is your fathers height (inch)? \n12. Arrival:   How many minutes does it take for you to reach the recitation classroom from your residence? \n13. Sleep:     How many HOURS did you sleep last night, to the nearest half-hour? \n14. Number:    What is your favorite whole number between 1 and 10? \n15. Hand:      Are you right- or left-handed? \n16. Credit:    How many credits are you taking this semester? \n\nLet us check the variable name and the first six observations by using the function \\(\\texttt{head()}\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Beginning Semester Survey Data\nFor illustrations, we will use our beginning semester survey data. It contains 136 observations and 16 variables as follows:\n\n01. Sports:    What is your favorite professional sport? \n02. States:    How many states in the US have you traveled to? \n03. Cat_Dog:   Are you more of a cat person or a dog person? \n04. Pets:      What is the number of pets you and your family currently have? \n05. Gender:    What is your gender? \n06. Browser:   What is your preferred internet browser? \n08. Shoes:     How many pairs of shoes do you have? \n09. Height:    How tall are you (inch)? \n10. MO_Height: What is your mothers height (inch)? \n11. FA_Height: What is your fathers height (inch)? \n12. Arrival:   How many minutes does it take for you to reach the recitation classroom from your residence? \n13. Sleep:     How many HOURS did you sleep last night, to the nearest half-hour? \n14. Number:    What is your favorite whole number between 1 and 10? \n15. Hand:      Are you right- or left-handed? \n16. Credit:    How many credits are you taking this semester? \n\nLet us check the variable name and the first six observations by using the function \\(\\texttt{head()}\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#bar-plots",
@@ -278,27 +298,47 @@
     "href": "Lab_4.html#bar-plot",
     "title": "Lab 4",
     "section": "Bar Plot",
-    "text": "Bar Plot\nA bar plot is highly useful for displaying categorical data, regardless of the number of categories. To create a bar plot, we can use the \\(\\texttt{barplot()}\\) function. Note that the function accepts the \\(\\texttt{table}\\) object that we created earlier.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor any plotting functions, the \\(\\texttt{main}\\) argument can be used to add a “title” to the plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExample\nSelect a single categorical variable from the data set, and create a bar plot with an appropriate title. (We will address bivariate categorical variables in a lab question.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Bar Plot\nA bar plot is highly useful for displaying categorical data, regardless of the number of categories. To create a bar plot, we can use the \\(\\texttt{barplot()}\\) function. Note that the function accepts the \\(\\texttt{table}\\) object that we created earlier.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor any plotting functions, the \\(\\texttt{main}\\) argument can be used to add a “title” to the plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExample\nSelect a single categorical variable from the data set, and create a bar plot with an appropriate title. (We will address bivariate categorical variables in a lab question.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#histogram",
     "href": "Lab_4.html#histogram",
     "title": "Lab 4",
     "section": "Histogram",
-    "text": "Histogram\nHistogram is a versatile graphical display for a single numerical variable (data). It directly accepts a numerical vector as its first argument. Let us create a histogram for the \\(\\texttt{Height}\\) variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe histogram reveals that the distribution of the \\(\\texttt{Height}\\) variable is right-skewed.\n\nExample\nSelect a single numerical variable from the data set, and create a histogram with an appropriate title. What is the shape of the distribution?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Histogram\nHistogram is a versatile graphical display for a single numerical variable (data). It directly accepts a numerical vector as its first argument. Let us create a histogram for the \\(\\texttt{Height}\\) variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe histogram reveals that the distribution of the \\(\\texttt{Height}\\) variable is right-skewed.\n\nExample\nSelect a single numerical variable from the data set, and create a histogram with an appropriate title. What is the shape of the distribution?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#box-plot",
     "href": "Lab_4.html#box-plot",
     "title": "Lab 4",
     "section": "Box Plot",
-    "text": "Box Plot\nAlthough the histogram is typically our go-to choice for a single numerical variable, there are situations where a box plot is preferable. For instance, if we want to display \\(\\texttt{Height}\\) by \\(\\texttt{Gender}\\), a box plot would be more appropriate.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThis graphical representation makes it easy to compare the differences in \\(\\texttt{Height}\\) between genders. As demonstrated, a box plot is a clear and intuitive choice when we have one numerical variable and one categorical variable."
+    "text": "Box Plot\nAlthough the histogram is typically our go-to choice for a single numerical variable, there are situations where a box plot is preferable. For instance, if we want to display \\(\\texttt{Height}\\) by \\(\\texttt{Gender}\\), a box plot would be more appropriate.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThis graphical representation makes it easy to compare the differences in \\(\\texttt{Height}\\) between genders. As demonstrated, a box plot is a clear and intuitive choice when we have one numerical variable and one categorical variable.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   },
   {
     "objectID": "Lab_4.html#lab-questions",
     "href": "Lab_4.html#lab-questions",
     "title": "Lab 4",
     "section": "Lab Questions",
-    "text": "Lab Questions\n\nLet us consider \\(\\texttt{Browser}\\) variable in relation to \\(\\texttt{Cat\\_Dog}\\).\n\n\n\nCreate a frequency table for the \\(\\texttt{Browser}\\) variable.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate a bar plot using the table object in (i).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate a conditional frequency table for \\(\\texttt{Browser}\\) with respect to \\(\\texttt{Cat\\_Dog}\\).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate a conditional frequency barplot for \\(\\texttt{Browser}\\) with respect to \\(\\texttt{Cat\\_Dog}\\). Discuss the percentages of Edge and Safari with respect to the personality.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nLet us consider \\(\\texttt{Shoes}\\) variable in relation to \\(\\texttt{Gender}\\). Note that we have one numerical and one categorical variable.\n\n\n\nChoose a relevant graphical display to summarize the information of \\(\\texttt{Shoes}\\), and provide the plot.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nChoose a relevant graphical display to summarize the information of \\(\\texttt{Shoes}\\) in terms of \\(\\texttt{Gender}\\), and provide the plot.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWhich gender has a higher central value for \\(\\texttt{Shoes}\\)? Which gender shows greater variability? What can we infer about the number of pairs of shoes with respect to gender?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Lab Questions\n\nLet us consider \\(\\texttt{Browser}\\) variable in relation to \\(\\texttt{Cat\\_Dog}\\).\n\n\n\nCreate a frequency table for the \\(\\texttt{Browser}\\) variable.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate a bar plot using the table object in (i).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate a conditional frequency table for \\(\\texttt{Browser}\\) with respect to \\(\\texttt{Cat\\_Dog}\\).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate a conditional frequency barplot for \\(\\texttt{Browser}\\) with respect to \\(\\texttt{Cat\\_Dog}\\). Discuss the percentages of Edge and Safari with respect to the personality.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nLet us consider \\(\\texttt{Shoes}\\) variable in relation to \\(\\texttt{Gender}\\). Note that we have one numerical and one categorical variable.\n\n\n\nChoose a relevant graphical display to summarize the information of \\(\\texttt{Shoes}\\), and provide the plot.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nChoose a relevant graphical display to summarize the information of \\(\\texttt{Shoes}\\) in terms of \\(\\texttt{Gender}\\), and provide the plot.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWhich gender has a higher central value for \\(\\texttt{Shoes}\\)? Which gender shows greater variability? What can we infer about the number of pairs of shoes with respect to gender?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 4"
+    ]
   }
 ]

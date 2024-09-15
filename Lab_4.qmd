@@ -5,7 +5,7 @@ webr:
 ---
 
 ```{r,echo=FALSE}
-Survey_Data<-read.csv("MATH012_Survey.csv",header=TRUE)
+Survey_Data<-read.csv(file="https://www.lehigh.edu/~tak422/data/Survey_FA2024.csv")
 attach(Survey_Data)
 ```
 
