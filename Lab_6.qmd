@@ -94,7 +94,7 @@ As emphasized in class, it is crucial to understand how to interpret the slope a
 * Slope coefficient (**b**): As the explanatory ($x$) variable increases by one unit, the response variable ($y$) increases/decreases by $b$ units **on average**.
 * Intercept (**a**): When the explanatory ($x$) is zero, the the response variable variable is $a$ **on average**.
 
-Please note that regression analysis describes average behavior, and the interpretations reflect this. In our example, the intercept is not of interest because we do not observe a batting average of 0 for any team. For the slope, we interpret it as follows:
+Please note that regression analysis describes average behavior, and the interpretations reflect this. In our example, the intercept is not of interest because we do not observe a batting average of 0 for any team. For the slope, we interpret it as follows:  
 **"As Batting Average increases by one unit for a MLB team, the Winning Percentage increases by 4.27% on average."**  
 
 
