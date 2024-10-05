@@ -424,5 +424,161 @@
       "Lab Sessions",
       "Lab 5"
     ]
+  },
+  {
+    "objectID": "Lab_5.html#analyzing-bivariate-data-with-r-i",
+    "href": "Lab_5.html#analyzing-bivariate-data-with-r-i",
+    "title": "Lab 5",
+    "section": "Analyzing Bivariate Data with R (I)",
+    "text": "Analyzing Bivariate Data with R (I)\nThere are many situations where we are interested in the relationship between two variables. For the discrete bivariate case, a conditional frequency table can be used. For continuous variables, correlation and linear regression analyses are appropriate. In this lab, we focus on the correlation analysis based on a dataset with continuous variables.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "Lab_5.html#from-correlation-analysis-to-regression-analysis",
+    "href": "Lab_5.html#from-correlation-analysis-to-regression-analysis",
+    "title": "Lab 5",
+    "section": "From correlation analysis to regression analysis",
+    "text": "From correlation analysis to regression analysis\nOne of the biggest differences between correlation and regression analyses is the treatment of two continuous variables. While we treat the two variables equally in correlation analysis, we strictly distinguish independent (explanatory) variable and dependent (response) variable. Put it in another way, we manage two variables symmetrically in correlation analysis, but asymetrically in regression analysis. For example, given the MLB data set, our goal is to predict or explain the response variable, \\(\\texttt{Winning Percentage}\\) based on a explanatory variable chosen among the measures of defensive, offensive, or combined capability.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "Lab_5.html#regression-equation",
+    "href": "Lab_5.html#regression-equation",
+    "title": "Lab 5",
+    "section": "Regression equation",
+    "text": "Regression equation\nWe have learned the fomula for the regression analysis: \\[\\begin{align*}\n  \\hat{y}\\;=&\\; a+bx;\\\\ \\text{such that}&\\begin{cases}\n  b\\;=& \\frac{\\sum (x-\\bar{x})(y-\\bar{y})}{\\sum (x-\\bar{x})^2};\\\\\n  a\\;=& \\bar{y}-b\\bar{x},\\end{cases}\n\\end{align*}\\] where \\(y\\) is the response variable and \\(x\\) is the explanatory variable. Now, consider the \\(\\texttt{Batting Average}\\) as our explanatory variable with the response variable \\(\\texttt{Winning Percentage}\\). Then, we can use \\(\\textbf{R}\\) to calculate the coefficients, a and b:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can rewrite labels by using the \\(\\texttt{xlab}\\) and \\(\\texttt{ylab}\\) arguments.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAlso, change the plotting character and colors with the \\(\\texttt{col}\\) argument.\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#analyzing-bivariate-data-with-r-ii",
+    "href": "Lab_6.html#analyzing-bivariate-data-with-r-ii",
+    "title": "Lab 6",
+    "section": "Analyzing Bivariate Data with R (II)",
+    "text": "Analyzing Bivariate Data with R (II)\nWe continue our discussion of bivariate data analysis. In particular, we focus on linear regression analysis using a dataset with continuous variables in this lab.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#mlb-data-2023-regular-season-team-statistics",
+    "href": "Lab_6.html#mlb-data-2023-regular-season-team-statistics",
+    "title": "Lab 6",
+    "section": "MLB Data: 2023 Regular Season Team Statistics",
+    "text": "MLB Data: 2023 Regular Season Team Statistics\nWe again use the dataset of the MLB 2023 regular season, as follows:\n\n01. Team:  Name of the team \n02. Win_P: Winning Percentage, \"(# of Wins\"/ \"Total # of games)*100\".\n03. RPG:   Runs per Game, the average number of runs a team or player scores in each game. \n04. BA:    Batting Average, \"the # of times a batter hits a ball and reaches the base\"/\"the # of at bats by a batter\".   \n05. OPS:   On-base plus slugging, the sum of on-base percentage and slugging percentage. \n06. ORPG:  Opponent Runs per Game, the runs per game by the opponent.   \n07. ERA:   Earned Run Average, the number of earned runs a pitcher allows per nine innings.    \n08. WHIP:  Walks And Hits Per Inning Pitched, the statistic shows how well a pitcher has kept runners off the basepaths, one of his main goals.\n\nIn the data set, the variable \\(\\texttt{Win\\_P}\\) measures a MLB team’s performance throughout the 2023 season. For offensive capability, we can use the variables \\(\\texttt{RPG}\\), \\(\\texttt{BA}\\), and \\(\\texttt{OPS}\\); whereas, for defensive capability, we can use \\(\\texttt{ORPG}\\), \\(\\texttt{ERA}\\), and \\(\\texttt{WHIP}\\).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#offensive-capability",
+    "href": "Lab_6.html#offensive-capability",
+    "title": "Lab 6",
+    "section": "Offensive Capability",
+    "text": "Offensive Capability\nIn baseball, offensive capability is closely tied to the performance of batters. We can expect a positive association between offensive measures and winning percentage. This relationship can be quantified using correlation, which provides a unit-less value between -1 and 1. A value close to 1 or -1 indicates a strong positive or negative association, respectively, while a value near 0 indicates no linear association between the variables. In R, the function \\(\\texttt{cor()}\\) can be used to calculate correlation:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBased on the correlation value, we can describe the level of linear association (e.g., a moderately high positive relationship). However, it’s also important to visually confirm the actual association, as this helps us better understand the data. For this purpose, we can use the \\(\\texttt{plot()}\\) function in R:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can rewrite labels by using the \\(\\texttt{xlab}\\) and \\(\\texttt{ylab}\\) arguments.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAlso, change the plotting character and colors with the \\(\\texttt{col}\\) argument.\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#defensive-capability",
+    "href": "Lab_6.html#defensive-capability",
+    "title": "Lab 6",
+    "section": "Defensive Capability",
+    "text": "Defensive Capability\nUnlike offensive capability, defensive capability in baseball is closely tied to the performance of pitchers. For defensive measures, smaller values indicate better performance, leading us to expect a negative association with winning percentage. For example, \\(\\texttt{ERA}\\) (Earned Run Average) is a classic measure of a pitcher’s ability. Let’s examine the correlation and create a scatter plot to confirm this relationship.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#overall-capability",
+    "href": "Lab_6.html#overall-capability",
+    "title": "Lab 6",
+    "section": "Overall Capability",
+    "text": "Overall Capability\nThe variables ‘runs per game’ and ‘opponent runs per game’ are valid offensive and defensive metrics in baseball. Let’s examine the correlation and create scatter plots to confirm their relationship.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow, let us want to combine these two analytics to measure the overall capability of a MLB team. The idea is very simple. By subtracting \\(\\texttt{ORPG}\\) from \\(\\texttt{RPG}\\), we quantify the actual “net runs per game” compared to opponent team: \\[\\texttt{NRPG}=\\texttt{RPG}-\\texttt{ORPG}.\\] Please create the new variable in R, and check the correlation and display the scatter plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDo you think the created \\(\\texttt{NRPG}\\) would be a good overall performance measure?",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#lab-questions",
+    "href": "Lab_6.html#lab-questions",
+    "title": "Lab 6",
+    "section": "Lab Questions",
+    "text": "Lab Questions\nIn the previous lab, we considered the “net runs per game” variable as a measure of MLB team’s overall capability:\n\\[\\texttt{NRPG}=\\texttt{RPG}-\\texttt{ORPG}.\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nLet us perform a linear regression analysis to predict the winning percentage based on the NRPG. Derive the slope and intercept coefficients, respectively.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPredict the winning percentage of the IronPigs when their hypothesitcal NRPG is -3.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nChoose relevant interpretations for the slope and intercept coefficients.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#from-correlation-analysis-to-regression-analysis",
+    "href": "Lab_6.html#from-correlation-analysis-to-regression-analysis",
+    "title": "Lab 6",
+    "section": "From correlation analysis to regression analysis",
+    "text": "From correlation analysis to regression analysis\nOne of the key differences between correlation and regression analysis lies in how we handle two continuous variables. In correlation analysis, both variables are treated equally, whereas in regression analysis, we distinctly classify one variable as explanatory (independent) and the other as response (dependent). In other words, correlation treats the two variables symmetrically, while regression treats them asymmetrically. For example, in the context of regression analysis with the MLB dataset, our goal is to predict or explain the response variable, \\(\\texttt{Winning Percentage}\\), based on an explanatory variable chosen from measures of defensive, offensive, or combined capability.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#regression-equation",
+    "href": "Lab_6.html#regression-equation",
+    "title": "Lab 6",
+    "section": "Regression equation",
+    "text": "Regression equation\nWe have learned the fomulas for the regression analysis: \\[\\begin{align*}\n  \\hat{y}\\;=&\\; a+bx;\\\\ \\text{such that}&\\begin{cases}\n  b\\;=& \\frac{\\sum (x-\\bar{x})(y-\\bar{y})}{\\sum (x-\\bar{x})^2};\\\\\n  a\\;=& \\bar{y}-b\\bar{x},\\end{cases}\n\\end{align*}\\] where \\(y\\) is the response variable and \\(x\\) is the explanatory variable.\nNow, consider the \\(\\texttt{Batting Average}\\) as our explanatory variable with the corresponding response variable \\(\\texttt{Winning Percentage}\\). Then, we can use \\(\\textbf{R}\\) to calculate the coefficients, a and b:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html#example",
+    "href": "Lab_6.html#example",
+    "title": "Lab 6",
+    "section": "Example",
+    "text": "Example\nLet us instead of use \\(\\texttt{ERA}\\) (Earned Run Average) as a explanatory variable. Derive the regression equation and visualize the regression line with corresponding scatter plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSuppose the IronPigs have a team ERA of 7 if they were playing in the MLB. What would their expected winning percentage be?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
+  },
+  {
+    "objectID": "Lab_6.html",
+    "href": "Lab_6.html",
+    "title": "Lab 6",
+    "section": "",
+    "text": "Loading required package: MASS",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 6"
+    ]
   }
 ]
