@@ -123,6 +123,7 @@ Let us instead of use $\texttt{ERA}$ (Earned Run Average) as a explanatory varia
 
 ```{webr-r}
 y <- 
+# ERA has no unit issues, so it can be used as is.
 x <- 
 Numer <- sum((x-mean(x))*(y-mean(y)))
 Denom <- sum((x-mean(x))^2)
