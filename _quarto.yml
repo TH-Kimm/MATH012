@@ -39,6 +39,7 @@ website:
             - Lab_5.qmd
             - Lab_6.qmd
             - Lab_7.qmd
+            
 filters:
   - webr
       
