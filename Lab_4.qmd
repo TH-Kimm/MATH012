@@ -200,7 +200,7 @@ attach(Survey_Data)
 ```
 
 
-## Basic Graphics in **R**
+# Basic Graphics in **R**
 
 **R** offers a variety of options for creating visual displays in statistics. While base **R** itself provides sufficient quality for many plots, additional packages like $\texttt{ggplot2}$ or $\texttt{lattice}$ to produce "publishable" quality graphics. In our lab sessions, we will focus on the basic **R** graphics.
 

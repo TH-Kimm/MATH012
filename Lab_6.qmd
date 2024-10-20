@@ -39,7 +39,7 @@ MLB_Data <- structure(list(Team = c("ARI", "ATL","BAL", "BOS", "CHC", "CHW",
 attach(MLB_Data)
 ```
 
-## Analyzing Bivariate Data with **R (II)**
+# Analyzing Bivariate Data with **R (II)**
 
 We continue our discussion of bivariate data analysis. In particular, we focus on **linear regression** analysis using a dataset with continuous variables in this lab.
 

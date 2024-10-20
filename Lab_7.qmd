@@ -202,7 +202,7 @@ SURVEY<-na.omit(Survey_Data)
 
 ```
 
-## Analyzing Bivariate Data with **R (III)**
+# Analyzing Bivariate Data with **R (III)**
 
 We finalize our discussion of bivariate data analysis. In particular, we focus on **linear regression** analysis using our survey dataset with continuous variables.
 

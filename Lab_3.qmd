@@ -4,7 +4,7 @@ webr:
   show-startup-message: true
 ---
 
-## Basic **R** Object: Data Frame
+# Basic **R** Object: Data Frame
 
 A data frame in **R** stores a data set where columns represent variables and rows correspond to individuals. Each element in the data frame is an observation or measurement of a variable for a specific individual. (It’s similar to an Excel sheet.)
 
@@ -34,13 +34,14 @@ HP2 <- mtcars[,4]
 identical(HP,HP2)
 ```
 
-Note that the first argument is empty because it is used to select a specific row (an individual car). By leaving it empty, we are selecting all rows (cars) of the $\texttt{horsepower}$ variable. Similarly, we can extract the value of a particular variable for a specific car, e.g. $\texttt{mtcars[3,4]}$  retrieves the horsepower of "Datsun 710".
+Note that the first argument is empty because it is used to select a specific row (an individual car). By leaving it empty, we are selecting all rows (cars) of the $\texttt{horsepower}$ variable. Similarly, we can extract the value of a particular variable for a specific car, e.g. $\texttt{mtcars[3,4]}$ retrieves the horsepower of "Datsun 710".
 
 ```{webr-r}
 mtcars[3,4]
 ```
 
 Lastly, we can simultaneously select or deselect multiple variables and/or observations by combining $\texttt{[]}$, $\texttt{c()}$ and $\texttt{-}$.
+
 ```{webr-r}
 ## 2nd and 4th variables
 mtcars[,c(2,4)]
@@ -51,20 +52,22 @@ mtcars[,-5]
 ## data set without 5th and 10th variables
 mtcars[,-c(5,10)]
 ```
+
 I believe you can now recognize the patterns. Mastering data subsetting is a crucial skill in data analysis, and we have just covered the fundamental procedures.
 
 #### Example
 
-Consider the $\texttt{mtcars}$ data again. 
+Consider the $\texttt{mtcars}$ data again.
 
-1. Extract the weight variable using $\texttt{\$}$ command.
+1.  Extract the weight variable using $\texttt{\$}$ command.
 
-2.  Extract the Miles/gallon of Honda Civic using $\texttt{[]}$ command.  
-You can check the car names with the $\texttt{rownames(mtcars)}$ command.
+2.  Extract the Miles/gallon of Honda Civic using $\texttt{[]}$ command.\
+    You can check the car names with the $\texttt{rownames(mtcars)}$ command.
 
-3. Extract the $\texttt{mpg}$ and $\texttt{hp}$ variables using $\texttt{[]}$ command.
+3.  Extract the $\texttt{mpg}$ and $\texttt{hp}$ variables using $\texttt{[]}$ command.
 
-4. Extract the $\texttt{mpg}$ and $\texttt{hp}$ variables except for the $\texttt{Merc}$ cars.
+4.  Extract the $\texttt{mpg}$ and $\texttt{hp}$ variables except for the $\texttt{Merc}$ cars.
+
 ```{webr-r}
 ## 1
 
@@ -114,22 +117,21 @@ iv) Compare the IQRs of $\texttt{SW}$ and $\texttt{PW}$. Which variable exhibits
 
 ```
 
+<!-- -->
 
+2.  Let us recall the fomulas for the sample variance.
 
 ```{=html}
 <!-- -->
 ```
-2.  Let us recall the fomulas for the sample variance.
+i)  The sample variance can be computed from the following formula: $$s^2=\frac{1}{n-1}\sum_{i=1}^n\left(x_i-\bar{x}\right)^2,$$ where $x$ is a numerical variable of length $n$. Calculate the variance of $\texttt{SL}$ without using $\texttt{var()}$ function. (You could use $\texttt{mean()}$, $\texttt{sum()}$, and $\texttt{length()}$ functions.) Verify that your result matches the value provided in 1-ii.
 
-i) The sample variance can be computed from the following formula: 
-$$s^2=\frac{1}{n-1}\sum_{i=1}^n\left(x_i-\bar{x}\right)^2,$$ where $x$ is a numerical variable of length $n$. Calculate the variance of $\texttt{SL}$ without using $\texttt{var()}$ function. (You could use $\texttt{mean()}$, $\texttt{sum()}$, and $\texttt{length()}$ functions.) Verify that your result matches the value provided in 1-ii.
 ```{webr-r}
 
 ```
 
-ii)  Additionally, we have learned an alternative formula for variance calculation (also known as the 'computing formula'):
-$$s^2=\frac{1}{n-1}\left\{\sum_{i=1}^nx_i^2-\bar{x}^2\right\}.$$
-Similar to the previous case, calculate the variance of $\texttt{PL}$ using this formula, based on the $\texttt{mean()}$, $\texttt{sum()}$, and $\texttt{length()}$ functions. Verify that your result matches the value provided in 1-ii.
+ii) Additionally, we have learned an alternative formula for variance calculation (also known as the 'computing formula'): $$s^2=\frac{1}{n-1}\left\{\sum_{i=1}^nx_i^2-\bar{x}^2\right\}.$$ Similar to the previous case, calculate the variance of $\texttt{PL}$ using this formula, based on the $\texttt{mean()}$, $\texttt{sum()}$, and $\texttt{length()}$ functions. Verify that your result matches the value provided in 1-ii.
+
 ```{webr-r}
 
 ```

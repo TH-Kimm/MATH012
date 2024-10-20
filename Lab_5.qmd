@@ -43,7 +43,7 @@ MLB_Data <- structure(list(Team = c("Arizona Diamondbacks", "Atlanta Braves",
 attach(MLB_Data)
 ```
 
-## Analyzing Bivariate Data with **R** (I)
+# Analyzing Bivariate Data with **R** (I)
 
 There are many situations where we are interested in the relationship between two variables. For the discrete bivariate case, a conditional frequency table can be used. For continuous variables, correlation and linear regression analyses are appropriate. In this lab, we focus on the **correlation** analysis based on a dataset with continuous variables.
 
