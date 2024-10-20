@@ -99,7 +99,7 @@ var(DATA)
 The binomial probability distribution is one of the most widely used discrete distributions. Consider an experiment with two possible outcomes: success or failure, each with a fixed probability of success $p$. If this experiment is repeated $n$ times, the total number of successes can be modeled as a binomial random variable $X$, which can take any integer value from 0 (no success) to $n$ (all successes).  
 Recall that the probability of observing exactly $x$ successes is given by:
 $$
-p(x)=\frac{n!}{x!(n-x)!}p^x(1-p)^x.
+p(x)=\frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}.
 $$
 
 ### Example: Curry's free throw shootings
