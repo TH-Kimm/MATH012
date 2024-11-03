@@ -100,7 +100,7 @@ Then, the shape of the sampling distribution can be described as follows:
 
 In particular, we call the second result **the central limit theorem (C.L.T)**.
 
-# Probability Calculation
+# Probability calculation
 
 Suppose a test score has the mean value 78 and standard deviation 10. We don't have any information regarding the population distribution. Suppose we are interested in the probability that a sample mean with the sample size $n=32$ is greater than 82.
 ```{webr-r}
@@ -121,7 +121,7 @@ sigma_xbar <- 10/sqrt(35)
 
 
 
-# Verification of C.L.T. through a Simulation 
+# Verification of C.L.T. through a simulation 
 
 Lastly, let us verify the central limit theorem through a short simulation. Here, we assume the population distribution is highly skewed to the right. 
 
@@ -166,12 +166,12 @@ ii. Calculate the probability.
 
 ```
 
-2. The average teacher's salary in New Jersey is \$52,174, assuming a normal distribution with a standard deviation of \$7,500.
-i. What is the probability that a randomly selected teacher makes less than \$50,000 per year?
+2. The average teacher's salary in New Jersey is \$62,174, assuming a normal distribution with a standard deviation of \$8,500.
+i. What is the probability that a randomly selected teacher makes less than \$60,000 per year?
 ```{webr-r}
 
 ```
-ii. If we sample 100 teachers' salaries, what is the probability that the sample mean is less than \$50,000 per year?
+ii. If we sample 100 teachers' salaries, what is the probability that the sample mean is less than \$60,000 per year?
 ```{webr-r}
 
 ```
