@@ -733,5 +733,89 @@
       "Lab Sessions",
       "Lab 8"
     ]
+  },
+  {
+    "objectID": "Lab_9.html",
+    "href": "Lab_9.html",
+    "title": "Lab 9",
+    "section": "",
+    "text": "A continuos random variable can take on any values within its variable range. For example, it might yield a value between 10 and 120 (as in the daily high temperature in the US) or any value from 0 to infinity (such as a failure time of a particular device in minutes).\n\n\n\nA continuous probability distribution can be expressed as a curve \\(f(x)\\) that covers up the possible values of a random variable. It can be any shapes based on the variable of interest with the following properties:\n\nThe total area under the probability density curve is 1.\n\\(P[ a\\le X\\le b ]\\) is the area under the probability density curve between \\(a\\) and \\(b\\).\n\\(f(x)\\ge 0\\) for all \\(x\\).\n\n\n\n\n\n\n\n\n\nIn our class, we focus on the normal distribution because:\n\nAll manner of things appear to be distributed normally: people’s height, IQ scores, examination grades, sizes of snowflakes, errors in measurements, lifetimes of lightbulbs, and so on;\nCentral Limit Theorem;\nEasy to deal with.\n\nA normal distribution can be characterized by two parameters: the mean \\(\\mu\\) and the variance \\(\\sigma^2\\) (or equivalently, the standard deviation \\(\\sigma\\)).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
+  },
+  {
+    "objectID": "Lab_9.html#continuous-random-variable-rv",
+    "href": "Lab_9.html#continuous-random-variable-rv",
+    "title": "Lab 9",
+    "section": "Continuous Random Variable (RV)",
+    "text": "Continuous Random Variable (RV)\nA continuous random variable can take any value within its range. For example, it might yield a value between 10 and 120 (such as the daily high temperature in the U.S.) or any value from 0 to infinity (such as the failure time of a particular device in minutes).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
+  },
+  {
+    "objectID": "Lab_9.html#probability-distribution-of-continuous-rv",
+    "href": "Lab_9.html#probability-distribution-of-continuous-rv",
+    "title": "Lab 9",
+    "section": "Probability Distribution of Continuous RV",
+    "text": "Probability Distribution of Continuous RV\nA continuous probability distribution can be represented as a curve \\(f(x)\\) that spans the possible values of a random variable. Its shape can vary depending on the variable of interest, but it has the following properties: 1. The total area under the probability density curve is 1. 2. \\(P[ a\\le X\\le b ]\\) is the area under the probability density curve between \\(a\\) and \\(b\\). 3. \\(f(x)\\ge 0\\) for all \\(x\\).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
+  },
+  {
+    "objectID": "Lab_9.html#the-normal-distribution",
+    "href": "Lab_9.html#the-normal-distribution",
+    "title": "Lab 9",
+    "section": "The Normal Distribution",
+    "text": "The Normal Distribution\nIn our class, we focus on the normal distribution because: 1. All manner of things appear to be distributed normally: people’s height, IQ scores, examination grades, sizes of snowflakes, errors in measurements, lifetimes of lightbulbs, and so on; 2. Central Limit Theorem; 3. Easy to deal with.\nA normal distribution can be characterized by two parameters: the mean \\(\\mu\\) and the variance \\(\\sigma^2\\) (or equivalently, the standard deviation \\(\\sigma\\)).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
+  },
+  {
+    "objectID": "Lab_9.html#example",
+    "href": "Lab_9.html#example",
+    "title": "Lab 9",
+    "section": "Example",
+    "text": "Example\nLet \\(Y\\) be the # of beer cans consumed by a male college student in a year. It is assumed to be normally distributed with the mean 640 and standard deviation 60. What proportion of male students drink more than 595 beer cans per year?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
+  },
+  {
+    "objectID": "Lab_9.html#sampling-distribution-for-sample-mean",
+    "href": "Lab_9.html#sampling-distribution-for-sample-mean",
+    "title": "Lab 9",
+    "section": "Sampling Distribution for Sample Mean",
+    "text": "Sampling Distribution for Sample Mean\nThe sampling distribution provides all the information about a statistic of interest. When examining the behavior of a sample mean randomly drawn from a population, we first consider the following properties:\n\nThe mean of “the sampling distribution for the sample mean” will always equal the population mean \\(\\mu\\): \\[\\mu_\\bar{X}=E[\\bar{X}]=\\mu.\\]\nThe standard deviation of “the sampling distribution for the sample mean” will equal the population standard deviation \\(\\sigma\\) over the square root of the sample size \\(n\\): \\[\\sigma_\\bar{X}=SD[\\bar{X}]=\\frac{\\sigma}{\\sqrt{n}}.\\]\n\nThen, the shape of the sampling distribution can be described as follows:\n\nIf population distribution is a normal distribution, then the sampling distribution for sample mean would resemble the shape of the population distribution. So, the sampling distribution also follows a normal distribution with the above mean and standard deviation.\nIf population distribution is unknown, then the sampling distribution for sample mean would still follow a normal distribution with the above mean and standard deviation when we have sufficiently large sample size, e.g., \\(n\\ge 30\\).\n\nIn particular, we call the second result the central limit theorem (C.L.T).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
+  },
+  {
+    "objectID": "Lab_9.html#lab-questions",
+    "href": "Lab_9.html#lab-questions",
+    "title": "Lab 9",
+    "section": "Lab Questions",
+    "text": "Lab Questions\n\nA survey indicates that the average American family produces 17.2 pounds of glass waste per year, with a population standard deviation of 2.5 pounds. Calculate the probability that the sample mean for a group of 55 families will fall between 17 and 18 pounds.\n\n\nCan we use the C.L.T. for the probability calculation?\nTrue / False\nCalculate the probability.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThe average teacher’s salary in New Jersey is $52,174, assuming a normal distribution with a standard deviation of $7,500.\n\n\nWhat is the probability that a randomly selected teacher makes less than $50,000 per year?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nIf we sample 100 teachers’ salaries, what is the probability that the sample mean is less than $50,000 per year?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWhy is the probability in part (i) higher than the probability in part (ii)?",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 9"
+    ]
   }
 ]
