@@ -6,6 +6,7 @@ webr:
 
 ```{webr-r}
 #| context: setup
+
 library(fastGraph)
 ```
 # Probability (II)
