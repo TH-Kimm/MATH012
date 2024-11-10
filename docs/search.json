@@ -817,5 +817,53 @@
       "Lab Sessions",
       "Lab 9"
     ]
+  },
+  {
+    "objectID": "Lab_10.html#confidence-interval",
+    "href": "Lab_10.html#confidence-interval",
+    "title": "Lab 10",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nConfidence interval is the most widely used interval estimation procedures for a target parameter. When a population mean \\(\\mu\\) is the target parameter, we have learned the following formula for the procedure: \\[\n[\\text{Lower bound},\\text{Upper bound}]=\\left[\\bar{x}-|z_{\\alpha/2}|\\times \\tfrac{\\sigma}{\\sqrt{n}},\\bar{x}+|z_{\\alpha/2}|\\times \\tfrac{\\sigma}{\\sqrt{n}}\\right]\n\\]\n\nThe sample mean \\(\\bar{x}\\) is the point estimator. It is the best representative for \\(\\mu\\) given the sample.\n\\(|z_{\\alpha/2}|\\) is the cut-off value that reflect the confidence level.\n\\(\\sigma/\\sqrt{n}\\) is the standard error that reflect the variability of the sample mean.\n\nLet us construct the 95% confidence interval for the population mean (i.e., population average height).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 10"
+    ]
+  },
+  {
+    "objectID": "Lab_10.html#random-sample",
+    "href": "Lab_10.html#random-sample",
+    "title": "Lab 10",
+    "section": "Random Sample",
+    "text": "Random Sample\nLet’s start with the concept of a random sample. Our population represents a LARGE set of data, and we typically assume we have limited or no information about it. For example, suppose we are interested in the average height of male students at Lehigh. In this case, our population consists of the height measurements of all male students at Lehigh. In this lab, we will use a hypothetical population with a mean \\(\\mu=70.77\\) and a standard deviation \\(\\sigma=3.5\\) for this scenario. Note that, for illustration purposes, we have access to all measurement data in this example.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the population, we can randomly draw a sample of size \\(n=50\\) using the $ function. Since the population is large enough, we are able to assume the obtained data is independent and identically distributed.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that each time you repeat the sampling, the shape of the histogram will vary due to sampling variability. In principle, every student in the class would obtain a similar, though not identical, histogram from their sample.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 10"
+    ]
+  },
+  {
+    "objectID": "Lab_10.html#confidence-interval-ci",
+    "href": "Lab_10.html#confidence-interval-ci",
+    "title": "Lab 10",
+    "section": "Confidence Interval (CI)",
+    "text": "Confidence Interval (CI)",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 10"
+    ]
+  },
+  {
+    "objectID": "Lab_10.html#lab-questions",
+    "href": "Lab_10.html#lab-questions",
+    "title": "Lab 10",
+    "section": "Lab Questions",
+    "text": "Lab Questions\nSuppose we are interested in the average mileage (in miles/gallon, or mpg) of passenger cars in 1970s. Let us assume that we know the population standard deviation, \\(\\sigma=6\\). Our goal is to construct a 95% confidence interval for the population mean mileage. For this, we can use a sample from the built-in data set \\(\\texttt{mtcars}\\).\n\nWhat is the sample size?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCompute the three components: point estimate, cut-off, and standard error.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nConstruct the 95% CI for population mean mileage.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nMake a interpretation.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 10"
+    ]
   }
 ]
