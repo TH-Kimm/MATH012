@@ -123,9 +123,9 @@ L.Bounds2 <- xbars - 1.96*se;U.Bounds2 <- xbars + 1.96*se
 L.Bounds3 <- xbars - 2.58*se;U.Bounds3 <- xbars + 2.58*se
 # Plots
 par(mfrow=c(1,3))
-CI_Plot(L.Bounds1,U.Bounds1,mu,main="Fifty 90% CIs")
-CI_Plot(L.Bounds2,U.Bounds2,mu,main="Fifty 95% CIs")
-CI_Plot(L.Bounds3,U.Bounds3,mu,main="Fifty 99% CIs")
+CI_Plot(L.Bounds1,U.Bounds1,mu)
+CI_Plot(L.Bounds2,U.Bounds2,mu)
+CI_Plot(L.Bounds3,U.Bounds3,mu)
 par(mfrow=c(1,1))
 ```
 You can run the code a few times, as the exact coverage may not be 90\%, 95\%, or 99\% due to randomness. However, on average, you should observe that approximately "5" CIs, "2 or 3" CIs, and "1" CI will not contain the true parameter out of a total of 50 CIs, respectively.
