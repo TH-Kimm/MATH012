@@ -58,14 +58,14 @@ print(mu <- mean(M.Height))
 # This population is designed to have the standard deviation 3.5.
 print(sigma <- sd(M.Height))
 ```
-From the population, we can randomly draw a sample of size $n=50$ using the $\texttt{sample()} function. Since the population is large enough, we are able to assume the obtained data is independent and identically distributed. 
+From the population, we can randomly draw a sample of size $n=50$ using the $\texttt{sample()}$ function. Since the population is large enough, we are able to assume the obtained data is independent and identically distributed. 
 ```{webr-r}
 # Random sampling 
 n<-50
 my.sample <- sample(M.Height,n)
 hist(my.sample)
 ```
-Note that each time you repeat the sampling, the shape of the histogram will vary due to sampling variability. In principle, every student in the class would obtain a similar, though not identical, histogram from their sample.
+Note that each time you repeat the sampling, the shape of the histogram will vary due to sampling variability. 
 
 
 ## Confidence Interval (CI)
