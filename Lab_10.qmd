@@ -44,12 +44,12 @@ M.Height <- M.Height*1.0184221-0.001543042
 
 # Inferential Statistics (I)
 
-In inferential statistics, we assume there is an **unknown target parameter** that characterizes the population. In this class, our target parameter is usually a population mean or proportion; however, it could be any characteristic of the population that interests us. Our goal is to estimate or make a claim about this parameter using various statistical procedures, such as interval estimation or hypothesis testing. These procedures are widely used across disciplines, and understanding these concepts will be **extremely beneficial** for your future studies in your major.
+In inferential statistics, we assume there is an [unknown target parameter]{style="color:blue;"} that characterizes the population. In this class, our target parameter is usually a population mean or proportion; however, it could be any characteristic of the population that interests us. Our goal is to estimate or make a claim about this parameter using various statistical procedures, such as interval estimation or hypothesis testing. These procedures are widely used across disciplines, and understanding these concepts will be [greatly beneficial]{style="color:blue;"}for your future studies in your major.
 
 ## Random Sample
 
 Let’s start with the concept of a random sample. Our population represents a **LARGE** set of data, and we typically assume we have limited or no information about it. For example, suppose we are interested in the average height of male students at Lehigh. In this case, our population consists of the height measurements of all male students at Lehigh.
-In this lab, we will use a hypothetical population with a mean $\mu=70.77$ and a standard deviation $\sigma=3.5$ for this scenario. Note that, **for illustration purposes**, we have access to all measurement data in this example.
+In this lab, we will use a hypothetical population with a mean $\mu=70.77$ and a standard deviation $\sigma=3.5$ for this scenario. Note that, [for illustration purposes]{style="color:red;"}, we have access to all measurement data in this example.
 ```{webr-r}
 # We assume the population consists of 3500 measurements.
 print(n <- length(M.Height))
@@ -118,7 +118,7 @@ for(i in 1:50){
   xbars[i] <- mean(re.sample)
 }
 # Three sets of CIs: 90%, 95%, and 99%
-L.Bounds1 <- xbars - cut_off*se;U.Bounds1 <- xbars + cut_off*se
+L.Bounds1 <- xbars - 1.645*se;U.Bounds1 <- xbars + 1.645*se
 L.Bounds2 <- xbars - 1.96*se;U.Bounds2 <- xbars + 1.96*se
 L.Bounds3 <- xbars - 2.58*se;U.Bounds3 <- xbars + 2.58*se
 # Plots
@@ -132,12 +132,12 @@ You can run the code a few times, as the exact coverage may not be 90\%, 95\%, o
 
 # Interpretation of confidence interval
 
-Returning to the real case, note that we only observe a **SINGLE** sample. Since the target parameter is **UNKNOWN**, we can never know for sure whether the computed confidence interval (CI) contains the true parameter. Once the CI is computed, it consists of a fixed pair of constants, and since we cannot assign a probability to these fixed values, we use the term "confidence" instead. This indirect expression reflects our earlier observation that, **if the CI were constructed repeatedly, it would cover the true parameter based on the confidence level**.
+Returning to the real case, note that we only observe a [SINGLE]{style="color:red;"} sample. Since the target parameter is [UNKNOWN]{style="color:red;"}, we can never know for sure whether the computed confidence interval (CI) contains the true parameter. Once the CI is computed, it consists of a fixed pair of constants, and since we cannot assign a probability to these fixed values, we use the term "confidence" instead. This indirect expression reflects our earlier observation that, [if the CI were constructed repeatedly, it would cover the true parameter based on the confidence level]{style="color:blue;"}.
 
 Finally, we use one of the following interpretations:  
 
-* "We are $100(1-\alpha)$\% confident that the true parameter falls into the resulting confidence interval, "computed lower bound" and "computed upper bound".
-* "We have $100(1-\alpha)$\% confidence that the resulting confidence interval, "computed lower bound" and "computed upper bound", covers the true parameter.
+* **"We are $100(1-\alpha)$\% confident that the true parameter falls into the resulting confidence interval, [computed lower bound] and [computed upper bound].**
+* **"We have $100(1-\alpha)$\% confidence that the resulting confidence interval, [computed lower bound] and [computed upper bound], covers the true parameter.**
 
 
 ## Lab Questions
