@@ -865,5 +865,103 @@
       "Lab Sessions",
       "Lab 10"
     ]
+  },
+  {
+    "objectID": "Lab_11.html",
+    "href": "Lab_11.html",
+    "title": "Lab 11",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\nInferential Statistics (II)\nThis week, let’s delve into hypothesis testing for the population mean. For our discussion, let’s suppose our interest lies in the population mean height, denoted as \\(\\mu\\), for all Lehigh students. As this value is unknown, we need to collect a sample for inference. For our purpose, let’s utilize the Height variable in our class survey data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor the following questions, let us presume the assumptions for the hypothesis testings are satisfied.\nFirst of all, let say we are interested in whether the population average height is greater than 66 inches, and wish to statistically confirm this claim under 0.05 significance level. The notation for population average or population mean is the Greek letter \\(\\mu\\). So, let us write what we want to show in alternative hypothesis \\(\\mu &gt; 66\\) and the null hypothesis is just the opposite \\(\\mu \\le 66\\): \\[\nH_0:\\; \\mu \\le 66 \\;\\;\\text{vs.}\\;\\;H_a:\\; \\mu &gt; 66.\n\\] Note that the general notation for the reference value 66 is \\(\\mu_0\\). This test is called a right-tailed test since we want to show the target parameter \\(\\mu\\) is in right hand side the reference value \\(\\mu_0\\).\nNow, let us explore our data vector \\(X\\) and record necessary components.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere, the sample size is large \\(n\\ge 30\\), so we can use the \\(z\\) test statistic: \\[\nZ^*=\\frac{\\bar{X}-\\mu_0}{\\sigma/\\sqrt{n}}\n\\] In particular, the population standard deviation \\(\\sigma\\) will be replaced by its sample version that we calculated previously (since we have a large sample size).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOnce we have the test statistic, then it’s time to calculate the corresponding p-value. In z-test, the p-value is essentially one of the tail-probabilities on the standard normal distribution. Since this test is a right-tailed test, we calculate the right-tail probability. In R, the function \\(\\texttt{pnorm()}\\) provides us the left-tail probability, so \\[\n\\text{p-value}=P[Z&gt;z^*]\\stackrel{\\textsf{R}}{=}\\texttt{1-pnorm(z.star)}.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that a small p-value indicates a strong evidence against the Null Hypothesis in favor of Alternative Hypothesis, so we can reject the null hypothesis. How small is small enough? We determine this through the comparison with the significance level.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn this case, we fail to reject the null hypothesis. Interpretation would follow given the context of the problem:\n“Given the significance level 0.05, there is not enough evidence that the population average height of all Lehigh students is greater than 66 inches.”.\nNow, let us consider another population parameter: the population average height of all Lehigh students whose favorite professional sports is NBA. Regarding this target parameter, we wish to perform exactly the same right-tailed test. Let us explore the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe need to note that the sample size of new data set is only 27. Since the sample size is not large enough we have to use the \\(t\\)-test. (Assume the population distribution is normal.) \\[\nT^*=\\frac{\\bar{X}-\\mu_0}{s/\\sqrt{n}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor the p-value calculation, we now need to compute one of the tail probabilities of the t-distribution with the corresponding degrees of freedom (\\(n-1\\)). The t-table we have used in class does not provide the exact probability, but the R function \\(\\texttt{pt()}\\) can be used for the exact computation. Since this is still right-tailed test: \\[\n\\text{p-value}=P[T&gt;t^*]\\stackrel{\\textsf{R}}{=}\\texttt{1-pt(t.star,n-1)}.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that we can reject the null hypothesis in this sub-group analysis. Therefore, “Given the significance level 0.05, there is not enough evidence that the population average height of all Lehigh students who loves NBA is greater than 66 inches.”."
+  },
+  {
+    "objectID": "Lab_11.html#lab-questions",
+    "href": "Lab_11.html#lab-questions",
+    "title": "Lab 11",
+    "section": "Lab Questions",
+    "text": "Lab Questions\nLet us consider the population average height \\(\\mu\\) of all Lehigh male students. In particular, we are interested in whether the average height of the male students is less than 70 inches and wish to statistically confirm this claim with a 0.1 significance level.\n\nChoose the right form of the null and alternative hypotheses.\n\n\n\\(H_0:\\; \\mu \\le 70 \\;\\;\\text{vs.}\\;\\;H_a:\\; \\mu &gt; 70.\\)\n\\(H_0:\\; \\mu \\ge 70 \\;\\;\\text{vs.}\\;\\;H_a:\\; \\mu &lt; 70.\\)\n\\(H_0:\\; \\mu &lt; 70 \\;\\;\\text{vs.}\\;\\;H_a:\\; \\mu \\ge 70.\\)\n\\(H_0:\\; \\mu &gt; 70 \\;\\;\\text{vs.}\\;\\;H_a:\\; \\mu \\le 70.\\)\n\n\nSubset the relevant sample data and record the necessary component.\nWhat would be your choice of the test? (Determine it solely based on the sample size.)\n\n\nz-test\nt-test\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCompute the test-statistic and calculate the p-value.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nMake a conclusion and choose the correct interpretation.\n\n\nReject \\(H_0\\). There is enough evidence that the population average height of all Lehigh male students is less than 70.\nReject \\(H_0\\). There is not enough evidence that the population average height of all Lehigh male students is less than 70.\nFail to reject \\(H_0\\). There is enough evidence that the population average height of all Lehigh male students is less than 70.\nFail to teject \\(H_0\\). There is not enough evidence that the population average height of all Lehigh male students is less than 70.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
+  },
+  {
+    "objectID": "Lab_11.html#sample-data",
+    "href": "Lab_11.html#sample-data",
+    "title": "Lab 11",
+    "section": "Sample Data",
+    "text": "Sample Data\nAs the target parameter population mean is unknown, we need to collect a sample for inference. For this purpose, let’s use the Height variable in our class survey data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
+  },
+  {
+    "objectID": "Lab_11.html#hypotheses-set-up",
+    "href": "Lab_11.html#hypotheses-set-up",
+    "title": "Lab 11",
+    "section": "Hypotheses Set-Up",
+    "text": "Hypotheses Set-Up\nFirst, let’s say we are interested in determining whether the population average height of female students exceeds 64.5 inches, and we aim to statistically confirm this claim at a significance level of 0.1. As mentioned, the population average (or mean) is denoted by the Greek letter \\(\\mu\\). Thus, we express our claim as the alternative hypothesis: \\(\\mu &gt; 64.5\\). The null hypothesis, being the opposite, is \\(\\mu \\le 64.5\\): \\[\nH_0:\\; \\mu \\le 64.5 \\;\\;\\text{vs.}\\;\\;H_a:\\; \\mu &gt; 64.5.\n\\] Note that the reference value, 64.5, is generally denoted as \\(\\mu_0\\). This test is referred to as a right-tailed test because we aim to show that the target parameter \\(\\mu\\) lies to the right of the reference value \\(\\mu_0\\).",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
+  },
+  {
+    "objectID": "Lab_11.html#choice-of-test",
+    "href": "Lab_11.html#choice-of-test",
+    "title": "Lab 11",
+    "section": "Choice of Test",
+    "text": "Choice of Test\nNow, let us explore our data vector \\(X\\) and record necessary components.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere, the sample size is large \\(n\\ge 30\\), so we can use the \\(z\\) test statistic: \\[\nZ^*=\\frac{\\bar{X}-\\mu_0}{\\sigma/\\sqrt{n}}\n\\] In particular, the population standard deviation \\(\\sigma\\) will be replaced by its sample counterpart, which we calculated earlier, as we are working with a large sample size.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
+  },
+  {
+    "objectID": "Lab_11.html#p-value",
+    "href": "Lab_11.html#p-value",
+    "title": "Lab 11",
+    "section": "p-value",
+    "text": "p-value\nOnce we have the test statistic, the next step is to calculate the corresponding p-value.\nIn a z-test, the p-value is essentially one of the tail-probabilities from the standard normal distribution. Since this test is a right-tailed test, we calculate the right-tail probability. In R, the function \\(\\texttt{pnorm()}\\) provides us the left-tail probability, so \\[\n\\text{p-value}=P[Z&gt;z^*]\\stackrel{\\textsf{R}}{=}\\texttt{1-pnorm(z.star)}.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that a small p-value indicates a strong evidence against the Null Hypothesis in favor of Alternative Hypothesis, allowing us to reject the null hypothesis. But, how small is small enough? This is determined by comparing the p-value to the significance level.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
+  },
+  {
+    "objectID": "Lab_11.html#conclusion-and-interpretation",
+    "href": "Lab_11.html#conclusion-and-interpretation",
+    "title": "Lab 11",
+    "section": "Conclusion and Interpretation",
+    "text": "Conclusion and Interpretation\nIn this case, we fail to reject the null hypothesis. Interpretation should be based on the context of the problem:\n“Given the significance level 0.1, there is not enough evidence that the population average height of all Lehigh female students is greater than 64.5 inches.”.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
+  },
+  {
+    "objectID": "Lab_11.html#example-sub-group",
+    "href": "Lab_11.html#example-sub-group",
+    "title": "Lab 11",
+    "section": "Example: Sub-Group",
+    "text": "Example: Sub-Group\nNow, let us consider another population parameter: the population average height of all Lehigh female students whose favorite professional sports is NBA. Regarding this target parameter, we wish to perform exactly the same right-tailed test. Let us explore the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that the sample size of new data set is small (\\(n&lt;30\\)). In this case, we have to use the \\(t\\)-test. (Assume the population distribution is normal.) \\[\nT^*=\\frac{\\bar{X}-\\mu_0}{s/\\sqrt{n}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor the p-value calculation, we now need to compute one of the tail probabilities of the t-distribution with the corresponding degrees of freedom (\\(n-1\\)). The t-table we have used in class does not provide the exact probability, but the R function \\(\\texttt{pt()}\\) can be used for the exact computation. Since this is still right-tailed test: \\[\n\\text{p-value}=P[T&gt;t^*]\\stackrel{\\textsf{R}}{=}\\texttt{1-pt(t.star,n-1)}.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that we can reject the null hypothesis in this sub-group analysis. Therefore, “Given the significance level 0.1, there is enough evidence that the population average height of all Lehigh female students who loves NBA is greater than 64.5 inches.”."
+  },
+  {
+    "objectID": "Lab_11.html#small-sample-case",
+    "href": "Lab_11.html#small-sample-case",
+    "title": "Lab 11",
+    "section": "Small Sample Case",
+    "text": "Small Sample Case\nNow, let us consider a slightly different population parameter: the population average height of all Lehigh female students whose favorite professional sports is NBA. Regarding this target parameter, we wish to perform exactly the same right-tailed test. Let us explore the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that the sample size of new data set is small (\\(n&lt;30\\)). In this case, we have to use the \\(t\\)-test. (Let us assume the population distribution is normal to satisfy the assumption.) \\[\nT^*=\\frac{\\bar{X}-\\mu_0}{s/\\sqrt{n}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor the p-value calculation, we now need to compute one of the tail probabilities of the t-distribution with the corresponding \\(n-1\\) degrees of freedom. The t-table we use in class does not provide the exact probability, but the R function \\(\\texttt{pt()}\\) can be used for the precise computation. Since this is still right-tailed test: \\[\n\\text{p-value}=P[T&gt;t^*]\\stackrel{\\textsf{R}}{=}\\texttt{1-pt(t.star,n-1)}.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that we can reject the null hypothesis in this sub-group analysis. Therefore, “Given the significance level 0.1, there is enough evidence that the population average height of all Lehigh female students who like the NBA is greater than 64.5 inches.”.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 11"
+    ]
   }
 ]
