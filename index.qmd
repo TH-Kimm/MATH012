@@ -25,7 +25,7 @@ Although you can [download](https://posit.co/downloads/) and run **R** locally o
 
 ## R-Lab procedure during recitations
 
-In most recitation sessions, we will dedicate about 20 minutes to a lab focused on **R** programming and data analysis.
+In most recitation sessions, we will dedicate about 15 - 20 minutes to a lab focused on **R** programming and data analysis.
 
 -   Each lab includes a brief tutorial that you can easily follow.
 -   At the end of each lab, you'll find a few questions that you can answer based on the lab materials.
