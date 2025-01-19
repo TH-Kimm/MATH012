@@ -6,39 +6,7 @@ webr:
 
 # Introduction to R (II)
 
-## Variable Names
 
-While defining variables (objects), the significance of variable naming in programming is immense. Selecting clear and descriptive names for variables is vital for several reasons:
-
--   **Readability and Understandability**: Clear and descriptive variable names enhance the readability and comprehension of your code.
-
--   **Maintainability and Debugging**: Thoughtfully named variables simplify code maintenance and debugging processes.
-
--   **Collaboration**: In a team setting, consistent and clear variable naming conventions are crucial for effective collaboration.
-
--   **Self-Documentation**: Meaningful variable names serve as self-documentation, making the code more intuitive.
-
--   **Code Reusability**: Adopting good variable naming practices supports greater code reusability.
-
-Sometimes, clear naming requires using multiple words in a variable name, but spaces are not allowed. A common approach is to separate words with underscores, as demonstrated previously, such as $\texttt{morning\_temperature\_august}$.
-
-#### Example
-
-Let us assign relevant names to the following variables:
-
-| \#  |            Feature             | Value  |
-|:---:|:------------------------------:|:------:|
-|  1  | Body temperature in Fahrenheit |   98   |
-|  2  |    Number of shoes for Sam     |   11   |
-|  3  | Weight of a elephant in pounds  | 12,050 |
-
-```{webr-r}
-# 1
-
-# 2
-
-# 3
-```
 
 ## Basic **R** Object: Vector
 
