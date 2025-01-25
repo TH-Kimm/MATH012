@@ -25,7 +25,12 @@
     "href": "Lab_2.html",
     "title": "Lab 2",
     "section": "",
-    "text": "A vector is a sequence of finite elements and serves as the basic object in R. For example, a single number like “3” is considered a vector of length 1. To create a vector, we use the \\(\\texttt{c()}\\) function, where the name is an abbreviation of “combine.”\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAs learned, we can assign a descriptive variable name to the vector:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOne of the powerful features of vectors in R is the ability to perform the same calculation on every element with a single command, i.e., element-wise operation. For example, when converting weights from pounds to kilograms, we can multiply 0.454. This operation can be applied to all the numbers in a vector simultaneously:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTo access a specific number in a vector, you add square brackets after the vector name and place the index of the desired element inside the brackets. The “index” refers to the position of the item within the vector, with the first element having an index of 1, and so on. For example, the third element of the vector \\(\\texttt{weight\\_kg}\\) is:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nAs we discussed in class, we can use the “mean” and “median” to measure the central tendency of our data, with the mode also being an option in some cases. In R, the functions \\(\\texttt{mean()}\\) and \\(\\texttt{median()}\\) can be used to obtain the mean and median of a vector, respectively.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWe can also easily calculate the summation and length of a vector by using the functions, \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCompute the mean of \\(\\texttt{weight\\_kg}\\) by using \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\) functions. (Do not use \\(\\texttt{mean()}\\) function.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nBMI is a measurement of a person’s leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: \\[\\textbf{BMI}=703\\times \\frac{\\text{weight (lb)}}{ \\text{(height (in)})^2}\\] Suppose the variable \\(\\texttt{weight\\_pound}\\) is the weights of seven Lehigh students. Also, the corresponding height observations in inches are \\[70,\\;72,\\;72.5,\\;66,\\;74,\\;66.5,\\;72.\\]\n\n\n\nSave the height observations in a variable by using a descriptive name. (Uncomment and use the data.)\nCalculate the BMIs of the seven students.\nCompute the mean and median of the BMIs .\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPeople often underreport how frequently they engage in antisocial behaviors like peeing in swimming pools. Urine, beyond being unpleasant, reacts with chlorine to produce toxic chemicals like trichloramine, a common cause of skin irritation for swimmers. Researchers found that the artificial sweetener ACE, which passes through the body unmetabolized and in consistent amounts, can be used to measure the amount of urine in a pool by analyzing ACE concentrations. Below is a list of ACE concentrations (measured in ng/L) from 15 different pools in the US: \\[ 438,  211,  640,   85,   83,  350,  138,   49,  465,  489,55, 1086,   71, 1058,  247.\\]\n\n\n\nIn R, create a vector of these data and give it an appropriate name. (Uncomment and use the data.)\nWhat is the mean ACE concentration in these 15 pools?\nSince urine contains an average ACE of 4000 ng/ml, we can obtain the urin concentration (ml/L) by dividing each value by 4000 from the ACE concentration data. Compute the urin concentration and it a suitable name.\nWhat is the mean urine concentration (in ml) per liter?\nUse R to calculate the average amount of urine (in ml) in a 500,000 L pool.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "A vector is a sequence of finite elements and serves as the basic object in R. For example, a single number like “3” is considered a vector of length 1. It is a highly relevant object from a statistical perspective, as it allows us to store variables in vector objects. To create a vector, we use the \\(\\texttt{c()}\\) function, where the name is an abbreviation of “combine”. For example, suppose we need to create a vector for a set of elements representing weight observations.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAs learned, we can assign a descriptive variable name to the vector:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRemark: We can condense the double line process (saving and printing) into a single line by wrapping the assignment process with the \\(\\texttt{print()}\\) function.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIf we want to create an integer vector, then the \\(\\texttt{:}\\) operator or \\(\\texttt{seq()}\\) function offer efficient solutions.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOf course, we can combine two vectors by using the \\(\\texttt{c()}\\) function again.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nOne of the powerful features of vectors in R is the ability to perform the same calculation on every element with a single command, i.e., element-wise operation. For example, when converting weights from pounds to kilograms, we can multiply 0.454. This operation can be applied to all the numbers in a vector simultaneously:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe operation between two vectors is also element-wise in R.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nTo access a specific element in a vector, you add square brackets after the vector name and place the index of the desired element inside the brackets. The “index” refers to the position of the item within the vector, with the first element having an index of 1, and so on. For example, suppose we want to subset the vector \\(\\texttt{weight\\_pound}\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIt is also possible to extract multiple elements in a vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLastly, we can exclude particular elements.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nConsider the vector \\(\\texttt{weight\\_update}\\):\n\nExtract the fifth and sixth elements.\nExtract the last four elemtns.\nExtract all but the last elements.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\nWhen the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the function to obtain this information.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWe can also easily calculate the summation of a vector by using the functions, \\(\\texttt{sum()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nAs we discussed in class, we can use the “mean” and “median” to measure the central tendency of our data, with the mode also being an option in some cases. In R, the functions \\(\\texttt{mean()}\\) and \\(\\texttt{median()}\\) can be used to obtain the mean and median of a vector, respectively.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCompute the mean of \\(\\texttt{weight\\_kg}\\) by using \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\) functions. (Do not use \\(\\texttt{mean()}\\) function.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\nBMI is a measurement of a person’s leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: \\[\\textbf{BMI}=703\\times \\frac{\\text{weight (lb)}}{ \\text{(height (in)})^2}\\] Suppose the previously obtained vector \\(\\texttt{weight\\_pound}\\) is the weights of seven Lehigh students. Also, the corresponding height observations in inches are \\[70,\\;72,\\;72.5,\\;66,\\;74,\\;66.5,\\;72.\\]\n\n\n\nSave the height observations in a vector by using a descriptive name.\nCalculate the BMIs of the seven students.\nCompute the mean and median of the BMIs.\nCompute the mean BMI of the first three students and the mean BMI of the last four students.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
   },
   {
     "objectID": "about.html",
@@ -118,28 +123,48 @@
     "href": "Lab_2.html#basic-r-object-vector",
     "title": "Lab 2",
     "section": "",
-    "text": "A vector is a sequence of finite elements and serves as the basic object in R. For example, a single number like “3” is considered a vector of length 1. To create a vector, we use the \\(\\texttt{c()}\\) function, where the name is an abbreviation of “combine.”\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAs learned, we can assign a descriptive variable name to the vector:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOne of the powerful features of vectors in R is the ability to perform the same calculation on every element with a single command, i.e., element-wise operation. For example, when converting weights from pounds to kilograms, we can multiply 0.454. This operation can be applied to all the numbers in a vector simultaneously:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTo access a specific number in a vector, you add square brackets after the vector name and place the index of the desired element inside the brackets. The “index” refers to the position of the item within the vector, with the first element having an index of 1, and so on. For example, the third element of the vector \\(\\texttt{weight\\_kg}\\) is:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "A vector is a sequence of finite elements and serves as the basic object in R. For example, a single number like “3” is considered a vector of length 1. It is a highly relevant object from a statistical perspective, as it allows us to store variables in vector objects. To create a vector, we use the \\(\\texttt{c()}\\) function, where the name is an abbreviation of “combine”. For example, suppose we need to create a vector for a set of elements representing weight observations.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAs learned, we can assign a descriptive variable name to the vector:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRemark: We can condense the double line process (saving and printing) into a single line by wrapping the assignment process with the \\(\\texttt{print()}\\) function.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIf we want to create an integer vector, then the \\(\\texttt{:}\\) operator or \\(\\texttt{seq()}\\) function offer efficient solutions.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOf course, we can combine two vectors by using the \\(\\texttt{c()}\\) function again.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
   },
   {
     "objectID": "Lab_2.html#measure-of-center",
     "href": "Lab_2.html#measure-of-center",
     "title": "Lab 2",
     "section": "",
-    "text": "As we discussed in class, we can use the “mean” and “median” to measure the central tendency of our data, with the mode also being an option in some cases. In R, the functions \\(\\texttt{mean()}\\) and \\(\\texttt{median()}\\) can be used to obtain the mean and median of a vector, respectively.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "As we discussed in class, we can use the “mean” and “median” to measure the central tendency of our data, with the mode also being an option in some cases. In R, the functions \\(\\texttt{mean()}\\) and \\(\\texttt{median()}\\) can be used to obtain the mean and median of a vector, respectively.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCompute the mean of \\(\\texttt{weight\\_kg}\\) by using \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\) functions. (Do not use \\(\\texttt{mean()}\\) function.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
   },
   {
     "objectID": "Lab_2.html#summation-and-length",
     "href": "Lab_2.html#summation-and-length",
     "title": "Lab 2",
     "section": "",
-    "text": "We can also easily calculate the summation and length of a vector by using the functions, \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCompute the mean of \\(\\texttt{weight\\_kg}\\) by using \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\) functions. (Do not use \\(\\texttt{mean()}\\) function.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "We can also easily calculate the summation and length of a vector by using the functions, \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCompute the mean of \\(\\texttt{weight\\_kg}\\) by using \\(\\texttt{sum()}\\) and \\(\\texttt{length()}\\) functions. (Do not use \\(\\texttt{mean()}\\) function.)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
   },
   {
     "objectID": "Lab_2.html#lab-questions",
     "href": "Lab_2.html#lab-questions",
     "title": "Lab 2",
     "section": "",
-    "text": "BMI is a measurement of a person’s leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: \\[\\textbf{BMI}=703\\times \\frac{\\text{weight (lb)}}{ \\text{(height (in)})^2}\\] Suppose the variable \\(\\texttt{weight\\_pound}\\) is the weights of seven Lehigh students. Also, the corresponding height observations in inches are \\[70,\\;72,\\;72.5,\\;66,\\;74,\\;66.5,\\;72.\\]\n\n\n\nSave the height observations in a variable by using a descriptive name. (Uncomment and use the data.)\nCalculate the BMIs of the seven students.\nCompute the mean and median of the BMIs .\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPeople often underreport how frequently they engage in antisocial behaviors like peeing in swimming pools. Urine, beyond being unpleasant, reacts with chlorine to produce toxic chemicals like trichloramine, a common cause of skin irritation for swimmers. Researchers found that the artificial sweetener ACE, which passes through the body unmetabolized and in consistent amounts, can be used to measure the amount of urine in a pool by analyzing ACE concentrations. Below is a list of ACE concentrations (measured in ng/L) from 15 different pools in the US: \\[ 438,  211,  640,   85,   83,  350,  138,   49,  465,  489,55, 1086,   71, 1058,  247.\\]\n\n\n\nIn R, create a vector of these data and give it an appropriate name. (Uncomment and use the data.)\nWhat is the mean ACE concentration in these 15 pools?\nSince urine contains an average ACE of 4000 ng/ml, we can obtain the urin concentration (ml/L) by dividing each value by 4000 from the ACE concentration data. Compute the urin concentration and it a suitable name.\nWhat is the mean urine concentration (in ml) per liter?\nUse R to calculate the average amount of urine (in ml) in a 500,000 L pool.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "BMI is a measurement of a person’s leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: \\[\\textbf{BMI}=703\\times \\frac{\\text{weight (lb)}}{ \\text{(height (in)})^2}\\] Suppose the previously obtained vector \\(\\texttt{weight\\_pound}\\) is the weights of seven Lehigh students. Also, the corresponding height observations in inches are \\[70,\\;72,\\;72.5,\\;66,\\;74,\\;66.5,\\;72.\\]\n\n\n\nSave the height observations in a vector by using a descriptive name.\nCalculate the BMIs of the seven students.\nCompute the mean and median of the BMIs.\nCompute the mean BMI of the first three students and the mean BMI of the last four students.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
   },
   {
     "objectID": "Lab_3.html",
@@ -1066,6 +1091,54 @@
       "Home",
       "Lab Sessions",
       "Lab 1"
+    ]
+  },
+  {
+    "objectID": "Lab_2.html#vector-operations-in-r",
+    "href": "Lab_2.html#vector-operations-in-r",
+    "title": "Lab 2",
+    "section": "",
+    "text": "One of the powerful features of vectors in R is the ability to perform the same calculation on every element with a single command, i.e., element-wise operation. For example, when converting weights from pounds to kilograms, we can multiply 0.454. This operation can be applied to all the numbers in a vector simultaneously:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe operation between two vectors is also element-wise in R.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "Lab_2.html#vector-subsetting",
+    "href": "Lab_2.html#vector-subsetting",
+    "title": "Lab 2",
+    "section": "",
+    "text": "To access a specific element in a vector, you add square brackets after the vector name and place the index of the desired element inside the brackets. The “index” refers to the position of the item within the vector, with the first element having an index of 1, and so on. For example, suppose we want to subset the vector \\(\\texttt{weight\\_pound}\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIt is also possible to extract multiple elements in a vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLastly, we can exclude particular elements.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nConsider the vector \\(\\texttt{weight\\_update}\\):\n\nExtract the fifth and sixth elements.\nExtract the last four elemtns.\nExtract all but the last elements.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "Lab_2.html#length",
+    "href": "Lab_2.html#length",
+    "title": "Lab 2",
+    "section": "",
+    "text": "When the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the function to obtain this information.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "Lab_2.html#summation",
+    "href": "Lab_2.html#summation",
+    "title": "Lab 2",
+    "section": "",
+    "text": "We can also easily calculate the summation of a vector by using the functions, \\(\\texttt{sum()}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
     ]
   }
 ]
