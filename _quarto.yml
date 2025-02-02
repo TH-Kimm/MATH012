@@ -14,7 +14,8 @@ website:
         text: Lab 1
       - href: Lab_2.qmd
         text: Lab 2
-        
+      - href: Lab_3.qmd
+        text: Lab 3       
   favicon: lehigh-icon.ico
         
   sidebar: 
@@ -24,7 +25,8 @@ website:
           contents:
             - Lab_1.qmd
             - Lab_2.qmd
-            
+            - Lab_3.qmd
+
 filters:
   - webr
       

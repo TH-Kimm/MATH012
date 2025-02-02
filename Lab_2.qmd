@@ -3,12 +3,16 @@ title: "Lab 2"
 webr:
   show-startup-message: true
 ---
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
 
 # Introduction to R (II)
 
 ## Basic **R** Object: Vector
 
-A vector is a sequence of finite elements and serves as the basic object in **R**. For example, a single number like "3" is considered a vector of length 1. It is a highly relevant object from a statistical perspective, as it allows us to store variables in vector objects. To create a vector, we use the $\texttt{c()}$ function, where the name is an abbreviation of **"combine"**. For example, suppose we need to create a vector for a set of elements representing weight observations.
+A vector is a sequence of finite elements and serves as the basic object in **R**. For example, a single number like "3" is considered a vector of length 1. It is a highly relevant object from a statistical perspective, as it allows us to store variables in vector objects. To create a vector, we use the $\txt{c()}$ function, where the name is an abbreviation of **"combine"**. For example, suppose we need to create a vector for a set of elements representing weight observations.
 
 ```{webr-r}
 c(150.2,178.6,190,144.3,202.2,165,163.5)
@@ -21,18 +25,22 @@ weight_pound <- c(150.2,178.6,190,144.3,202.2,165,163.5)
 weight_pound
 ```
 
-Remark: We can condense the double line process (saving and printing) into a single line by wrapping the assignment process with the $\texttt{print()}$ function.
+Remark: We can condense the double line process (saving and printing) into a single line by wrapping the assignment process with the $\txt{print()}$ function.
 
 ```{webr-r}
 print(weight_pound <- c(150.2,178.6,190,144.3,202.2,165,163.5))
 ```
-If we want to create an integer vector, then the $\texttt{:}$ operator or $\texttt{seq()}$ function offer efficient solutions.
+
+If we want to create an integer vector, then the $\txt{:}$ operator or $\txt{seq()}$ function offer efficient solutions.
+
 ```{webr-r}
 print(loss <- 1:7)
 print(half_sequence <- seq(1,10,by=0.5))
 ## Use ?seq for further information.
 ```
-Of course, we can combine two vectors by using the $\texttt{c()}$ function again.
+
+Of course, we can combine two vectors by using the $\txt{c()}$ function again.
+
 ```{webr-r}
 c(weight_pound,half_sequence)
 ```
@@ -55,7 +63,7 @@ print(weight_update <- weight_kg - loss)
 
 ## Vector Subsetting
 
-To access a specific element in a vector, you add square brackets after the vector name and place the index of the desired element inside the brackets. The "index" refers to the position of the item within the vector, with the first element having an index of 1, and so on. For example, suppose we want to subset the vector $\texttt{weight\_pound}$:
+To access a specific element in a vector, you add square brackets after the vector name and place the index of the desired element inside the brackets. The "index" refers to the position of the item within the vector, with the first element having an index of 1, and so on. For example, suppose we want to subset the vector $\txt{weight\_pound}$:
 
 ```{webr-r}
 weight_pound
@@ -64,6 +72,7 @@ weight_pound[3]
 ```
 
 It is also possible to extract multiple elements in a vector.
+
 ```{webr-r}
 weight_pound
 ## the first three elements.
@@ -71,7 +80,9 @@ weight_pound[1:3]
 ## The first and last elements.
 weight_pound[c(1,7)]
 ```
+
 Lastly, we can exclude particular elements.
+
 ```{webr-r}
 weight_pound
 ## exclude the first element.
@@ -82,11 +93,12 @@ weight_pound[-c(1,7)]
 
 #### Example
 
-Consider the vector $\texttt{weight\_update}$:
+Consider the vector $\txt{weight\_update}$:
 
-1. Extract the fifth and sixth elements.
-2. Extract the last four elemtns.
-3. Extract all but the last elements.
+1.  Extract the fifth and sixth elements.
+2.  Extract the last four elemtns.
+3.  Extract all but the last elements.
+
 ```{webr-r}
 ## 1
 
@@ -97,7 +109,7 @@ Consider the vector $\texttt{weight\_update}$:
 
 ## Length
 
-When the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the \texttt{length()} function to obtain this information.
+When the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the \txt{length()} function to obtain this information.
 
 ```{webr-r}
 length(weight_pound)
@@ -106,28 +118,25 @@ length(c(weight_pound,half_sequence))
 
 ## Summation
 
-We can also easily calculate the summation of a vector by using the functions, $\texttt{sum()}$.
+We can also easily calculate the summation of a vector by using the functions, $\txt{sum()}$.
 
 ```{webr-r}
 sum(weight_pound)
 sum(weight_kg)
 ```
 
-
 ## Measure of Center
 
-As we discussed in class, we can use the "mean" and "median" to measure the central tendency of our data, with the mode also being an option in some cases. In **R**, the functions $\texttt{mean()}$ and $\texttt{median()}$ can be used to obtain the mean and median of a vector, respectively.
+As we discussed in class, we can use the "mean" and "median" to measure the central tendency of our data, with the mode also being an option in some cases. In **R**, the functions $\txt{mean()}$ and $\txt{median()}$ can be used to obtain the mean and median of a vector, respectively.
 
 ```{webr-r}
 mean(weight_pound)
 median(weight_pound)
 ```
 
-
-
 #### Example
 
-Compute the mean of $\texttt{weight\_kg}$ by using $\texttt{sum()}$ and $\texttt{length()}$ functions. (Do not use $\texttt{mean()}$ function.)
+Compute the mean of $\txt{weight\_kg}$ by using $\txt{sum()}$ and $\txt{length()}$ functions. (Do not use $\txt{mean()}$ function.)
 
 ```{webr-r}
 # mean weight in kilograms
@@ -136,12 +145,11 @@ Compute the mean of $\texttt{weight\_kg}$ by using $\texttt{sum()}$ and $\texttt
 
 ## Lab Questions
 
-1.  BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: $$\textbf{BMI}=703\times \frac{\text{weight (lb)}}{ \text{(height (in)})^2}$$ Suppose the previously obtained vector $\texttt{weight\_pound}$ is the weights of seven Lehigh students. Also, the corresponding height observations in inches are $$70,\;72,\;72.5,\;66,\;74,\;66.5,\;72.$$
-
+1.  BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: $$\textbf{BMI}=703\times \frac{\text{weight (lb)}}{ \text{(height (in)})^2}$$ Suppose the previously obtained vector $\txt{weight\_pound}$ is the weights of seven Lehigh students. Also, the corresponding height observations in inches are $$70,\;72,\;72.5,\;66,\;74,\;66.5,\;72.$$
 
 <!-- -->
 
-i)  Save the height observations in a vector by using a descriptive name. 
+i)  Save the height observations in a vector by using a descriptive name.
 ii) Calculate the BMIs of the seven students.
 iii) Compute the mean and median of the BMIs.
 iv) Compute the mean BMI of the first three students and the mean BMI of the last four students.
@@ -155,6 +163,8 @@ iv) Compute the mean BMI of the first three students and the mean BMI of the las
 
 ## iv
 ```
+
+````{=html}
 <!--
 2. People often underreport how frequently they engage in antisocial behaviors like peeing in swimming pools. Urine, beyond being unpleasant, reacts with chlorine to produce toxic chemicals like trichloramine, a common cause of skin irritation for swimmers. Researchers found that the artificial sweetener ACE, which passes through the body unmetabolized and in consistent amounts, can be used to measure the amount of urine in a pool by analyzing ACE concentrations.
 Below is a list of ACE concentrations (measured in ng/L) from 15 different pools in the US:
@@ -186,3 +196,4 @@ v) Use R to calculate the average amount of urine (in ml) in a 500,000 L pool.
 
 ```
  -->
+````
