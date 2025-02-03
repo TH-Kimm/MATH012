@@ -138,7 +138,7 @@ i)  The sample variance can be computed from the following formula: $$s^2=\frac{
 
 ```
 
-ii) Additionally, we have learned an alternative formula for variance calculation (also known as the 'computing formula'): $$s^2=\frac{1}{n-1}\left\{\sum_{i=1}^nx_i^2-\bar{x}^2\right\}.$$ Similar to the previous case, calculate the variance of $\txt{PL}$ using this formula, based on the $\txt{mean()}$, $\txt{sum()}$, and $\txt{length()}$ functions. Verify that your result matches the value provided in 1-ii.
+ii) Additionally, we have learned an alternative formula for variance calculation (also known as the 'computing formula'): $$s^2=\frac{1}{n-1}\left\{\sum_{i=1}^nx_i^2-n\bar{x}^2\right\}.$$ Similar to the previous case, calculate the variance of $\txt{PL}$ using this formula, based on the $\txt{mean()}$, $\txt{sum()}$, and $\txt{length()}$ functions. Verify that your result matches the value provided in 1-ii.
 
 ```{webr-r}
 
