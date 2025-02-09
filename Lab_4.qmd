@@ -376,13 +376,13 @@ i)  Choose a relevant graphical display to summarize the information of $\txt{Sh
 
 ```
 
-i)  Choose a relevant graphical display to summarize the information of $\txt{Shoes}$ in terms of $\txt{Gender}$, and provide the plot.
+ii)  Choose a relevant graphical display to summarize the information of $\txt{Shoes}$ in terms of $\txt{Gender}$, and provide the plot.
 
 ```{webr-r}
 
 ```
 
-ii) Which gender has a higher central value for $\txt{Shoes}$? Which gender shows greater variability? What can we infer about the number of pairs of shoes with respect to gender?
+iii) Which gender has a higher central value for $\txt{Shoes}$? Which gender shows greater variability? What can we infer about the number of pairs of shoes with respect to gender?
 
 ```{webr-r}
 
