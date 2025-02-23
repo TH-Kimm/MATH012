@@ -365,60 +365,35 @@
     "href": "Lab_5.html#mlb-data-2023-regular-season-team-statistics",
     "title": "Lab 5",
     "section": "MLB Data: 2023 Regular Season Team Statistics",
-    "text": "MLB Data: 2023 Regular Season Team Statistics\nWith MLB wrapping up its 2024 regular season, let’s use the complete dataset from the 2023 regular season. As depicted in the movie Moneyball (2011), the use of baseball statistics and analytics to measure player and team performance has become widespread. While numerous baseball analytics are used in the field, we will focus on some of the key statistics that measure the offensive and defensive capabilities of MLB teams:\n\n01. Team:  Name of the team \n02. Win_P: Winning Percentage, \"(# of Wins\"/ \"Total # of games)*100\".\n03. RPG:   Runs per Game, the average number of runs a team or player scores in each game. \n04. BA:    Batting Average, \"the # of times a batter hits a ball and reaches the base\"/\"the # of at bats by a batter\".   \n05. OPS:   On-base plus slugging, the sum of on-base percentage and slugging percentage. \n06. ORPG:  Opponent Runs per Game, the runs per game by the opponent.   \n07. ERA:   Earned Run Average, the number of earned runs a pitcher allows per nine innings.    \n08. WHIP:  Walks And Hits Per Inning Pitched, the statistic shows how well a pitcher has kept runners off the basepaths, one of his main goals.\n\nIn the data set, the variable \\(\\texttt{Win\\_P}\\) measures a MLB team’s performance throughout the 2023 season. For offensive capability, we can use the variables \\(\\texttt{RPG}\\), \\(\\texttt{BA}\\), and \\(\\texttt{OPS}\\); whereas, for defensive capability, we can use \\(\\texttt{ORPG}\\), \\(\\texttt{ERA}\\), and \\(\\texttt{WHIP}\\).",
-    "crumbs": [
-      "Home",
-      "Lab Sessions",
-      "Lab 5"
-    ]
+    "text": "MLB Data: 2023 Regular Season Team Statistics\nIn this lab, let’s use the complete dataset from the 2023 regular season. As depicted in the movie Moneyball (2011), the use of baseball statistics and analytics to measure player and team performance has become widespread. While numerous baseball analytics are used in the field, we will focus on some of the key statistics that measure the offensive and defensive capabilities of MLB teams:\n\n01. Team:  Name of the team \n02. Win_P: Winning Percentage, \"(# of Wins\"/ \"Total # of games)*100\".\n03. RPG:   Runs per Game, the average number of runs a team or player scores in each game. \n04. BA:    Batting Average, \"the # of times a batter hits a ball and reaches the base\"/\"the # of at bats by a batter\".   \n05. OPS:   On-base plus slugging, the sum of on-base percentage and slugging percentage. \n06. ORPG:  Opponent Runs per Game, the runs per game by the opponent.   \n07. ERA:   Earned Run Average, the number of earned runs a pitcher allows per nine innings.    \n08. WHIP:  Walks And Hits Per Inning Pitched, the statistic shows how well a pitcher has kept runners off the basepaths, one of his main goals.\n\nIn the data set, the variable \\(\\texttt{\\color{brown}{Win\\_P}}\\) measures an MLB team’s performance throughout the 2023 season. For offensive capability, we can use the variables \\(\\texttt{\\color{brown}{RPG}}\\), \\(\\texttt{\\color{brown}{BA}}\\), and \\(\\texttt{\\color{brown}{OPS}}\\); whereas, for defensive capability, we can use \\(\\texttt{\\color{brown}{ORPG}}\\), \\(\\texttt{\\color{brown}{ERA}}\\), and \\(\\texttt{\\color{brown}{WHIP}}\\)."
   },
   {
     "objectID": "Lab_5.html#offensive-capability",
     "href": "Lab_5.html#offensive-capability",
     "title": "Lab 5",
     "section": "Offensive Capability",
-    "text": "Offensive Capability\nIn baseball, offensive capability is closely tied to the performance of batters. We can expect a positive association between offensive measures and winning percentage. This relationship can be quantified using correlation, which provides a unit-less value between -1 and 1. A value close to 1 or -1 indicates a strong positive or negative association, respectively, while a value near 0 indicates no linear association between the variables. In R, the function \\(\\texttt{cor()}\\) can be used to calculate correlation:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBased on the correlation value, we can describe the level of linear association (e.g., a moderately high positive relationship). However, it’s also important to visually confirm the actual association, as this helps us better understand the data. For this purpose, we can use the \\(\\texttt{plot()}\\) function in R:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can rewrite labels by using the \\(\\texttt{xlab}\\) and \\(\\texttt{ylab}\\) arguments.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAlso, change the plotting character and colors with the \\(\\texttt{col}\\) argument.\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Lab Sessions",
-      "Lab 5"
-    ]
+    "text": "Offensive Capability\nIn baseball, offensive capability is closely tied to the performance of batters. We can expect a positive association between offensive measures and winning percentage. This relationship can be quantified using correlation, which provides a unit-less value between -1 and 1. A value close to 1 or -1 indicates a strong positive or negative association, respectively, while a value near 0 indicates no linear association between the variables. In , the function \\(\\texttt{\\color{brown}{cor()}}\\) can be used to calculate correlation:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBased on the correlation value, we can describe the level of linear association (e.g., a moderately high positive relationship). However, it’s also important to visually confirm the actual association, as this helps us better understand the data. For this purpose, we can use the \\(\\texttt{\\color{brown}{plot()}}\\) function in R:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can rewrite labels by using the \\(\\texttt{\\color{brown}{xlab}}\\) and \\(\\texttt{\\color{brown}{ylab}}\\) arguments.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAlso, change the plotting character and colors with the \\(\\texttt{\\color{brown}{col}}\\) argument.\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Lab_5.html#defensive-capability",
     "href": "Lab_5.html#defensive-capability",
     "title": "Lab 5",
     "section": "Defensive Capability",
-    "text": "Defensive Capability\nUnlike offensive capability, defensive capability in baseball is closely tied to the performance of pitchers. For defensive measures, smaller values indicate better performance, leading us to expect a negative association with winning percentage. For example, \\(\\texttt{ERA}\\) (Earned Run Average) is a classic measure of a pitcher’s ability. Let’s examine the correlation and create a scatter plot to confirm this relationship.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Lab Sessions",
-      "Lab 5"
-    ]
+    "text": "Defensive Capability\nUnlike offensive capability, defensive capability in baseball is closely tied to the performance of pitchers. For defensive measures, smaller values indicate better performance, leading us to expect a negative association with winning percentage. For example, \\(\\texttt{\\color{brown}{ERA}}\\) (Earned Run Average) is a classic measure of a pitcher’s ability. Let’s examine the correlation and create a scatter plot to confirm this relationship.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Lab_5.html#overall-capability",
     "href": "Lab_5.html#overall-capability",
     "title": "Lab 5",
     "section": "Overall Capability",
-    "text": "Overall Capability\nThe variables ‘runs per game’ and ‘opponent runs per game’ are valid offensive and defensive metrics in baseball. Let’s examine the correlation and create scatter plots to confirm their relationship.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow, let us want to combine these two analytics to measure the overall capability of a MLB team. The idea is very simple. By subtracting \\(\\texttt{ORPG}\\) from \\(\\texttt{RPG}\\), we quantify the actual “net runs per game” compared to opponent team: \\[\\texttt{NRPG}=\\texttt{RPG}-\\texttt{ORPG}.\\] Please create the new variable in R, and check the correlation and display the scatter plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDo you think the created \\(\\texttt{NRPG}\\) would be a good overall performance measure?",
-    "crumbs": [
-      "Home",
-      "Lab Sessions",
-      "Lab 5"
-    ]
+    "text": "Overall Capability\nThe variables ‘runs per game’ and ‘opponent runs per game’ are valid offensive and defensive metrics in baseball. Let’s examine the correlation and create scatter plots to confirm their relationship.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow, let’s say we want to combine these two analytics to measure the overall capability of an MLB team. The idea is very simple. By subtracting \\(\\texttt{\\color{brown}{ORPG}}\\) from \\(\\texttt{\\color{brown}{RPG}}\\), we quantify the actual “net runs per game” compared to opponent team: \\[\\texttt{\\color{brown}{NRPG}}=\\texttt{\\color{brown}{RPG}}-\\texttt{\\color{brown}{ORPG}}.\\] Please create the new variable in R, and check the correlation and display the scatter plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDo you think the created \\(\\texttt{\\color{brown}{NRPG}}\\) would be a good overall performance measure?"
   },
   {
     "objectID": "Lab_5.html#lab-questions",
     "href": "Lab_5.html#lab-questions",
     "title": "Lab 5",
     "section": "Lab Questions",
-    "text": "Lab Questions\n\nAmong the six variables, \\(\\texttt{RPG}\\), \\(\\texttt{BA}\\), \\(\\texttt{OPS}\\), \\(\\texttt{ORPG}\\), \\(\\texttt{ERA}\\), and \\(\\texttt{WHIP}\\), we wish to choose the best offensive measure and the best defensive measure, respectively. Please perform correlation analysis and provide your conclusion.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nNote that the \\(\\texttt{NRPG}\\) we have defined is just one way to combine \\(\\texttt{RPG}\\) and \\(\\texttt{ORPG}\\). We can also consider the “ratio of runs per game” by dividing \\(\\texttt{ORPG}\\) from \\(\\texttt{RPG}\\). Create a new variable \\(\\texttt{RRPG}\\) for the “ratio of runs per game” and compare the result with \\(\\texttt{NRPG}\\). Which one would be preferable to measure the overall performance of a MLB team?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Lab Sessions",
-      "Lab 5"
-    ]
+    "text": "Lab Questions\n\nAmong the six variables, \\(\\texttt{\\color{brown}{RPG}}\\), \\(\\texttt{\\color{brown}{BA}}\\), \\(\\texttt{\\color{brown}{OPS}}\\), \\(\\texttt{\\color{brown}{ORPG}}\\), \\(\\texttt{\\color{brown}{ERA}}\\), and \\(\\texttt{\\color{brown}{WHIP}}\\), we wish to choose the best offensive measure and the best defensive measure, respectively. Please perform correlation analysis and provide your conclusion.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nNote that the \\(\\texttt{\\color{brown}{NRPG}}\\) we have defined is just one way to combine \\(\\texttt{\\color{brown}{RPG}}\\) and \\(\\texttt{\\color{brown}{ORPG}}\\). We can also consider the “ratio of runs per game” by dividing \\(\\texttt{\\color{brown}{ORPG}}\\) from \\(\\texttt{\\color{brown}{RPG}}\\). Create a new variable \\(\\texttt{\\color{brown}{RRPG}}\\) for the “ratio of runs per game” and compare the result with \\(\\texttt{\\color{brown}{NRPG}}\\). Which one would be more effective in measuring the overall capability of an MLB team?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Lab_5.html#analyzing-bivariate-data-with-r-i",

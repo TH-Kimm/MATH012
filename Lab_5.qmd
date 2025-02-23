@@ -42,6 +42,10 @@ MLB_Data <- structure(list(Team = c("Arizona Diamondbacks", "Atlanta Braves",
 "tbl", "data.frame"))
 attach(MLB_Data)
 ```
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
 
 # Analyzing Bivariate Data with **R** (I)
 
@@ -49,7 +53,7 @@ There are many situations where we are interested in the relationship between tw
 
 ## MLB Data: 2023 Regular Season Team Statistics
 
-With MLB wrapping up its 2024 regular season, let's use the complete dataset from the 2023 regular season. As depicted in the movie Moneyball (2011), the use of baseball statistics and analytics to measure player and team performance has become widespread. While numerous baseball analytics are used in the field, we will focus on some of the key statistics that measure the offensive and defensive capabilities of MLB teams:
+In this lab, let's use the complete dataset from the 2023 regular season. As depicted in the movie Moneyball (2011), the use of baseball statistics and analytics to measure player and team performance has become widespread. While numerous baseball analytics are used in the field, we will focus on some of the key statistics that measure the offensive and defensive capabilities of MLB teams:
 
 ```{r,eval=FALSE}
 01. Team:  Name of the team 
@@ -63,31 +67,32 @@ With MLB wrapping up its 2024 regular season, let's use the complete dataset fro
 
 ```
 
-In the data set, the variable $\texttt{Win\_P}$ measures a MLB team's performance throughout the 2023 season. For offensive capability, we can use the variables $\texttt{RPG}$, $\texttt{BA}$, and $\texttt{OPS}$; whereas, for defensive capability, we can use $\texttt{ORPG}$, $\texttt{ERA}$, and $\texttt{WHIP}$.
+In the data set, the variable $\txt{Win\_P}$ measures an MLB team's performance throughout the 2023 season. For offensive capability, we can use the variables $\txt{RPG}$, $\txt{BA}$, and $\txt{OPS}$; whereas, for defensive capability, we can use $\txt{ORPG}$, $\txt{ERA}$, and $\txt{WHIP}$.
 
 ## Offensive Capability
 
-In baseball, offensive capability is closely tied to the performance of batters. We can expect a positive association between offensive measures and winning percentage. This relationship can be quantified using correlation, which provides a unit-less value between -1 and 1. A value close to 1 or -1 indicates a strong positive or negative association, respectively, while a value near 0 indicates no linear association between the variables. In R, the function $\texttt{cor()}$ can be used to calculate correlation:
+In baseball, offensive capability is closely tied to the performance of batters. We can expect a positive association between offensive measures and winning percentage. This relationship can be quantified using correlation, which provides a unit-less value between -1 and 1. A value close to 1 or -1 indicates a strong positive or negative association, respectively, while a value near 0 indicates no linear association between the variables. In \textbf{R}, the function $\txt{cor()}$ can be used to calculate correlation:
 
 ```{webr-r}
 cor(BA,Win_P)
 ```
 
-Based on the correlation value, we can describe the level of linear association (e.g., a moderately high positive relationship). However, it's also important to visually confirm the actual association, as this helps us better understand the data. For this purpose, we can use the $\texttt{plot()}$ function in R:
+Based on the correlation value, we can describe the level of linear association (e.g., a moderately high positive relationship). However, it's also important to visually confirm the actual association, as this helps us better understand the data. For this purpose, we can use the $\txt{plot()}$ function in R:
 
 ```{webr-r}
 plot(BA, Win_P, main="Relationship b/w Batting Average and Winning %")
 ```
 
-We can rewrite labels by using the $\texttt{xlab}$ and $\texttt{ylab}$ arguments. 
+We can rewrite labels by using the $\txt{xlab}$ and $\txt{ylab}$ arguments.
+
 ```{webr-r}
 plot(BA, Win_P, main="Relationship b/w Batting Average and Winning %",
      xlab="Batting average",ylab="Winning Percentage")
 ```
 
-Also, change the **p**lotting **ch**aracter and **col**ors with the $\texttt{col}$ argument.
+Also, change the **p**lotting **ch**aracter and **col**ors with the $\txt{col}$ argument.
 
-![](images/pch-symbols.png){fig-align="center" width=3in}
+![](images/pch-symbols.png){fig-align="center" width="3in"}
 
 ```{webr-r}
 # Refine labels and change the color: red=2, green=3, blue=3, etc
@@ -95,14 +100,15 @@ plot(BA, Win_P, main="Relationship b/w Batting Average and Winning %",
      xlab="Batting average",ylab="Winning Percentage",pch=0,col=2)
 # We can also use color options in palette
 plot(BA, Win_P, main="Relationship b/w Batting Average and Winning %",
-     xlab="Batting average",ylab="Winning Percentage",pch=19,col="darkgray")
+     xlab="Batting average",ylab="Winning Percentage",pch=19,col=blues9)
 ## R color palette: Uncomment the next line and run the code
 #colors()
 ```
 
 ## Defensive Capability
 
-Unlike offensive capability, defensive capability in baseball is closely tied to the performance of pitchers. For defensive measures, smaller values indicate better performance, leading us to expect a negative association with winning percentage. For example, $\texttt{ERA}$ (Earned Run Average) is a classic measure of a pitcher's ability. Let's examine the correlation and create a scatter plot to confirm this relationship.
+Unlike offensive capability, defensive capability in baseball is closely tied to the performance of pitchers. For defensive measures, smaller values indicate better performance, leading us to expect a negative association with winning percentage. For example, $\txt{ERA}$ (Earned Run Average) is a classic measure of a pitcher's ability. Let's examine the correlation and create a scatter plot to confirm this relationship.
+
 ```{webr-r}
 cor(ERA,Win_P)
 plot(ERA, Win_P, main="Relationship b/w Batting Average and Winning %",
@@ -112,29 +118,36 @@ plot(ERA, Win_P, main="Relationship b/w Batting Average and Winning %",
 ## Overall Capability
 
 The variables 'runs per game' and 'opponent runs per game' are valid offensive and defensive metrics in baseball. Let’s examine the correlation and create scatter plots to confirm their relationship.
+
 ```{webr-r}
+## Win_P vs. RPG
+
+
+## Win_P vs. ORPG
+
 
 ```
 
-Now, let us want to combine these two analytics to measure the overall capability of a MLB team. The idea is very simple. By subtracting $\texttt{ORPG}$ from $\texttt{RPG}$, we quantify the actual "net runs per game" compared to opponent team: 
-$$\texttt{NRPG}=\texttt{RPG}-\texttt{ORPG}.$$
-Please create the new variable in **R**, and check the correlation and display the scatter plot.
+Now, let's say we want to combine these two analytics to measure the overall capability of an MLB team. The idea is very simple. By subtracting $\txt{ORPG}$ from $\txt{RPG}$, we quantify the actual "net runs per game" compared to opponent team: $$\txt{NRPG}=\txt{RPG}-\txt{ORPG}.$$ Please create the new variable in **R**, and check the correlation and display the scatter plot.
+
 ```{webr-r}
+## Define new variable
 NRPG
 
 ```
-Do you think the created $\texttt{NRPG}$ would be a good overall performance measure?
 
+Do you think the created $\txt{NRPG}$ would be a good overall performance measure?
 
 ## Lab Questions
-1. Among the six variables, $\texttt{RPG}$, $\texttt{BA}$, $\texttt{OPS}$, $\texttt{ORPG}$, $\texttt{ERA}$, and $\texttt{WHIP}$, we wish to choose the best offensive measure and the best defensive measure, respectively. Please perform correlation analysis and provide your conclusion.  
+
+1.  Among the six variables, $\txt{RPG}$, $\txt{BA}$, $\txt{OPS}$, $\txt{ORPG}$, $\txt{ERA}$, and $\txt{WHIP}$, we wish to choose the best offensive measure and the best defensive measure, respectively. Please perform correlation analysis and provide your conclusion.\
+
 ```{webr-r}
 
 ```
 
-2. Note that the $\texttt{NRPG}$ we have defined is just one way to combine $\texttt{RPG}$ and $\texttt{ORPG}$. We can also consider the "ratio of runs per game" by dividing $\texttt{ORPG}$ from $\texttt{RPG}$. Create a new variable $\texttt{RRPG}$ for the "ratio of runs per game" and compare the result with $\texttt{NRPG}$. Which one would be preferable to measure the overall performance of a MLB team?
+2.  Note that the $\txt{NRPG}$ we have defined is just one way to combine $\txt{RPG}$ and $\txt{ORPG}$. We can also consider the "ratio of runs per game" by dividing $\txt{ORPG}$ from $\txt{RPG}$. Create a new variable $\txt{RRPG}$ for the "ratio of runs per game" and compare the result with $\txt{NRPG}$. Which one would be more effective in measuring the overall capability of an MLB team?
+
 ```{webr-r}
 
 ```
-
-
