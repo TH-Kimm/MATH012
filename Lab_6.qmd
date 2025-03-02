@@ -73,9 +73,9 @@ One of the key differences between correlation and regression analysis lies in h
 
 ## Regression equation
 
-We have learned the fomulas for the regression analysis: \begin{align*}
+We have learned the formulas for the regression analysis: \begin{align*}
   \hat{y}\;=&\; a+bx;\\ \text{such that}&\begin{cases}
-  b\;=& \frac{\sum (x-\bar{x})(y-\bar{y})}{\sum (x-\bar{x})^2};\\
+  b\;=& \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2};\\
   a\;=& \bar{y}-b\bar{x},\end{cases}
 \end{align*} where $y$ is the response variable and $x$ is the explanatory variable.\
 Now, consider the $\txt{Batting Average}$ as our explanatory variable with the corresponding response variable $\txt{Winning Percentage}$. Then, we can use $\textbf{R}$ to calculate the coefficients, *a* and *b*:
