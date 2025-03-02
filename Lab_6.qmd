@@ -39,10 +39,15 @@ MLB_Data <- structure(list(Team = c("ARI", "ATL","BAL", "BOS", "CHC", "CHW",
 attach(MLB_Data)
 ```
 
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
+
+
 # Analyzing Bivariate Data with **R (II)**
 
 We continue our discussion of bivariate data analysis. In particular, we focus on **linear regression** analysis using a dataset with continuous variables in this lab.
-
 
 ## MLB Data: 2023 Regular Season Team Statistics
 
@@ -59,21 +64,21 @@ We again use the dataset of the MLB 2023 regular season, as follows:
 08. WHIP:  Walks And Hits Per Inning Pitched, the statistic shows how well a pitcher has kept runners off the basepaths, one of his main goals.
 
 ```
-In the data set, the variable $\texttt{Win\_P}$ measures a MLB team's performance throughout the 2023 season. For offensive capability, we can use the variables $\texttt{RPG}$, $\texttt{BA}$, and $\texttt{OPS}$; whereas, for defensive capability, we can use $\texttt{ORPG}$, $\texttt{ERA}$, and $\texttt{WHIP}$.  
+
+In the data set, the variable $\txt{Win\_P}$ measures a MLB team's performance throughout the 2023 season. For offensive capability, we can use the variables $\txt{RPG}$, $\txt{BA}$, and $\txt{OPS}$; whereas, for defensive capability, we can use $\txt{ORPG}$, $\txt{ERA}$, and $\txt{WHIP}$.
 
 ## From correlation analysis to regression analysis
 
-One of the key differences between correlation and regression analysis lies in how we handle two continuous variables. In correlation analysis, both variables are treated equally, whereas in regression analysis, we distinctly classify one variable as explanatory (independent) and the other as response (dependent). In other words, correlation treats the two variables symmetrically, while regression treats them asymmetrically. For example, in the context of regression analysis with the MLB dataset, our goal is to predict or explain the response variable, $\texttt{Winning Percentage}$, based on an explanatory variable chosen from measures of defensive, offensive, or combined capability.
+One of the key differences between correlation and regression analysis lies in how we handle two continuous variables. In correlation analysis, both variables are treated equally, whereas in regression analysis, we distinctly classify one variable as explanatory (independent) and the other as response (dependent). In other words, correlation treats the two variables symmetrically, while regression treats them asymmetrically. For example, in the context of regression analysis with the MLB dataset, our goal is to predict or explain the response variable, $\txt{Winning Percentage}$, based on an explanatory variable chosen from measures of defensive, offensive, or combined capability.
 
 ## Regression equation
-We have learned the fomulas for the regression analysis:
-\begin{align*}
+
+We have learned the fomulas for the regression analysis: \begin{align*}
   \hat{y}\;=&\; a+bx;\\ \text{such that}&\begin{cases}
   b\;=& \frac{\sum (x-\bar{x})(y-\bar{y})}{\sum (x-\bar{x})^2};\\
   a\;=& \bar{y}-b\bar{x},\end{cases}
-\end{align*}
-where $y$ is the response variable and $x$ is the explanatory variable.  
-Now, consider the $\texttt{Batting Average}$ as our explanatory variable with the corresponding response variable $\texttt{Winning Percentage}$. Then, we can use $\textbf{R}$ to calculate the coefficients, *a* and *b*:
+\end{align*} where $y$ is the response variable and $x$ is the explanatory variable.\
+Now, consider the $\txt{Batting Average}$ as our explanatory variable with the corresponding response variable $\txt{Winning Percentage}$. Then, we can use $\textbf{R}$ to calculate the coefficients, *a* and *b*:
 
 ```{webr-r}
 y <- Win_P 
@@ -82,44 +87,57 @@ x <- BA*100
 Numer <- sum((x-mean(x))*(y-mean(y)))
 Denom <- sum((x-mean(x))^2)
 
-b <- Numer / Denom
-a <- mean(y)-b*mean(x)
-a;b
+print(b <- Numer / Denom)
+print(a <- mean(y)-b*mean(x))
 ```
 
 # Interpretation of coefficients
 
 As emphasized in class, it is crucial to understand how to interpret the slope and intercept coefficients correctly. Below is the general interpretations:
 
-* Slope coefficient (**b**): As the explanatory ($x$) variable increases by one unit, the response variable ($y$) increases/decreases by $b$ units **on average**.
-* Intercept (**a**): When the explanatory ($x$) is zero, the the response variable variable is $a$ **on average**.
+-   Slope coefficient (**b**): As the explanatory ($x$) variable increases by one unit, the response variable ($y$) increases/decreases by $b$ units **on average**.
+-   Intercept (**a**): When the explanatory ($x$) is zero, the response variable value is $a$ **on average**.
 
-Please note that regression analysis describes average behavior, and the interpretations reflect this. In our example, the intercept is not of interest because we do not observe a batting average of 0 for any team. For the slope, we interpret it as follows:  
-**"As Batting Average increases by one unit for a MLB team, the Winning Percentage increases by 4.27% on average."**  
-
+Please note that regression analysis describes average behavior, and the interpretations reflect this. In our example, the intercept is not of interest because we do not observe a batting average of 0 for any team. For the slope, we interpret it as follows:\
+**"As Batting Average increases by one unit for a MLB team, the Winning Percentage increases by 4.27% on average."**
 
 # Visualization of regression line
 
 Let's visualize the regression line by overlaying it on the corresponding scatter plot:
+
 ```{webr-r}
-plot(BA*100,Win_P,main="Linear Regression Line",xlim=c(22,28.5))
+# Plotting 
+plot(BA*100,Win_P,main="Linear Regression Line",xlim=c(22,28.5),col=blues9)
 textxy(BA*100,Win_P,labs=Team,cex=1,col="black")
-curve(a+b*x,col=2,lwd=2,add=TRUE)
+curve(a+b*x,col=2,lwd=2,add=TRUE,lty=3)
 ```
 
 # Prediction
 
-Now it's time for prediction. We can simply substitute the value of the explanatory variable into the regression formula. Suppose the Lehigh Valley IronPigs would have a team batting average of 0.18 if they play in the MLB regular league. What would their expected winning percentage be?
+Now it's time for prediction! We can simply substitute the value of the explanatory variable into the regression formula. Suppose the Lehigh Valley IronPigs would have a team batting average of 0.18 if they play in the MLB regular league. What would their expected winning percentage be?
+
 ```{webr-r}
 # Again multiplying 100 to resolve the unit issue.
-Pigs <- a+b*(0.18*100)
-Pigs
+print(LVP <- a+b*(0.18*100))
 ```
+
 (In principle, this is not a recommended prediction due to extrapolation.)
+
+# Evaluation of Linear Regression
+
+We used the linear regression line to make the prediction, so the effectiveness of the prediction depends entirely on the performance of the linear regression model. But how can we evaluate its performance? One way is through the coefficient of determination, $\textbf{R}^2$, which measures **the proportion of variability in the response variable explained by the linear regression model**. In our case, this is equivalent to the correlation between the response and explanatory variables.
+```{webr-r}
+print(R2<-cor(Win_P,BA)^2)
+# Correlation is invariant under linear transformation.
+print(cor(Win_P,BA*100)^2)
+```
+
+
+
 
 ## Example
 
-Let us instead of use $\texttt{ERA}$ (Earned Run Average) as a explanatory variable. Derive the regression equation and visualize the regression line with corresponding scatter plot.
+Let us instead of use $\txt{ERA}$ (Earned Run Average) as a explanatory variable. Derive the regression equation and visualize the regression line with corresponding scatter plot. 
 
 ```{webr-r}
 y <- 
@@ -128,42 +146,54 @@ x <-
 Numer <- sum((x-mean(x))*(y-mean(y)))
 Denom <- sum((x-mean(x))^2)
 
-b <- Numer / Denom
-a <- mean(y)-b*mean(x)
-a;b
+print(b <- Numer / Denom)
+print(a <- mean(y)-b*mean(x))
 
 plot(  ,Win_P,main="Linear Regression Line",xlim=c(3.5,6))
 textxy(  ,Win_P,labs=Team,cex=1,col="black")
 curve(a+b*x,col=2,lwd=2,add=TRUE)
-```
-Suppose the IronPigs have a team ERA of 7 if they were playing in the MLB. What would their expected winning percentage be?
-```{webr-r}
 
+```
+
+Suppose the IronPigs had a team ERA of 7 if they were playing in the MLB. What would their expected winning percentage be? Also, evaluate the performance by computing $\textbf{R}^2$.
+
+```{webr-r}
+# Prediction
+print(LVP <-     )
+# R^2
+cor( , )
 ```
 
 ## Lab Questions
 
-In the previous lab, we considered the "net runs per game" variable as a measure of MLB team's overall capability:  
-$$\texttt{NRPG}=\texttt{RPG}-\texttt{ORPG}.$$
+In the previous lab, we considered the "net runs per game" variable as a measure of MLB team's overall capability:\
+$$\txt{NRPG}=\txt{RPG}-\txt{ORPG}.$$
+
 ```{webr-r}
 NRPG<-RPG-ORPG
-plot(NRPG  ,Win_P,main="Relationship between NRPG and Win_P",xlim=c(-2.5,2))
-textxy(NRPG  ,Win_P,labs=Team,cex=1,col="black")  
+plot(NRPG, Win_P,main="Relationship between NRPG and Win_P",xlim=c(-2.5,2),col=blues9)
+textxy(NRPG, Win_P,labs=Team,cex=1,col="black")  
 ```
 
-1. Let us perform a linear regression analysis to predict the winning percentage based on the NRPG. Derive the slope and intercept coefficients, respectively.
+1.  Let us perform a linear regression analysis to predict the winning percentage based on the NRPG. Derive the slope and intercept coefficients, respectively.
+
 ```{webr-r}
 
   
 ```
 
-2. Predict the winning percentage of the IronPigs when their hypothesitcal NRPG is -3.
+2.  Predict the winning percentage of the IronPigs when their hypothetical NRPG is -3.
+
 ```{webr-r}
 
 ```
 
-3. Choose relevant interpretations for the slope and intercept coefficients.
+3.  Compute the coefficient of determination $\textbf{R}^2$. 
 
+```{webr-r}
 
+```
+
+4.  Choose relevant interpretations for the slope and intercept coefficients.
 
 
