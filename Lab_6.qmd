@@ -125,7 +125,7 @@ print(LVP <- a+b*(0.18*100))
 
 # Evaluation of Linear Regression
 
-We used the linear regression line to make the prediction, so the effectiveness of the prediction depends entirely on the performance of the linear regression model. But how can we evaluate its performance? One way is through the coefficient of determination, $\textbf{R}^2$, which measures **the proportion of variability in the response variable explained by the linear regression model**. In our case, this is equivalent to the correlation between the response and explanatory variables.
+We used the linear regression line to make the prediction, so the effectiveness of the prediction depends entirely on the performance of the linear regression model. But how can we evaluate its performance? One way is through the coefficient of determination, $\textbf{R}^2$, which measures **the proportion of variability in the response variable explained by the linear regression model**. In our case, this is equivalent to the squared correlation between the response variable and the explanatory variables.
 ```{webr-r}
 print(R2<-cor(Win_P,BA)^2)
 # Correlation is invariant under linear transformation.
