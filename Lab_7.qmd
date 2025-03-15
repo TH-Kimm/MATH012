@@ -202,13 +202,19 @@ SURVEY<-na.omit(Survey_Data)
 
 ```
 
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
+
+
 # Analyzing Bivariate Data with **R (III)**
 
-We finalize our discussion of bivariate data analysis. In particular, we focus on **linear regression** analysis using our survey dataset with continuous variables.
+We finalize our discussion of bivariate data analysis. In particular, we focus on **linear regression** analysis using the $\txt{survey dataset}$ with continuous variables that we discussed earlier.
 
 ## Beginning Semester Survey Data
 
-The original data contains 136 observations and 15 variables. But, we omit the observations with a missing value, so the final data dimension becomes $108\times 15$. 
+The original data contains 136 observations and 15 variables. But, we omit the observations with a missing value, so the final data dimension becomes $108\times 15$.
 
 ```{r,eval=FALSE}
 01. Sports:    What is your favorite professional sport? 
@@ -227,7 +233,9 @@ The original data contains 136 observations and 15 variables. But, we omit the o
 14. Hand:      Are you right- or left-handed? 
 15. Credit:    How many credits are you taking this semester? 
 ```
-Note that the survey dataset is recorded in "SURVEY".
+
+Note that the survey dataset is recorded in $\txt{SURVEY}$.
+
 ```{webr-r}
 ## Variable names
 names(SURVEY)
@@ -237,9 +245,10 @@ dim(SURVEY)
 
 ## Heights relationship between parents and children
 
-Do you believe your height is inherited from your father or mother? If your answer is YES, it might make sense to predict a child's height based on one parent's height using linear regression. Let’s explore this idea with our survey dataset.
+Do you believe your height is inherited from your father or mother? If your answer is YES, it might make sense to predict a child's height based on one parent's height using linear regression. Let’s explore this idea through the survey dataset.
 
-Our first step is to examine the correlation and scatter plots. We'll create these for the mother’s and father’s height variables, respectively.
+Our first step is to examine the correlation and scatter plots. We'll create these for the mother’s height ($\txt{MO_Height}$) and father’s height ($\txt{FA_Height}$) variables, respectively.
+
 ```{webr-r}
 ## In this lab, the data is not "attached"
 ## So, we are using "$" operator to select the variable
@@ -250,34 +259,41 @@ plot(SURVEY$Height,SURVEY$MO_Height)
 
 ```
 
-Do you think the variables exhibit sufficient linear associations to justify proceeding with linear regression? Based on the results, the answer seems to be 'NO.' A common rule of thumb is that a correlation of around 0.7 (or at least 0.6) is recommended. So, should we stop our analysis here?
+Do you believe the variables demonstrate a sufficient level of linear association to justify proceeding with linear regression? Based on the results, the answer seems to be 'NO.' A common rule of thumb is that a correlation of around 0.7 (or at least 0.6) is recommended. So, should we stop our analysis here?
 
 ## Searching for the relationship within subsets.
 
-This type of issue is quite common in data analysis. However, we can still move forward by identifying meaningful relationships within specific subsets. In this lab, we will use the $\texttt{subset()}$ function to accomplish this."
+This type of issue is commonly encountered in data analysis. However, we can still move forward by identifying meaningful relationships within specific subsets. In this lab, we will use the $\txt{subset()}$ function to accomplish this.
 
-### Example: Subsetting with $\texttt{subset()}$
-The $\texttt{subset()}$ function takes three arguments: the first is the dataset to subset, the second is the condition for selecting observations, and the third specifies the variables to retain. For example, using the $\texttt{mtcars}$ dataset:
+### Example: Subsetting with $\txt{subset()}$
+
+The $\txt{subset()}$ function takes three arguments: the first is the dataset to subset, the second is the condition for selecting observations (rows in data table), and the third specifies the variables (columns in data table) to retain. For example, with the $\txt{mtcars}$ dataset:
+
 ```{webr-r}
-## Choose all the observations with Shoes>10
-Subset1<-subset(SURVEY,Shoes>20)
-## Just checking the dimension
-Subset1
-## Choose all the observations with Shoes>10 
-## and the Shoes and Height variables
-Subset2<-subset(SURVEY,Shoes>20,c("Shoes","Height"))
-Subset2
+## Keep all the variables with the observations with Shoes>20
+print(Subset1<-subset(SURVEY,Shoes>20))
+## Checking the dimension
+dim(Subset1)
+## Keep two variables, Pets and Height, 
+## with the observations with Shoes>20 
+print(Subset2<-subset(SURVEY,Shoes>20,c("Pets","Height")))
+## Checking the dimension
+dim(Subset2)
 ```
 
-Now, let us subset our data for analysis. A common way for the subset would be through the gender variable. So,
+Now, let us subset our data for the regression analysis. A common method of subsetting is by using the gender variable. So,
+
 ```{webr-r}
 ## Female Survey dataset
-FSV<-subset(SURVEY,Gender=="Female",c("Height","MO_Height","FA_Height","Sleep"))
+FSV<-subset(SURVEY,Gender=="Female",c("Height","MO_Height","FA_Height"))
 ## Male Survey dataset
-MSV<-subset(SURVEY,Gender=="Male",c("Height","MO_Height","FA_Height","Sleep"))
+MSV<-subset(SURVEY,Gender=="Male",c("Height","MO_Height","FA_Height"))
+## Checking the dimensions
+dim(FSV);dim(MSV)
 ```
 
 Then, let us check the correlations for two datasets.
+
 ```{webr-r}
 ## For the female sub-group
 cor(FSV$Height,FSV$MO_Height)
@@ -291,29 +307,27 @@ Based on the result, we can confirm a reasonable level of correlation between $\
 
 ## Regression analysis with the $\texttt{lm()}$ built-in function
 
-In the previous lab, we calculated the regression coefficients manually using formulas. While that approach was informative, it’s not practical to repeat every time. Here, we’ll use the built-in $\texttt{lm()}$ function for convenience. With $\texttt{lm()}$, we use a "tilde" to link the response variable ($\texttt{Height}$) with the explanatory variable ($\texttt{MO\_Height}$).
+In the previous lab, we manually calculated the regression coefficients using the formulas. While that approach worked as intended, it’s not practical to repeat it every time. Here, we’ll use the built-in $\txt{lm()}$ function for convenience. With $\txt{lm()}$, we use a "tilde" to link the response variable ($\txt{Height}$) with the explanatory variable ($\txt{MO\_Height}$) within the male group.
 
 ```{webr-r}
 ## Regression coefficients
-Reg1 <- lm(Height~MO_Height,data=MSV)
-Reg1
+print(Reg1 <- lm(Height~MO_Height,data=MSV))
 ## Regression summary
 summary(Reg1)
-
 ```
-Let’s focus on the R-squared value from the regression summary. This coefficient of determination ($\mathbf{R}^2$), as we discussed in class, represents the proportion of variation in a student's height explained by the mother's height. Currently, the R-squared value is not particularly high, indicating that the model’s predictive power is limited.
 
-What if we use both the mother’s height (MO_Height) and the father’s height (FA_Height) for prediction, even though we haven't covered this yet? This approach is known as multiple regression analysis. It can be easily implemented as follows:
+Note that the coefficient of determination ($\mathbf{R}^2$) is 0.3926, and it represents the proportion of variation in a student's height explained by the mother's height through the regression analysis. Currently, the R-squared value is not particularly high, indicating that the model’s predictive power is fairly limited.
+
+What if we use both the mother’s height ($\txt{MO\_Height}$) and the father’s height ($\txt{FA\_Height}$) for prediction? This approach is known as **multiple regression analysis**. Even though we didn't learn this procedure in class, it can be easily implemented as follows:
 
 ```{webr-r}
-Reg2 <- lm(Height~MO_Height+FA_Height,data=MSV)
-Reg2
+print(Reg2 <- lm(Height~MO_Height+Sleep,data=MSV))
 ## Regression summary
 summary(Reg2)
-
 ```
-
+Note that we can increase $\mathbf{R}^2$, but the change is not too much.
 Lastly, let’s make predictions. Since we are using data from male students, all interpretations should be limited to this subset.
+
 ```{webr-r}
 ## Prediction of a "male" student height when his mother's height is 68.
 new.obs1<-data.frame(MO_Height=68)
@@ -325,6 +339,7 @@ predict(Reg2,newdata=new.obs2)
 ```
 
 ## Lab Questions
+
 ```{webr-r}
 #| context: setup
 
@@ -358,7 +373,8 @@ class = c("spec_tbl_df",
 "tbl_df", "tbl", "data.frame"))
 ```
 
-Larger animals tend to have larger brains, but is the increase in brain size proportional to the increase in body size? Allison and Cicchetti (1976) compiled data on the body and brain sizes of 62 mammal species, available in the dataset $\texttt{Mammal}$. This dataset includes columns for the species name, average body mass (in kg), and average brain size (in g). Since both variables are highly right-skewed, we apply a log transformation for analysis.
+Larger animals tend to have larger brains, but is the increase in brain size proportional to the increase in body size? Allison and Cicchetti (1976) compiled data on the body and brain sizes of 62 mammal species, available in the dataset $\txt{Mammal}$. This dataset includes columns for the species name, average body mass (in kg), and average brain size (in g). Since both variables are highly right-skewed, we apply a log transformation for analysis.
+
 ```{webr-r}
 ## Check data
 Mammal
@@ -368,22 +384,21 @@ colnames(DATA)<-c("LM.Body","LM.Brain")
 plot(DATA$LM.Body,DATA$LM.Brain)
 ```
 
-1. Calculate the correlation between the log body mass and log brain size.
+1.  Calculate the correlation between the log body mass and log brain size.
+
 ```{webr-r}
 
 ```
 
-2. Perform the linear regression analysis for log brain size based on the log average body mass,
-using the $\texttt{lm()}$ function.
+2.  Perform the linear regression analysis for log brain size based on the log average body mass, using the $\texttt{lm()}$ function.
+
 ```{webr-r}
 
 ```
 
-3. Predict the log brain size when the log body mass is 3.12.
+3.  Predict the log of brain size when the log of body mass is 3.12 (approximately 50 lb).
+
 ```{webr-r}
 new.obs<-data.frame(LM.Body=3.12)
 
 ```
-
-
-
