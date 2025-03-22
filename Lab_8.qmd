@@ -3,6 +3,10 @@ title: "Lab 8"
 webr:
   show-startup-message: true
 ---
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
 
 # Probability (I)
 
@@ -18,35 +22,42 @@ A discrete random variable can take on countably distinct values. For example, i
 
 A box model is a useful way to model an experiment with a discrete random variable. Suppose we have a box containing three balls marked with 1, five balls marked with 2, and two balls marked with 3. We draw a ball with replacement, meaning:
 
-1. Extract a ball.
-2. Check the number on it.
-3. Put the ball back into the box.
-4. Repeat the process.
+1.  Extract a ball.
+2.  Check the number on it.
+3.  Put the ball back into the box.
+4.  Repeat the process.
 
 Due to this "replacement" condition, the theoretical probability of drawing a 1, 2, or 3 remains constant throughout the experiment. If we define the random variable $X$ as the number marked on the drawn ball, the corresponding discrete probability distribution is:
 
-| x | 1 | 2 | 3 |  Total |
-|:---:|:---:|:---:|:---:|:--------:|
+|  x   |  1   |  2   |  3   |  Total  |
+|:----:|:----:|:----:|:----:|:-------:|
 | p(x) | 3/10 | 5/10 | 2/10 | 10/10=1 |
 
 The shape of the distribution can be illustrated:
+
 ```{webr-r}
 plot(1:3,c(0.3,0.5,0.2),type="h",lwd=10,ylim=c(0,0.5),
-     main="Probability Mass Function")
+     main="Probability Mass Function",ylab="Prob.",xlab="x")
 ```
 
-Now, we can use the $\texttt{sample()}$ function in $\textbf{R}$ to implement the experiment using the box model. This means we assume the model and simulate the process of drawing balls from the box.
+Now, we can use the $\txt{sample()}$ function in $\textbf{R}$ to implement the experiment using the box model, which involves assuming the model and simulating the process of drawing balls from the box. The $\txt{sample()}$ function accepts three arguments:
+- The first argument accepts the ball setting in a box model;
+- The second argument is the number of balls we want to draw;
+- The third argument is to set the replacement condition.
+
 ```{webr-r}
-## The balls in the box in the example
+## Ball setting of the given box model
 BOX<-c(1,1,1,2,2,2,2,2,3,3)
-## The first argument accepts the box we defined
-## The second argument is the number of balls we want to draw
-## The third argument is to set the replacement condition
+## Drawing a single ball from the box model
 sample(BOX,size=1,replace=TRUE)
+## Drawing 10 balls from the box model
 #sample(BOX,size=10,replace=TRUE)
+## Drawing 100 balls from the box model
 #sample(BOX,size=100,replace=TRUE)
 ```
-Note that each time you run the code, the set of drawn balls will differ due to the randomness of the experiment. Now, we can summarize the sample data using a frequency table for the observed numbers as follows:
+
+Note that each time you run the code, the set of drawn balls will differ due to the randomness of the experiment. Now, we can summarize the observed balls in the sample data using a frequency table as follows:
+
 ```{webr-r}
 n<-2000
 ## Drawing 2000 balls from the box
@@ -56,31 +67,34 @@ table(DATA)
 ## Relative frequency table
 table(DATA)/n
 ```
-Note that the frequency table closely aligns with the theoretical probability distribution. This illustrates the concept of **long-run probability**—the idea that the relative frequency of an event (e.g., $X=1$, $X=2$, or $X=3$) converges toward the theoretical probability with repeated trials. We can further verify this by examining the trajectories of relative frequencies:
+
+With the large number of the sample, the frequency table closely aligns with the theoretical probability distribution. This illustrates the concept of **long-run probability**—the idea that the relative frequency of an event (e.g., $X=1$, $X=2$, or $X=3$) converges toward the theoretical probability with repeated trials. We can further verify this by examining the trajectories of relative frequencies. For this purpose, we use the $\txt{cumsum()}$ function, which generates a vector of cumulative sums of events from subsets with sample sizes ranging from 1 to 2000.
+
 ```{webr-r}
-## Matrix initialization
+## Matrix initialization to record the trajectories
 TRAJ<-matrix(,nrow=2000,ncol=3)
-## Record three trajectories
-TRAJ[,1]<-cumsum((DATA==1))/1:2000
-TRAJ[,2]<-cumsum((DATA==2))/1:2000
-TRAJ[,3]<-cumsum((DATA==3))/1:2000
+## Record three vectors for the occurrences of events
+EVENT1<-(DATA==1);EVENT2<-(DATA==2);EVENT3<-(DATA==3)
+## Divide cumsum() results by a vector 1:2000 
+TRAJ[,1]<-cumsum(EVENT1)/1:2000
+TRAJ[,2]<-cumsum(EVENT2)/1:2000
+TRAJ[,3]<-cumsum(EVENT3)/1:2000
 ## Plot the trajectories
 matplot(1:2000,TRAJ,ylim=c(0,1),type="l",lwd=2,col=2:4,lty=1
-        ,main="Box Model: Long-Run Probability")
+        ,main="Box Model: Long-Run Probability",ylab="Prob.",xlab="Trajectories")
+legend("topright",legend=c("P(X=1)","P(X=2)","P(X=3)"),col=2:4,lty=1,lwd=2)
 ## ADD reference lines
 abline(h=c(0.2,0.5,0.3),lwd=2,col="lightgray",lty=2)
-
 ```
+We can observe that the convergences of relative frequencies to the theoretical probabilities.
 
 ### Mean and variance of discrete probability distribution
 
-As learned, the mean and variance of a discrete probability distribution can be calculated by:
-\begin{align*}
+As learned, the mean and variance of a discrete probability distribution can be calculated by: \begin{align*}
   \mu =& \sum x p(x)\\
   \sigma^2 = & \sum (x-\mu)^2p(x),
-\end{align*}
-where the summation is taken over all possible values of $X$.
-Using **R**, we can easily compute these quantities. For example, with our box model:
+\end{align*} where the summation is taken over all possible values of $X$. Using **R**, we can easily compute these quantities. For example, with our box model:
+
 ```{webr-r}
 x<-c(1,2,3)
 px<-c(3/10,5/10,2/10)
@@ -88,25 +102,27 @@ mu<-sum(x*px)
 sigma<-sum((x-mu)^2*px)
 mu;sigma
 ```
+
 We can also calculate these values empirically using the data we generated.
+
 ```{webr-r}
 mean(DATA)
 var(DATA)
 ```
+Again, observe the empirical mean and variance are close to their theoretical counterparts.
 
 ## Binomial distribution
 
-The binomial probability distribution is one of the most widely used discrete distributions. Consider an experiment with two possible outcomes: success or failure, each with a fixed probability of success $p$. If this experiment is repeated $n$ times, the total number of successes can be modeled as a binomial random variable $X$, which can take any integer value from 0 (no success) to $n$ (all successes).  
-Recall that the probability of observing exactly $x$ successes is given by:
-$$
+The binomial probability distribution is one of the most widely used discrete distributions. Consider an experiment with two possible outcomes: success or failure, each with a fixed probability of success $p$. If this experiment is repeated $n$ times, the total number of successes can be modeled as a binomial random variable $X$, which can take any integer value from 0 (no success) to $n$ (all successes).\
+Recall that the probability of observing exactly $x$ successes is given by: $$
 p(x)=\frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}.
 $$
 
 ### Example: Curry's free throw shootings
 
-Stephen Curry is renowned for his three-point shooting, but he also holds the highest career free-throw percentage in NBA history (91%). Suppose we expect him to attempt 7 free throws in the Warriors' season opener against the Trail Blazers on 10/23.  
+Stephen Curry is renowned for his three-point shooting, but he also holds the highest career free-throw percentage in NBA history (91%). Suppose we expect him to attempt 7 free throws in the Warriors' season opener against the Pelicans on 03/28/2025.
 
-We can model this scenario using the binomial probability distribution with $p=0.91$ (success probability) and $n=7$ (number of attempts). The probability that he makes exactly 5 out of 7 free throws can be calculated as:
+We can model this scenario using the binomial probability distribution with $p=0.91$ (success probability) and $n=7$ (number of attempts). The probability that he makes **exactly 5** out of 7 free throws can be calculated as:
 
 ```{webr-r}
 n <- 7
@@ -114,30 +130,39 @@ p <- 0.91
 ## Based on the formula
 factorial(n)/(factorial(5)*factorial(n-5))*p^5*(1-p)^(n-5)
 ```
-While this direct computation is doable in **R**, it may not be convenient to write out all the steps manually. Instead, we can use the built-in function $\texttt{dbinom()}$ to simplify the process.
+
+While this direct computation is doable in **R**, it may not be convenient to write out all the steps manually. Instead, we can use the built-in function $\txt{dbinom()}$ to simplify the process. The function $\txt{dbinom()}$ accepts the three arguments:
+- the first argument is the observed $x$ value;
+- the second and third arguments are the two parameters $n$ and $p$.
+
 ```{webr-r}
-## First argument is x 
-## Second and third arguments are parameters n and p, respectively
+## Here x=5, n and p are gvien.
 dbinom(5,n,p)
 ```
-In addition, we can calculate the probability of achieving five or fewer successful shots using the function$\texttt{pbinom()}$.
+
+In addition, we can calculate the probability of achieving **five or fewer** successful shots using the function$\txt{pbinom()}$.
+
 ```{webr-r}
 ## Arguments are the same as earlier
 pbinom(5,n,p)
 ```
-Therefore, the probability the number of successes is more than five shots becomes:
+
+Therefore, the probability the number of successes is **more than five** shots becomes:
+
 ```{webr-r}
 1-pbinom(5,n,p)
 ```
 
 We can also check the shape of the distribution as well:
+
 ```{webr-r}
-plot(0:n,dbinom(0:n,n,p),type="h",lwd=10,main="Binomial PMF")
+plot(0:n,dbinom(0:n,n,p),type="h",lwd=10,main="Binomial PMF",xlab="x",ylab="Prob.")
 ```
-For a binomial distribution, we can easily determine the mean and variance using the two parameters $n$ and $p$:
-$$
+
+For a binomial distribution, we can easily determine the mean and variance using the two parameters $n$ and $p$: $$
 \mu=np\text{ and }\sigma^2=np(1-p).
 $$
+
 ```{webr-r}
 ## Mean
 n*p
@@ -147,22 +172,33 @@ n*p*(1-p)
 
 ## Lab Questions
 
-Shaquille O'Neal is a legendary NBA player, renowned for being one of the most dominant forces in the history of the league, particularly due to his impact on the game and his prowess in the paint. However, he was also infamous for his low free throw percentage of 52.7% throughout his career. Opposing teams often resorted to intentionally fouling him to give him more free throw attempts, a strategy known as "Hack-a-Shaq." For the following questions, suppose he attempted 10 free throws in a game.
+::: {.img-float}
+![By Steve Lipofsky Basketballphoto.com, CC BY 3.0.](images/HACK_SHAQ.jpg){style="float: right; margin: 5px;"}
+:::
+Shaquille O'Neal is a legendary NBA player, renowned for being one of the most dominant forces in the history of the league, particularly due to his impact on the game and his prowess in the paint. However, he was also infamous for his low free throw percentage of 52.7% throughout his career. Opposing teams often resorted to intentionally fouling him to give him more free throw attempts, a strategy known as **"Hack-a-Shaq."** For the following questions, suppose he attempted 10 free throws in a game.
 
-1. What are the two parameters $n$ and $p$?
+
+1.  What are the two parameters $n$ and $p$?
+
 ```{webr-r}
 n <-
 p <-
 ```
-2. What is the probability that O'Neal made 7 free throws among 10 attempts?
+
+2.  What is the probability that O'Neal made 7 free throws among 10 attempts?
+
 ```{webr-r}
 
 ```
-3. What is the probability that O'Neal made at least 7 free throws among 10 attempts?
+
+3.  What is the probability that O'Neal made at least 7 free throws among 10 attempts?
+
 ```{webr-r}
 
 ```
-4. Calculate the mean and variance of the number of successful shots among 10 attempts.
+
+4.  Calculate the mean and variance of the number of successful shots among 10 attempts.
+
 ```{webr-r}
 
 ```
