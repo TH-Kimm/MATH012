@@ -41,6 +41,10 @@ set.seed(2024)
 M.Height <- c(rnorm(1000,68,2.7),runif(1000,64,72),rnorm(1000,72,2.7),runif(500,62,78) )
 M.Height <- M.Height*1.0184221-0.001543042
 ```
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
 
 # Inferential Statistics (I)
 
@@ -48,8 +52,8 @@ In inferential statistics, we assume there is an [unknown target parameter]{styl
 
 ## Random Sample
 
-Let’s start with the concept of a random sample. Our population represents a **LARGE** set of data, and we typically assume we have limited or no information about it. For example, suppose we are interested in the average height of male students at Lehigh. In this case, our population consists of the height measurements of all male students at Lehigh.
-In this lab, we will use a hypothetical population with a mean $\mu=70.77$ and a standard deviation $\sigma=3.5$ for this scenario. Note that, [for illustration purposes]{style="color:red;"}, we have access to all measurement data in this example.
+Let’s start with the concept of a random sample. Our population represents a **LARGE** set of data, and we typically assume we have limited or no information about it. For example, suppose we are interested in the average height of male students at Lehigh. In this case, our population consists of the height measurements of all male students at Lehigh. In this lab, we will use a hypothetical population with a mean $\mu=70.77$ and a standard deviation $\sigma=3.5$ for this scenario. Note that, [for illustration purposes]{style="color:red;"}, we have access to all measurement data in this example.
+
 ```{webr-r}
 # We assume the population consists of 3500 measurements.
 print(n <- length(M.Height))
@@ -58,30 +62,32 @@ print(mu <- mean(M.Height))
 # This population is designed to have the standard deviation 3.5.
 print(sigma <- sd(M.Height))
 ```
-From the population, we can randomly draw a sample of size $n=50$ using the $\texttt{sample()}$ function. Since the population is large enough, we are able to assume the obtained data is independent and identically distributed. 
+
+From the population, we can randomly draw a sample of size $n=50$ using the $\txt{sample()}$ function. Since the population is large enough, we are able to assume the obtained data is independent and identically distributed.
+
 ```{webr-r}
 # Random sampling 
 n<-50
 my.sample <- sample(M.Height,n)
 hist(my.sample)
 ```
-Note that each time you repeat the sampling, the shape of the histogram will vary due to sampling variability. 
 
+Note that each time you repeat the sampling, the shape of the histogram will vary due to sampling variability.
 
 ## Confidence Interval (CI)
 
 # Form of confidence interval
 
-The confidence interval is the most widely used interval estimation procedure for a target parameter. When a population mean $\mu$ is the target parameter, we use the following formula for constructing the interval:
-$$
+The confidence interval is the most widely used interval estimation procedure for a target parameter. When a population mean $\mu$ is the target parameter, we use the following formula for constructing the interval: $$
 [\text{Lower bound},\;\text{Upper bound}]=\left[\bar{x}-|z_{\alpha/2}|\times \tfrac{\sigma}{\sqrt{n}},\;\bar{x}+|z_{\alpha/2}|\times \tfrac{\sigma}{\sqrt{n}}\right]
 $$
 
-* The sample mean $\bar{x}$ serves as the point estimate, representing the best estimate of $\mu$ based on the sample. 
-* $|z_{\alpha/2}|$ is the cut-off value that reflects the confidence level.
-* $\sigma/\sqrt{n}$ is the standard error, which reflects the variability of the sample mean.
+-   The sample mean $\bar{x}$ serves as the point estimate, representing the best estimate of $\mu$ based on the sample.
+-   $|z_{\alpha/2}|$ is the cut-off value that reflects the confidence level.
+-   $\sigma/\sqrt{n}$ is the standard error, which reflects the variability of the sample mean.
 
-Let us construct the 90\% confidence interval for the population mean (i.e., population average height).
+Let us construct the 90% confidence interval for the population mean $\mu$ (i.e., the population average height).
+
 ```{webr-r}
 ## Three components
 xbar <- mean(my.sample)
@@ -92,27 +98,31 @@ L.Bound <- xbar - cut_off*se
 U.Bound <- xbar + cut_off*se
 print(CI <- c(L.Bound,U.Bound))
 ```
+
 Since each of us has a different sample, the corresponding confidence interval (CI) will also vary.
 
-In practice, it’s impossible to know whether a computed CI actually covers the target parameter. However, with our hypothetical population, we can check this!
+In real-world settings, it's impossible to know whether a computed confidence interval truly contains the target parameter $\mu$. However, using our hypothetical population, we can directly assess this!
+
 ```{webr-r}
-## Checking the coverage
+## Checking the Coverage!
+## Lower Bound of CI < mu < Upper Bound of CI
 CI[1] < mu & mu < CI[2]
 ```
+
 Does your confidence interval contain the target parameter? Or does your fellow student's interval contain it?
 
 # Confidence level and coverage
 
-We have constructed the 90\% confidence interval, but what does "90\% confidence" mean? 
-It means that 90% of intervals from different samples will contain the true target parameter $\mu$.
+We have constructed the 90% confidence interval, but what does "90% confidence" mean? It means that 90% of intervals from repeated samples will contain the true target parameter $\mu$.
 
-The cut-off value of 1.645 was chosen to ensure 90\% coverage. Similarly, we use larger values 1.96 and 2.58 to achieve 95\% and 99\% coverage, respectively.
+The cut-off value of 1.645 was chosen to ensure 90% coverage. Similarly, we use larger values 1.96 and 2.58 to achieve 95% and 99% coverage, respectively.
 
 Let us actually confirm this result by creating 50 CIs in the following simple simulation.
+
 ```{webr-r}
-# Null vector for the sample means
+# Initialize a null vector to save the multiple sample means
 xbars <- NULL
-# Calculate 50 sample means
+# Calculate 50 sample means repeatedly
 for(i in 1:50){
   re.sample <- sample(M.Height,n)
   xbars[i] <- mean(re.sample)
@@ -128,40 +138,39 @@ CI_Plot(L.Bounds2,U.Bounds2,mu)
 CI_Plot(L.Bounds3,U.Bounds3,mu)
 par(mfrow=c(1,1))
 ```
-You can run the code a few times, as the exact coverage may not be 90\%, 95\%, or 99\% due to randomness. However, on average, you should observe that approximately "5" CIs, "2 or 3" CIs, and "1" CI will not contain the true parameter out of a total of 50 CIs, respectively.
+
+You can run the code a few times, as the exact coverage may not be 90%, 95%, or 99% due to randomness. However, on average, you should observe that approximately "5" CIs, "2 or 3" CIs, and "0 or 1" CI will not contain the true parameter out of a total of 50 CIs, respectively.
 
 # Interpretation of confidence interval
 
-Returning to the real case, note that we only observe a [SINGLE]{style="color:red;"} sample. Since the target parameter is [UNKNOWN]{style="color:red;"}, we can never know for sure whether the computed confidence interval (CI) contains the true parameter. Once the CI is computed, it consists of a fixed pair of constants, and since we cannot assign a probability to these fixed values, we use the term "confidence" instead. This indirect expression reflects our earlier observation that, [if the CI were constructed repeatedly, it would cover the true parameter based on the confidence level]{style="color:blue;"}.
+Returning to the real-world scenario, note that we only collect a [SINGLE]{style="color:red;"} sample of size $n$. Since the target parameter is [UNKNOWN]{style="color:red;"}, we can **never** know for sure whether the computed confidence interval (CI) contains the true parameter. Once a CI is computed, it consists of a pair of constants (lower and upper bounds), and since we cannot assign a probability to these constants, we use the term "confidence" instead. This indirect expression reflects our earlier observation that, [if the CI were constructed repeatedly, it would contain the true parameter approximately the proportion of times specified by the confidence level]{style="color:blue;"}.
 
-Finally, we use one of the following interpretations:  
+Finally, we use one of the following interpretations:
 
-* **"We are $100(1-\alpha)$\% confident that the true parameter falls into the resulting confidence interval, [computed lower bound] and [computed upper bound].**
-* **"We have $100(1-\alpha)$\% confidence that the resulting confidence interval, [computed lower bound] and [computed upper bound], covers the true parameter.**
-
+-   "We are $100(1-\alpha)$% confident that the true parameter falls into the resulting confidence interval, \[computed lower bound\] and \[computed upper bound\]."
+-   "We have $100(1-\alpha)$% confidence that the resulting confidence interval, \[computed lower bound\] and \[computed upper bound\], covers the true parameter."
 
 ## Lab Questions
 
-Suppose we are interested in the average mileage (in miles/gallon, or mpg) of passenger cars in 1970s. Let us assume that we know the population standard deviation, $\sigma=6$. Our goal is to construct a 95\% confidence interval for the population mean mileage. For this, we can use a sample from the built-in data set $\texttt{mtcars}$. 
+Suppose we are interested in the average mileage (in miles/gallon, or mpg) of passenger cars in 1970s. Let us assume that we know the population standard deviation, $\sigma=6$. Our goal is to construct a 95% confidence interval for the population mean mileage. To achieve this goal, we use the variable $\txt{mpg}$ from the built-in data set $\txt{mtcars}$ as our sample.
 
-1. What is the sample size?
+1.  What is the sample size?
+
 ```{webr-r}
 
 ```
 
-2. Compute the three components: point estimate, cut-off, and standard error.
+2.  Compute the three components: point estimate, cut-off, and standard error.
+
 ```{webr-r}
 
 ```
 
-3. Construct the 95\% CI for population mean mileage.
+3.  Construct the 95% CI for population mean mileage.
+
 ```{webr-r}
 
 
 ```
 
-4. Make a interpretation.
-
-
-
-
+4.  Provide a careful interpretation withing the context of the problem.
