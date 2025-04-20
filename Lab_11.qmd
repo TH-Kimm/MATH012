@@ -198,70 +198,74 @@ NA, 7, 8, 7.5, 7.5, 6.5, 8, 8, 9, 5, 6, 7.5, 8, 7, 8, 9, 6, 8,
 attach(Survey_Data)
 Survey_Data<-na.omit(Survey_Data)
 ```
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
 
 
 # Inferential Statistics (II)
-
 
 This week, let's delve into **hypothesis testing for the population mean**. For our discussion, let's suppose our interest lies in the population mean height, denoted as $\mu$, for **all Lehigh [female]{style="color:blue;"} students**. In this lab, let us presume the assumptions for the hypothesis testings are satisfied.
 
 ## Hypotheses Set-Up
 
-First, let’s say we are interested in determining whether the population average height of female students exceeds 64.5 inches, and we aim to statistically confirm this claim at a significance level of 0.1.
-As mentioned, the population average (or mean) is denoted by the Greek letter $\mu$. Thus, we express our claim as the alternative hypothesis: $\mu > 64.5$. The null hypothesis, being the opposite, is $\mu \le 64.5$:
-$$
+First, let’s say we are interested in determining whether the population average height of female students exceeds 64.5 inches, and we aim to [statistically confirm this claim at a significance level of 0.1]{style="color:blue;"}. As mentioned, the population average (or mean) is denoted by the Greek letter $\mu$. Thus, we express our claim as the alternative hypothesis: $\mu > 64.5$. The null hypothesis, being the opposite, is $\mu \le 64.5$: $$
 H_0:\; \mu \le 64.5 \;\;\text{vs.}\;\;H_a:\; \mu > 64.5.
-$$
-Note that the reference value, 64.5, is generally denoted as $\mu_0$. This test is referred to as a right-tailed test because we aim to show that the target parameter $\mu$ lies to the right of the reference value $\mu_0$.
+$$ Note that the reference value, 64.5, is generally denoted as $\mu_0$. This test is referred to as a right-tailed test because we aim to show that the target parameter $\mu$ lies to the right of the reference value $\mu_0$.
 
 ## Sample Data
-As the target parameter population mean is unknown, we need to collect a sample for inference. For this purpose, let's use the **Height** variable in our class survey data. 
+
+As the target parameter population mean is unknown, we need to collect a sample for inference. For this purpose, let's use the **Height** variable in a previous class survey data.
+
 ```{webr-r}
 head(Survey_Data)
 # Obtain the index of Female students
-index<-Survey_Data$Gender == "Female"
-# Obtain the Height data of Female students
-X<-Survey_Data$Height[index]
+index <- (Survey_Data$Gender == "Female")
+# Obtain the Height data of Female students using the index
+X <- Survey_Data$Height[index]
 ```
 
 ## Choice of Test
-Now, let us explore our data vector $X$ and record necessary components.
+
+Now, let us explore the height data vector $X$ and record necessary components.
+
 ```{webr-r}
 # Sample Size
 print(n<-length(X))
-# Mean value
+# Sample Mean 
 print(xbar<-mean(X))
-# Standard deviation
+# Sample Standard Deviation
 print(s<-sd(X))
 # mu_0
 mu0<-64.5
 # significance level
 alpha<-0.1
 ```
-Here, the sample size is large $n\ge 30$, so we can use the $z$ test statistic:
-$$
+
+Here, the sample size is large $n\ge 30$, so we can use the [$z$ test statistic]{style="color:blue;"}: $$
 Z^*=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}
-$$
-In particular, the population standard deviation $\sigma$ will be replaced by its sample counterpart, which we calculated earlier, as we are working with a large sample size.
+$$ In particular, the population standard deviation $\sigma$ will be replaced by its sample counterpart, which we calculated earlier, as we are working with a large sample size.
 
 ```{webr-r}
 # Z-test statistic
 print(z.star<-(xbar-mu0)/(s/sqrt(n)))
 ```
 
-## p-value 
+## p-value
 
-Once we have the test statistic, the next step is to calculate the corresponding p-value.  
-In a z-test, the p-value is essentially one of the tail-probabilities from the standard normal distribution. Since this test is a **right-tailed** test, we calculate the right-tail probability. In **R**, the function $\texttt{pnorm()}$ provides us the left-tail probability, so
-$$
-\text{p-value}=P[Z>z^*]\stackrel{\textsf{R}}{=}\texttt{1-pnorm(z.star)}.
+Once we have the test statistic, the next step is to calculate the corresponding p-value.\
+In a z-test, the p-value is essentially one of the tail-probabilities from the standard normal distribution. Since this test is a **right-tailed** test, we calculate the right-tail probability. We could use a $z$-table; however, in **R**, the function $\txt{pnorm()}$ is used  to compute the left-tail probability, so $$
+\text{p-value}=P[Z>z^*]=1-P[Z\le z^*]\stackrel{\textsf{R}}{=}\txt{1-pnorm(z.star)}.
 $$
 
 ```{webr-r}
 # p-value
 print(p.value<-1-pnorm(z.star))
 ```
-Note that **a small p-value indicates a strong evidence against the Null Hypothesis in favor of Alternative Hypothesis, allowing us to reject the null hypothesis**. But, how small is small enough? This is determined by comparing the p-value to the significance level.
+
+Note that [**a small p-value indicates a strong evidence against the Null Hypothesis in favor of Alternative Hypothesis, allowing us to reject the null hypothesis**]{style="color:blue;"}. But, how small is small enough? This is determined by comparing the p-value to the significance level.
+
 ```{webr-r}
 # Conclusion
 print(p.value <= alpha)
@@ -269,64 +273,75 @@ print(p.value <= alpha)
 
 ## Conclusion and Interpretation
 
-In this case, we **fail to reject the null hypothesis**. Interpretation should be based on the context of the problem:  
-**"Given the significance level 0.1, there is not enough evidence that the population average height of all Lehigh female students is greater than 64.5 inches."**. 
+In this case, we **fail to reject the null hypothesis**. Interpretation should be based on the context of the problem:\
+[**"Given the significance level 0.1, there is not enough evidence that the population average height of all Lehigh female students is greater than 64.5 inches."**]{style="color:blue;"}.
 
 ## Small Sample Case
 
 Now, let us consider a slightly different population parameter: the population average height of all Lehigh female students whose favorite professional sports is NBA. Regarding this target parameter, we wish to perform exactly the same right-tailed test. Let us explore the data.
+
 ```{webr-r}
 # Select all the students whose favorite sports is basketball
-index2<-Survey_Data$Sports=="NBA"
-# Subsetting
-X.Sub<-Survey_Data$Height[index&index2]
+index2 <- Survey_Data$Sports=="NBA"
+# Select female students whose favorite sports is NBA
+X.Sub <- Survey_Data$Height[index&index2]
 # Sample Size
-print(n<-length(X.Sub))
+print(n <- length(X.Sub))
 # Mean value
-print(xbar<-mean(X.Sub))
+print(xbar <- mean(X.Sub))
 # Standard deviation
-print(s<-sd(X.Sub))
+print(s <- sd(X.Sub))
 
 ```
-Note that the sample size of new data set is small ($n<30$). In this case, we have to use the $t$-test. (Let us assume the population distribution is normal to satisfy the assumption.)
-$$
+
+Note that the sample size of new data set is small ($n<30$). In this case, we have to use the [$t$-test]{style="color:blue;"}. (Let us presume the population distribution is normal to satisfy the assumption.) $$
 T^*=\frac{\bar{X}-\mu_0}{s/\sqrt{n}}
 $$
+
 ```{webr-r}
 # t-test statistic
-print(t.star<-(xbar-mu0)/(s/sqrt(n)))
+print(t.star <- (xbar-mu0)/(s/sqrt(n)))
 ```
 
-For the p-value calculation, we now need to compute one of the tail probabilities of the t-distribution with the corresponding $n-1$ degrees of freedom. The t-table we use in class does not provide the exact probability, but the **R** function $\texttt{pt()}$ can be used for the precise computation. Since this is still right-tailed test:
+For the p-value calculation, we now need to compute one of the tail probabilities of the t-distribution with the corresponding $n-1$ degrees of freedom. The t-table we use in class does not provide the exact probability, but the **R** function $\txt{pt()}$ can be used for the precise computation. Since this is still right-tailed test: $$
+\text{p-value}=P[T>t^*]=1-P[T\le t^*]\stackrel{\textsf{R}}{=}\txt{1-pt(t.star,n-1)}.
 $$
-\text{p-value}=P[T>t^*]\stackrel{\textsf{R}}{=}\texttt{1-pt(t.star,n-1)}.
-$$
+
 ```{webr-r}
 # p-value
-print(p.value<-1-pt(t.star,n-1))
+print(p.value <- 1-pt(t.star,n-1))
 # Conclusion
 (p.value <= alpha)
 ```
-Note that we can **reject the null hypothesis** in this sub-group analysis. Therefore,
-**"Given the significance level 0.1, there is enough evidence that the population average height of all Lehigh female students who like the NBA is greater than 64.5 inches."**. 
 
+Note that we can **reject the null hypothesis** in this sub-group analysis. Therefore,  
+[**"Given the significance level 0.1, there is enough evidence that the population average height of all Lehigh female students who like the NBA is greater than 64.5 inches."**]{style="color:blue;"}.
 
 ## Lab Questions
 
 Let us consider the population average height $\mu$ of all Lehigh [male]{style="color:blue;"} students. In particular, we are interested in whether the average height of the male students is less than 70 inches and wish to statistically confirm this claim with a 0.1 significance level.
 
-1. Choose the right form of the null and alternative hypotheses.
-  i) $H_0:\; \mu \le 70 \;\;\text{vs.}\;\;H_a:\; \mu > 70.$
-  ii) $H_0:\; \mu \ge 70 \;\;\text{vs.}\;\;H_a:\; \mu < 70.$
-  iii) $H_0:\; \mu < 70 \;\;\text{vs.}\;\;H_a:\; \mu \ge 70.$
-  iv) $H_0:\; \mu > 70 \;\;\text{vs.}\;\;H_a:\; \mu \le 70.$
+1.  Choose the right form of the null and alternative hypotheses.
 
-2. Subset the relevant sample data and record the necessary component.  
-What would be your choice of the test? (Determine it solely based on the sample size.)
-  i) z-test 
-  ii) t-test
+<!-- -->
+
+i)  $H_0:\; \mu \le 70 \;\;\text{vs.}\;\;H_a:\; \mu > 70.$
+ii) $H_0:\; \mu \ge 70 \;\;\text{vs.}\;\;H_a:\; \mu < 70.$
+iii) $H_0:\; \mu < 70 \;\;\text{vs.}\;\;H_a:\; \mu \ge 70.$
+iv) $H_0:\; \mu > 70 \;\;\text{vs.}\;\;H_a:\; \mu \le 70.$
+
+<!-- -->
+
+2.  Subset the relevant sample data and record the necessary component.\
+    What would be your choice of the test? (Determine it solely based on the sample size.)
+
+<!-- -->
+
+i)  z-test
+ii) t-test
+
 ```{webr-r}
-index3<-Survey_Data$Gender=="Male"
+index3 <- Survey_Data$Gender=="Male"
 X<-
 n<-
 xbar<-
@@ -335,13 +350,17 @@ mu0<-
 alpha<-
 ```
 
-3. Compute the test-statistic and calculate the p-value.
+3.  Compute the test-statistic and calculate the p-value.
+
 ```{webr-r}
 
 ```
 
-4. Make a conclusion and choose the correct interpretation.
-  i) Reject $H_0$. There is enough evidence that the population average height of all Lehigh male students is less than 70.
-  ii) Reject $H_0$. There is not enough evidence that the population average height of all Lehigh male students is less than 70.
-  iii) Fail to reject $H_0$. There is enough evidence that the population average height of all Lehigh male students is less than 70.
-  iv) Fail to teject $H_0$. There is not enough evidence that the population average height of all Lehigh male students is less than 70.
+4.  Make a conclusion and choose the correct interpretation.
+
+<!-- -->
+
+i)  Reject $H_0$. There is enough evidence that the population average height of all Lehigh male students is less than 70.
+ii) Reject $H_0$. There is not enough evidence that the population average height of all Lehigh male students is less than 70.
+iii) Fail to reject $H_0$. There is enough evidence that the population average height of all Lehigh male students is less than 70.
+iv) Fail to teject $H_0$. There is not enough evidence that the population average height of all Lehigh male students is less than 70.
