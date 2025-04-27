@@ -665,20 +665,20 @@ NA, 1, NA, 62, 15, 0.83, NA, 23, 18, 39, 21, NA, 32, NA, 20,
     7.75)), class = "data.frame", row.names = c(NA, -891L))
 attach(Titanic)
 ```
-
-
+::: {.hidden}
+\let\OldTexttt\texttt
+\renewcommand{\txt}[1]{\OldTexttt{\color{brown}{#1}}}
+:::
 
 # Inferential Statistics (III)
 
-
-This week, let's delve into **hypothesis testing for comparing two groups**. In this lab, let us presume the assumptions for the hypothesis testings are satisfied, e.g., random sampling.
+This week, let's delve into **hypothesis testing for comparing two groups**. In this lab, let us presume the assumptions for the hypothesis testings are satisfied, e.g., random sampling and independence.
 
 ## Titanic Data Set
 
-On April 15, 1912, the RMS Titanic, heralded as “unsinkable,” met its tragic fate during its maiden voyage after striking an iceberg. The insufficient number of lifeboats onboard sealed the fate of many, claiming 1,502 lives out of the 2,224 passengers and crew.
-Survival, while partly a matter of chance, also reflected stark disparities, with some groups having a significantly greater likelihood of making it to safety.
+On April 15, 1912, the RMS Titanic, heralded as “unsinkable,” met its tragic fate during its maiden voyage after striking an iceberg. The insufficient number of lifeboats onboard sealed the fate of many, claiming 1,502 lives out of the 2,224 passengers and crew. Survival, while partly a matter of chance, also reflected stark disparities, with some groups having a significantly greater likelihood of making it to safety.
 
-The data set $\texttt{Titanic}$ contains the passenger information ("Name" variable was removed).
+The data set $\txt{Titanic}$ contains the passenger information ("Name" variable was removed).
 
 ```{r,eval=FALSE}
 01. Survived: Survival Status (0 = No, 1= Yes)
@@ -690,6 +690,7 @@ The data set $\texttt{Titanic}$ contains the passenger information ("Name" varia
 07. Ticket:   Ticket Number 
 08. Fare:     Passenger Fare
 ```
+
 Given a dataset, one of the most intriguing target parameters to examine is the [survival rate]{style="color:blue;"}: the proportion of passengers within a group who survived. This proportion is often represented using the class notation [p]{style="color:blue;"}. Specifically, our goal is to compare survival rates across various groups to uncover patterns or disparities.
 
 ## Gender Disparity
@@ -704,53 +705,53 @@ print(xm<-sum(Survived==1 & Gender=="male"))
 print(pf<-xf/nf)
 print(pm<-xm/nm)
 ```
-Note that this can be easily summarized by a contingency table. 
+
+Note that this can be easily summarized by a contingency table.
+
 ```{webr-r}
 TBL1<-table(Gender,Survived)
 TBL2<-prop.table(TBL1, margin = 1)
 print.table(TBL2)
 ```
+
 Observe that the proportion of female survivors is greatly larger than that of male survivors. Then, let us see whether we can statistically confirm this difference.
 
 ### Setting up Hypotheses
 
-We want to confirm whether the survival rate of female group $p_f$ is larger than that of male group $p_m$: 
-\begin{align}
+We want to confirm whether the survival rate of female group $p_f$ is larger than that of male group $p_m$: \begin{align}
 H_0:\; p_f-p_m \le 0\; \;\;\text{vs.}&\;\;H_a:\; p_f-p_m > 0 ,\\
 \;\;(i.e.,\;\;H_0:\; p_f \le p_m \;\;\text{vs.}&\;\;H_a:\; p_f>p_m).
 \end{align}
 
-
 ### Test Statistic
 
-We set up the following test statistic
-$$
+We set up the following test statistic $$
 z^*=\frac{(\hat{p}_f-\hat{p}_m)-0}{\sqrt{\hat{p}(1-\hat{p})(1/n_1+1/n_2)}},
-$$
-where $\hat{p}=\frac{X_f+X_m}{n_f+n_m}$ with $X_f$ the number of survived passengers in female group, $X_m$ the number of survived passengers in male group, $n_f$ the number of female passengers, and $n_m$ the number of male passengers.
+$$ where $\hat{p}=\frac{X_f+X_m}{n_f+n_m}$ with $X_f$ the number of survived passengers in female group, $X_m$ the number of survived passengers in male group, $n_f$ the number of female passengers, and $n_m$ the number of male passengers.
+
 ```{webr-r}
 print(phat<-(xf+xm)/(nf+nm))
 print(z.star<-(pf-pm)/sqrt(phat*(1-phat)*(1/nf+1/nm)))
 ```
-It is worth noting that the observed z-test statistic is remarkably large, so we can expect a very small p-value.
 
+It is worth noting that the observed z-test statistic is remarkably large, so we can expect a very small p-value.
 
 ### p-value
 
-This is a **right-tailed** test based on **z** test statistic. Similar to the previous lab, we use the function $\texttt{pnorm()}$ provides us the left-tail probability, so
-$$
+This is a **right-tailed** test based on **z** test statistic. Similar to the previous lab, we use the function $\txt{pnorm()}$ provides us the left-tail probability, so $$
 \text{p-value}=P[Z>z^*]\stackrel{\textsf{R}}{=}\texttt{1-pnorm(z.star)}.
 $$
+
 ```{webr-r}
 print(p.val<-1-pnorm(z.star))
 ```
-The p-value is essentially **zero**!, which means we can comfortably reject the null hypothesis for any significance level. The interpretation should align with the context of the problem. At any significance level, there is sufficient evidence to conclude that a gender disparity exists in the survival rates of the Titanic shipwreck.
 
+The p-value is essentially **zero**!, which means we can comfortably reject the null hypothesis for any significance level. The interpretation should align with the context of the problem. At any significance level, there is sufficient evidence to conclude that a gender disparity exists in the survival rates of the Titanic shipwreck.
 
 ## Socioeconomic Status Disparity
 
-Let us now consider the socioeconomic status difference based on the proxy variable, **ticket class**.
-Let us define the following variables: $\hat{p}_1$ is the sample survival rate of 1st class group, $\hat{p}_2$ is the sample survival rate of 2nd class group, where $X_1$ the number of survived passengers in 1st class group, $X_2$ the number of survived passengers in 2nd class group, $n_1$ the number of 1st class passengers, and $n_2$ the number of 2nd class passengers.
+Let us now consider the socioeconomic status difference based on the proxy variable, **ticket class**. Let us define the following variables: $\hat{p}_1$ is the sample survival rate of 1st class group, $\hat{p}_2$ is the sample survival rate of 2nd class group, where $X_1$ the number of survived passengers in 1st class group, $X_2$ the number of survived passengers in 2nd class group, $n_1$ the number of 1st class passengers, and $n_2$ the number of 2nd class passengers.
+
 ```{webr-r}
 print(n1<-sum(Pclass==1))
 print(x1<-sum(Survived==1 & Pclass==1))
@@ -762,40 +763,42 @@ print(p2<-x2/n2)
 
 ### Setting up Hypotheses
 
-We want to confirm whether the survival rate of female group $p_1$ is larger than that of male group $p_2$: 
-\begin{align}
+We want to confirm whether the survival rate of the 1st class group $p_1$ is larger than that of the 2nd class group $p_2$: \begin{align}
 H_0:\; p_1-p_2 \le 0\; \;\;\text{vs.}&\;\;H_a:\; p_1-p_2 > 0 ,\\
 \;\;(i.e.,\;\;H_0:\; p_1 \le p_2 \;\;\text{vs.}&\;\;H_a:\; p_1>p_2).
 \end{align}
 
-
-
 ### Test Statistic and p-value
 
-We set up the following test statistic 
-$$
+We set up the following test statistic $$
 z^*=\frac{(\hat{p}_1-\hat{p}_2)-0}{\sqrt{\hat{p}(1-\hat{p})(1/n_1+1/n_2)}},
-$$
-where $\hat{p}=\frac{X_1+X_2}{n_1+n_2}$ with $X_1$ the number of survived passengers in female group, $X_2$ the number of survived passengers in male group, $n_1$ the number of female passengers, and $n_2$ the number of male passengers.
+$$ where $\hat{p}=\frac{X_1+X_2}{n_1+n_2}$ with $X_1$ the number of survived passengers in the 1st class group, $X_2$ the number of survived passengers in the 2nd class group, $n_1$ the number of the 1st class passengers, and $n_2$ the number of the 2nd class passengers.
+
 ```{webr-r}
 print(phat<-(x1+x2)/(n1+n2))
 print(z.star<-(p1-p2)/sqrt(phat*(1-phat)*(1/n1+1/n2)))
 print(p.val<-1-pnorm(z.star))
 ```
-What would you be your conclusion and interpretation?
 
+What would you be your conclusion and interpretation?
 
 ## Lab Questions
 
-Let us complete the investigation regarding the socioeconomic status difference by comparing 2nd and 3rd classes in the **ticket class** variable. 
+Let us complete the investigation regarding the socioeconomic status difference by comparing 2nd and 3rd classes in the **ticket class** variable.
 
-1. Choose the right form of the null and alternative hypotheses.
-  i) $H_0:\; p_2-p_3 \le 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 > 0$
-  ii) $H_0:\; p_2-p_3 < 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 \ge 0$ 
-  iii) $H_0:\; p_2-p_3 \ge 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 < 0$ 
-  iv) $H_0:\; p_2-p_3 > 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 \le 0$ 
+1.  Choose the right form of the null and alternative hypotheses.
 
-2. Define the relevant variables.
+<!-- -->
+
+i)  $H_0:\; p_2-p_3 \le 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 > 0$
+ii) $H_0:\; p_2-p_3 < 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 \ge 0$
+iii) $H_0:\; p_2-p_3 \ge 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 < 0$
+iv) $H_0:\; p_2-p_3 > 0\; \;\;\text{vs.}\;\;H_a:\; p_2-p_3 \le 0$
+
+<!-- -->
+
+2.  Define the relevant variables.
+
 ```{webr-r}
 n2<-
 x2<-
@@ -805,16 +808,17 @@ p2<-
 p3<-
 ```
 
-3. Compute the test-statistic and calculate the p-value.
+3.  Compute the test-statistic and calculate the p-value.
+
 ```{webr-r}
 
 ```
 
-4. Make a conclusion and choose the correct interpretation.
-  i) Reject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
-  ii) Reject $H_0$.  There is not enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
-  iii) Fail to reject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
-  iv) Fail to teject $H_0$.  There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
+4.  Make a conclusion and choose the correct interpretation.
 
+<!-- -->
 
-
+i)  Reject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
+ii) Reject $H_0$. There is not enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
+iii) Fail to reject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
+iv) Fail to teject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
