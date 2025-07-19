@@ -14,26 +14,7 @@ website:
         text: Lab 1
       - href: Lab_2.qmd
         text: Lab 2
-      - href: Lab_3.qmd
-        text: Lab 3   
-      - href: Lab_4.qmd
-        text: Lab 4    
-      - href: Lab_5.qmd
-        text: Lab 5
-      - href: Lab_6.qmd
-        text: Lab 6
-      - href: Lab_7.qmd
-        text: Lab 7
-      - href: Lab_8.qmd
-        text: Lab 8
-      - href: Lab_9.qmd
-        text: Lab 9
-      - href: Lab_10.qmd
-        text: Lab 10
-      - href: Lab_11.qmd
-        text: Lab 11
-      - href: Lab_12.qmd
-        text: Lab 12
+
   favicon: lehigh-icon.ico
         
   sidebar: 
@@ -43,16 +24,7 @@ website:
           contents:
             - Lab_1.qmd
             - Lab_2.qmd
-            - Lab_3.qmd
-            - Lab_4.qmd
-            - Lab_5.qmd
-            - Lab_6.qmd
-            - Lab_7.qmd
-            - Lab_8.qmd
-            - Lab_9.qmd
-            - Lab_10.qmd
-            - Lab_11.qmd
-            - Lab_12.qmd
+
 filters:
   - webr
       
