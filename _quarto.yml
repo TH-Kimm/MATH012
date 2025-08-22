@@ -12,8 +12,7 @@ website:
         text: Home
       - href: Lab_1.qmd
         text: Lab 1
-      - href: Lab_2.qmd
-        text: Lab 2
+
 
   favicon: lehigh-icon.ico
         
@@ -23,7 +22,7 @@ website:
         - section: "Lab Sessions"
           contents:
             - Lab_1.qmd
-            - Lab_2.qmd
+
 
 filters:
   - webr
