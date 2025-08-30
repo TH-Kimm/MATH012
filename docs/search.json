@@ -159,7 +159,7 @@
     "href": "Lab_2.html#lab-questions",
     "title": "Lab 2",
     "section": "Lab Questions",
-    "text": "Lab Questions\n\nBMI is a measurement of a person’s leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: \\[\\textbf{BMI}=703\\times \\frac{\\text{weight (lb)}}{ \\text{(height (in)})^2}\\] Suppose the previously obtained vector \\(\\texttt{\\color{brown}{weight\\_pound}}\\) is the weights of seven Lehigh students. Also, the corresponding height observations in inches are \\[70,\\;72,\\;72.5,\\;66,\\;74,\\;66.5,\\;72.\\]\n\n\n\nSave the height observations in a vector by using a descriptive name.\nCalculate the BMIs of the seven students.\nCompute the mean and median of the BMIs.\nCompute the mean BMI of the first three students and the mean BMI of the last four students.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Lab Questions\n\nBMI is a measurement of a person’s leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height and it is defined by: \\[\\textbf{BMI}=703\\times \\frac{\\text{weight (lb)}}{ \\text{(height (in)})^2}\\] Suppose the previously obtained vector \\(\\texttt{\\color{brown}{weight\\_pound}}\\) is the weights of seven Lehigh students. Also, the corresponding height observations in inches are \\[70,\\;72,\\;72.5,\\;66,\\;74,\\;66.5,\\;72.\\]\n\n\n\nSave the height observations in a vector by using a descriptive name.\nCalculate the BMIs of the seven students.\nCompute the mean and median of the BMIs.\nCompute the mean BMI of the first three students and the mean BMI of the last four students.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nClick HERE to submit your answers.",
     "crumbs": [
       "Home",
       "Lab Sessions",
@@ -1117,7 +1117,7 @@
     "href": "Lab_2.html#length",
     "title": "Lab 2",
     "section": "Length",
-    "text": "Length\nWhen the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the function to obtain this information.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Length\nWhen the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the \\(\\texttt{\\color{brown}{length()}}\\) function to obtain this information.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Lab Sessions",
@@ -1130,6 +1130,18 @@
     "title": "Lab 2",
     "section": "Summation",
     "text": "Summation\nWe can also easily calculate the summation of a vector by using the functions, \\(\\texttt{\\color{brown}{sum()}}\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Lab Sessions",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "Lab_2.html#vector-operations-in-textttcolorbrownr",
+    "href": "Lab_2.html#vector-operations-in-textttcolorbrownr",
+    "title": "Lab 2",
+    "section": "Vector Operations in \\(\\texttt{\\color{brown}{R}}\\)",
+    "text": "Vector Operations in \\(\\texttt{\\color{brown}{R}}\\)\nOne of the powerful features of vectors in \\(\\texttt{\\color{brown}{R}}\\) is the ability to perform the same calculation on every element with a single command, i.e., element-wise operation. For example, when converting weights from pounds to kilograms, we can multiply 0.454. This operation can be applied to all the numbers in a vector simultaneously:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe operation between two vectors is also element-wise in R.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Lab Sessions",

@@ -37,6 +37,8 @@ If we want to create an integer vector, then the $\txt{:}$ operator or $\txt{seq
 print(loss <- 1:7)
 print(half_sequence <- seq(1,10,by=0.5))
 ## Use ?seq for further information.
+## Quick Question: 
+## Is it possible to recreate "half_sequence" using the : operator?
 ```
 
 Of course, we can combine two vectors by using the $\txt{c()}$ function again.
@@ -109,7 +111,7 @@ Consider the vector $\txt{weight\_update}$:
 
 ## Length
 
-When the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the \txt{length()} function to obtain this information.
+When the number of elements in a vector (equivalently, the number of observations in a variable, or simply the sample size) is unknown, we can simply use the $\txt{length()}$ function to obtain this information.
 
 ```{webr-r}
 length(weight_pound)
@@ -197,3 +199,6 @@ v) Use R to calculate the average amount of urine (in ml) in a 500,000 L pool.
 ```
  -->
 ````
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5901189){target="_blank"} to submit your answers.**
