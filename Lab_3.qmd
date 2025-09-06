@@ -13,7 +13,7 @@ webr:
 
 A data frame in **R** stores a data set where columns represent variables and rows correspond to individuals. Each element in the data frame is an observation or measurement of a variable for a specific individual. (It’s similar to an Excel sheet.)
 
-A data frame is typically given a name, which tells **R**'s functions which dataset to work with. For example, a built-in data set $\texttt{\color{brown}{mtcars}}$ contains car specification information in 1970's. This data frame has 11 variables and 32 individual cars. The following $\texttt{\color{brown}{head()}}$ function shows the variables names and first six observations. Also, we can use the $\texttt{\color{brown}{help()}}$ function for the variable descriptions.
+A data frame is typically given a name, which tells **R**'s functions which dataset to work with. For example, a built-in data set $\texttt{\color{brown}{mtcars}}$ contains car specification information in 1970's. This data frame has 11 variables and 32 observations (individual cars). The following $\texttt{\color{brown}{head()}}$ function shows the variables names and first six observations. Also, we can use the $\texttt{\color{brown}{help()}}$ function for the variable descriptions.
 
 ```{webr-r}
 head(mtcars)
@@ -36,7 +36,7 @@ Another way to extract a variable is to use an index with the $\texttt{\color{br
 ```{webr-r}
 ## Subsetting a variable with "[]"
 print(HP2 <- mtcars[,4])
-## Checking the two variables are identical
+## Check if the two variables are identical
 identical(HP,HP2)
 ```
 
@@ -47,7 +47,7 @@ We can certainly extract the value of a particular variable for a specific car, 
 ```{webr-r}
 ## the horsepower of "Datsun 710"
 mtcars[3,4]
-## Subsetting observations of a variable with "[]"
+## the hoursepower of five cars
 print(HP3 <- mtcars[4:8,4])
 HP[4:8]
 ```
@@ -81,6 +81,7 @@ Consider the $\texttt{\color{brown}{mtcars}}$ data again.
 4.  Extract the $\texttt{\color{brown}{mpg}}$ and $\texttt{\color{brown}{hp}}$ variables except for the $\texttt{\color{brown}{Merc}}$ cars.
 
 ```{webr-r}
+head(mtcars)
 ## 1
 
 ## 2
@@ -146,3 +147,5 @@ ii) Additionally, we have learned an alternative formula for variance calculatio
 ```{webr-r}
 
 ```
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5912613){target="_blank"} to submit your answers.**
