@@ -270,7 +270,7 @@ Based on the results of conditional frequency table, we can answer questions suc
 
 ## Bar Plot
 
-A bar plot is highly useful for displaying categorical data, regardless of the number of categories. To create a bar plot, we can use the $\txt{barplot()}$ function. Note that the function accepts the $\txt{table}$ object that we created earlier.
+A bar plot is often more effective than a pie chart for displaying categorical data, especially when dealing with a large number of categories. To create a bar plot, we can use the $\txt{barplot()}$ function. Note that the function accepts the $\txt{table}$ object that we created earlier.
 
 ```{webr-r}
 ## Barplot
@@ -303,7 +303,7 @@ Select a single categorical variable from the data set, and create a bar plot wi
 Histogram is a versatile graphical display for a single numerical variable (data). It directly accepts a numerical vector as its first argument. Let us create a histogram for the $\txt{Height}$ variable.
 
 ```{webr-r}
-## Use Freq=FALSE to get a relative frequency table.
+## Use Freq=FALSE to get a histogram based on the relative frequency. .
 hist(Height,freq=FALSE)
 ## Let us refine the title 
 hist(Height,main="Height: MATH 012 Students",freq=FALSE)
@@ -387,3 +387,5 @@ iii) Which gender has a higher central value for $\txt{Shoes}$? Which gender sho
 ```{webr-r}
 
 ```
+
+**Click [HERE](){target="_blank"} to submit your answers.**
