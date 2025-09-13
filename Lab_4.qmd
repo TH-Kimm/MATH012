@@ -388,4 +388,4 @@ iii) Which gender has a higher central value for $\txt{Shoes}$? Which gender sho
 
 ```
 
-**Click [HERE](){target="_blank"} to submit your answers.**
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5922429){target="_blank"} to submit your answers.**
