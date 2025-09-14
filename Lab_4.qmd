@@ -360,7 +360,7 @@ iii) Create a conditional frequency table for $\txt{Browser}$ with respect to $\
 
 ```
 
-iv) Create a conditional frequency barplot for $\txt{Browser}$ with respect to $\txt{Cat\_Dog}$. Discuss the percentages of Edge and Safari with respect to the personality.
+iv) Create a conditional frequency barplot for $\txt{Browser}$ with respect to $\txt{Cat\_Dog}$. Discuss the relationship between the two categorical variables.
 
 ```{webr-r}
 
