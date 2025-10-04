@@ -194,6 +194,6 @@ textxy(NRPG, Win_P,labs=Team,cex=1,col="black")
 
 ```
 
-4.  Choose relevant interpretations for the slope and intercept coefficients.
+4.  Provide the relevant interpretations for the slope and intercept coefficients.
 
-
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5947314){target="_blank"} to submit your answers.**
