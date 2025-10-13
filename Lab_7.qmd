@@ -251,7 +251,7 @@ Our first step is to examine the correlation and scatter plots. We'll create the
 
 ```{webr-r}
 ## In this lab, the data is not "attached"
-## So, we are using "$" operator to select the variable
+## So, we use the "$" operator to select variables
 cor(SURVEY$Height,SURVEY$MO_Height)
 plot(SURVEY$Height,SURVEY$MO_Height)
 ## Please try the same operations with Height and FA_Height
@@ -259,7 +259,9 @@ plot(SURVEY$Height,SURVEY$MO_Height)
 
 ```
 
-Do you believe the variables demonstrate a sufficient level of linear association to justify proceeding with linear regression? Based on the results, the answer seems to be 'NO.' A common rule of thumb is that a correlation of around 0.7 (or at least 0.6) is recommended. So, should we stop our analysis here?
+Do you believe the variables demonstrate a sufficient level of linear association to justify proceeding with linear regression? Based on the results, the answer appears to be **“NO.”** In general, as a common rule of thumb, a moderately strong correlation — around $\pm0.7$, or at least $\pm0.6$ — is recommended. (Note that the threshold depends heavily on the nature of the data, e.g., observational vs. experimental, and the field of study, e.g., natural science vs. social science.)
+
+So, should we stop our analysis here?
 
 ## Searching for the relationship within subsets.
 
@@ -267,7 +269,7 @@ This type of issue is commonly encountered in data analysis. However, we can sti
 
 ### Example: Subsetting with $\txt{subset()}$
 
-The $\txt{subset()}$ function takes three arguments: the first is the dataset to subset, the second is the condition for selecting observations (rows in data table), and the third specifies the variables (columns in data table) to retain. For example, with the $\txt{mtcars}$ dataset:
+The $\txt{subset()}$ function takes three arguments: the first is the dataset to subset, the second is the condition for selecting observations (rows in data table), and the third specifies the variables (columns in data table) to retain. For example,
 
 ```{webr-r}
 ## Keep all the variables with the observations with Shoes>20
@@ -281,7 +283,7 @@ print(Subset2<-subset(SURVEY,Shoes>20,c("Pets","Height")))
 dim(Subset2)
 ```
 
-Now, let us subset our data for the regression analysis. A common method of subsetting is by using the gender variable. So,
+Now, let us subset our data for further regression analysis. A common way of subsetting is by using the gender variable. So,
 
 ```{webr-r}
 ## Female Survey dataset
@@ -321,7 +323,7 @@ Note that the coefficient of determination ($\mathbf{R}^2$) is 0.3926, and it re
 What if we use both the mother’s height ($\txt{MO\_Height}$) and the father’s height ($\txt{FA\_Height}$) for prediction? This approach is known as **multiple regression analysis**. Even though we didn't learn this procedure in class, it can be easily implemented as follows:
 
 ```{webr-r}
-print(Reg2 <- lm(Height~MO_Height+Sleep,data=MSV))
+print(Reg2 <- lm(Height~MO_Height+FA_Height,data=MSV))
 ## Regression summary
 summary(Reg2)
 ```
@@ -402,3 +404,6 @@ plot(DATA$LM.Body,DATA$LM.Brain)
 new.obs<-data.frame(LM.Body=3.12)
 
 ```
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5956215){target="_blank"} to submit your answers.**
