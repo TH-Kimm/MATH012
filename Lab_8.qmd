@@ -51,8 +51,10 @@ Now, we can use the $\txt{sample()}$ function in $\textbf{R}$ to implement the e
 BOX<-c(1,1,1,2,2,2,2,2,3,3)
 ## Drawing a single ball from the box model
 sample(BOX,size=1,replace=TRUE)
+
 ## Drawing 10 balls from the box model
 #sample(BOX,size=10,replace=TRUE)
+
 ## Drawing 100 balls from the box model
 #sample(BOX,size=100,replace=TRUE)
 ```
@@ -121,7 +123,7 @@ $$
 
 ### Example: Curry's free throw shootings
 
-Stephen Curry is renowned for his three-point shooting, but he also holds the highest career free-throw percentage in NBA history (91%). Suppose we expect him to attempt 7 free throws in the Warriors' season opener against the Pelicans on 03/28/2025.
+Stephen Curry is renowned for his three-point shooting, but he also holds the highest career free-throw percentage in NBA history (91%). Suppose we expect him to attempt 7 free throws in the Warriors' game against the Pelicans on 03/28/2025.
 
 We can model this scenario using the binomial probability distribution with $p=0.91$ (success probability) and $n=7$ (number of attempts). The probability that he makes **exactly 5** out of 7 free throws can be calculated as:
 
@@ -132,28 +134,29 @@ p <- 0.91
 factorial(n)/(factorial(5)*factorial(n-5))*p^5*(1-p)^(n-5)
 ```
 
-While this direct computation is doable in **R**, it may not be convenient to write out all the steps manually. Instead, we can use the built-in function $\txt{dbinom()}$ to simplify the process. The function $\txt{dbinom()}$ accepts the three arguments:
+While this direct computation is doable in **R**, it may not be convenient to write out all the codes manually. Instead, we can use the built-in function $\txt{dbinom()}$ to simplify the process. The function $\txt{dbinom()}$ accepts the three arguments:
 
 - The first argument is the observed $x$ value;
 - The second and third arguments are the two parameters $n$ and $p$.
 
 ```{webr-r}
-## Here x=5, n and p are gvien.
+## Here is the probability of x=5 when n and p are given.
 dbinom(5,n,p)
 ```
 
-In addition, we can calculate the probability of achieving **five or fewer** successful shots using the function$\txt{pbinom()}$.
+In addition, we can calculate the probability of achieving **five or fewer** successful shots using the function $\txt{pbinom()}$.
 
 ```{webr-r}
-## Arguments are the same as earlier
+## Given the same information as earlier
 pbinom(5,n,p)
 ```
 
-Therefore, the probability the number of successes is **more than five** shots becomes:
+Lastly, the probability the number of successes is **more than five** shots becomes:
 
 ```{webr-r}
 1-pbinom(5,n,p)
 ```
+Note that the probability above was obtained using the complement rule.
 
 We can also check the shape of the distribution as well:
 
@@ -204,3 +207,6 @@ p <-
 ```{webr-r}
 
 ```
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5961981){target="_blank"} to submit your answers.**
