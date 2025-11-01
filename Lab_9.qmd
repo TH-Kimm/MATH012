@@ -46,7 +46,7 @@ A normal distribution can be characterized by two parameters: the mean $\mu$ and
 
 # Probability calculation
 
-Probability calculations under a normal distribution can be easily performed using the function $\txt{pnorm(c)}$. Similar to using a $z$-table, this function provides the left-tail probability based on a cutoff value of $c$.
+Probability calculations under a normal distribution can be easily performed using the function $\txt{pnorm(c)}$. Similar to using a $z$-table, this function provides the **left-tail probability** based on a cutoff value of $c$.
 
 Suppose $X$ to be the \# of beer cans consumed by a female college student in a year. It is assumed to be normally distributed with the mean 260 and standard deviation 80. What we are interested in is the proportion of female students drink less than 300 beer cans per year.
 
@@ -112,7 +112,7 @@ In particular, we call the second result **the central limit theorem (C.L.T.)**.
 
 # Probability calculation
 
-Suppose a test score has the mean value 78 and standard deviation 10. We don't have any other information regarding the population distribution. Let us consider the probability that a sample mean with the sample size $n=32$ is greater than 82.
+Suppose a test score has the mean value 78 and standard deviation 10. We don't have any other information regarding the population distribution. Let us consider the probability that a sample mean with the sample size $n=32$ is greater than 82, i.e., the probability that the average test score of 32 students is greater than 82.
 
 ```{webr-r}
 # Given information
@@ -197,3 +197,6 @@ ii. If we sample 100 teachers' salaries, what is the probability that the sample
 ```
 
 iii. Why is the probability in part (i) higher than the probability in part (ii)?
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5992461){target="_blank"} to submit your answers.**
