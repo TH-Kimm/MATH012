@@ -61,6 +61,8 @@ print(n <- length(M.Height))
 print(mu <- mean(M.Height))
 # This population is designed to have the standard deviation 3.5.
 print(sigma <- sd(M.Height))
+# The first six measurements
+head(M.Height)
 ```
 
 From the population, we can randomly draw a sample of size $n=50$ using the $\txt{sample()}$ function. Since the population is large enough, we are able to assume the obtained data is independent and identically distributed.
@@ -72,17 +74,17 @@ my.sample <- sample(M.Height,n)
 hist(my.sample)
 ```
 
-Note that each time you repeat the sampling, the shape of the histogram will vary due to sampling variability.
+Each time you repeat the sampling, the 50 measurements will differ due to sampling variability, causing the histogram’s shape to change.
 
 ## Confidence Interval (CI)
 
 # Form of confidence interval
 
-The confidence interval is the most widely used interval estimation procedure for a target parameter. When a population mean $\mu$ is the target parameter, we use the following formula for constructing the interval: $$
+The **confidence interval** is the most widely used interval estimation procedure for a target parameter. When a population mean $\mu$ is the target parameter, we use the following formula for constructing the interval: $$
 [\text{Lower bound},\;\text{Upper bound}]=\left[\bar{x}-|z_{\alpha/2}|\times \tfrac{\sigma}{\sqrt{n}},\;\bar{x}+|z_{\alpha/2}|\times \tfrac{\sigma}{\sqrt{n}}\right]
 $$
 
--   The sample mean $\bar{x}$ serves as the point estimate, representing the best estimate of $\mu$ based on the sample.
+-   The sample mean $\bar{x}$ serves as the point estimate, representing the best estimate of $\mu$ based on the observed sample.
 -   $|z_{\alpha/2}|$ is the cut-off value that reflects the confidence level.
 -   $\sigma/\sqrt{n}$ is the standard error, which reflects the variability of the sample mean.
 
@@ -174,3 +176,6 @@ Suppose we are interested in the average mileage (in miles/gallon, or mpg) of pa
 ```
 
 4.  Provide a careful interpretation withing the context of the problem.
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=5999790){target="_blank"} to submit your answers.**
