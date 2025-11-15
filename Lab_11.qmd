@@ -364,3 +364,6 @@ i)  Reject $H_0$. There is enough evidence that the population average height of
 ii) Reject $H_0$. There is not enough evidence that the population average height of all Lehigh male students is less than 70.
 iii) Fail to reject $H_0$. There is enough evidence that the population average height of all Lehigh male students is less than 70.
 iv) Fail to teject $H_0$. There is not enough evidence that the population average height of all Lehigh male students is less than 70.
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=6009657){target="_blank"} to submit your answers.**
