@@ -822,3 +822,6 @@ i)  Reject $H_0$. There is enough evidence to claim that there eixsts socioecono
 ii) Reject $H_0$. There is not enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
 iii) Fail to reject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
 iv) Fail to teject $H_0$. There is enough evidence to claim that there eixsts socioeconomic disparity in the survival rates of the Titanic shipwreck.
+
+
+**Click [HERE](https://coursesite.lehigh.edu/mod/quiz/view.php?id=6024495){target="_blank"} to submit your answers.**
